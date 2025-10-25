@@ -1,0 +1,10 @@
+.brand {
+  display: flex;
+  align-items: center; /* căn giữa theo chiều dọc */
+  gap: 10px;      /* khoảng cách giữa các phần tử */
+  flex-wrap: wrap;
+}
+.brand-select{
+    min-width: 100px;
+    flex: 1;             /* để select chiếm hết chiều ngang còn lại */
+}
