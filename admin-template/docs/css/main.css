@@ -14881,3 +14881,8 @@ textarea.form-control-lg {
 .user .user-settings label {
   color: #666;
 }
+
+/* CSS Khoi lam */
+.space-first-right-khoi {
+  margin-left: 20px;
+}
