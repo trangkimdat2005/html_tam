@@ -5,9 +5,11 @@
       name="description"
       content="Vali is a responsive and free admin theme built with Bootstrap 5, SASS and PUG.js. It's fully customizable and modular."
     />
+    <!-- Twitter meta-->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:site" content="@pratikborsadiya" />
     <meta property="twitter:creator" content="@pratikborsadiya" />
+    <!-- Open Graph Meta-->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Vali Admin" />
     <meta property="og:title" content="Vali - Free Bootstrap 5 admin theme" />
@@ -27,11 +29,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Main CSS-->
     <link
       rel="stylesheet"
       type="text/css"
       href="../../admin-template/docs/css/main.css"
     />
+    <!-- Font-icon css-->
     <link
       rel="stylesheet"
       type="text/css"
@@ -39,14 +43,16 @@
     />
   </head>
   <body class="app sidebar-mini">
+    <!-- Navbar-->
     <header class="app-header">
       <a class="app-header__logo" href="index.html">Vali</a>
-      <a
+      <!-- Sidebar toggle button--><a
         class="app-sidebar__toggle"
         href="#"
         data-toggle="sidebar"
         aria-label="Hide Sidebar"
       ></a>
+      <!-- Navbar Right Menu-->
       <ul class="app-nav">
         <li class="app-search">
           <input class="app-search__input" type="search" placeholder="Search" />
@@ -54,6 +60,7 @@
             <i class="bi bi-search"></i>
           </button>
         </li>
+        <!--Notification Menu-->
         <li class="dropdown">
           <a
             class="app-nav__item"
@@ -151,6 +158,7 @@
             </li>
           </ul>
         </li>
+        <!-- User Menu-->
         <li class="dropdown">
           <a
             class="app-nav__item"
@@ -179,6 +187,7 @@
         </li>
       </ul>
     </header>
+    <!-- Sidebar menu-->
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
       <div class="app-sidebar__user">
@@ -483,15 +492,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="tile">
-            <div
-              class="tile-title-w-btn d-flex justify-content-between align-items-center"
-            >
-              <h3 class="title" style="margin-bottom: 0">Danh Sách Sản Phẩm</h3>
-              <a class="btn btn-primary" href="them-san-pham.html">
-                <i class="bi bi-plus-lg"></i> Thêm mới
-              </a>
-            </div>
-
+            <h2>Danh sách các nhà cung cấp</h2>
             <div class="tile-body">
               <div class="table-responsive">
                 <table
@@ -500,110 +501,20 @@
                 >
                   <thead>
                     <tr>
-                      <th>Mã sản phẩm</th>
-                      <th>Tên sản phẩm</th>
-                      <th>Loại sản phẩm</th>
-                      <th>Nhãn hiệu</th>
-                      <th>Đơn vị tính</th>
-                      <th>Giá bán</th>
-                      <th>Tồn kho</th>
-                      <th>Thời gian bán</th>
-                      <th>Mô tả</th>
-                      <th>Trạng thái</th>
-                      <th style="width: 100px">Hành động</th>
+                      <th>Mã Nhà Cung Cấp</th>
+
+                      <th>Tên Nhà Cung Cấp</th>
+
+                      <th>Số Điện Thoại</th>
+
+                      <th>Email</th>
+
+                      <th>Địa Chỉ</th>
+
+                      <th>Mã Số Thuế</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td>CK001</td>
-                      <td>Thịt gà công nghiệp</td>
-                      <td>Thực phẩm</td>
-                      <td>CP Foods</td>
-                      <td>KG</td>
-                      <td>85,000 đ</td>
-                      <td>3</td>
-                      <td>01/10/2025 - 31/12/2025</td>
-                      <td>Thịt gà tươi, đã làm sạch.</td>
-                      <td><span style="color: green">Còn hàng</span></td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm me-1"
-                          href="sua-sp.html?id=CK001"
-                          title="Sửa"
-                        >
-                          <i class="bi bi-pencil-square"></i>
-                        </a>
-                        <button
-                          class="btn btn-danger btn-sm"
-                          type="button"
-                          title="Xoá"
-                          onclick="xacNhanXoa('CK001')"
-                        >
-                          <i class="bi bi-trash3"></i>
-                        </button>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>ST001</td>
-                      <td>Sữa tươi TH True Milk (Lốc 4)</td>
-                      <td>Đồ uống</td>
-                      <td>TH True Milk</td>
-                      <td>Lốc</td>
-                      <td>38,000 đ</td>
-                      <td>250</td>
-                      <td>01/01/2025 - 31/12/2025</td>
-                      <td>Lốc 4 hộp 180ml, ít đường.</td>
-                      <td><span style="color: green">Còn hàng</span></td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm me-1"
-                          href="sua-sp.html?id=ST001"
-                          title="Sửa"
-                        >
-                          <i class="bi bi-pencil-square"></i>
-                        </a>
-                        <button
-                          class="btn btn-danger btn-sm"
-                          type="button"
-                          title="Xoá"
-                          onclick="xacNhanXoa('ST001')"
-                        >
-                          <i class="bi bi-trash3"></i>
-                        </button>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>CH002</td>
-                      <td>Cá hồi Na Uy (Fillet)</td>
-                      <td>Hải sản</td>
-                      <td>(Không có)</td>
-                      <td>Gram</td>
-                      <td>65,000 đ</td>
-                      <td>0</td>
-                      <td>(Trống)</td>
-                      <td>Fillet cá hồi tươi.</td>
-                      <td><span style="color: red">Ngừng kinh doanh</span></td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm me-1"
-                          href="sua-sp.html?id=CH002"
-                          title="Sửa"
-                        >
-                          <i class="bi bi-pencil-square"></i>
-                        </a>
-                        <button
-                          class="btn btn-danger btn-sm"
-                          type="button"
-                          title="Xoá"
-                          onclick="xacNhanXoa('CH002')"
-                        >
-                          <i class="bi bi-trash3"></i>
-                        </button>
-                      </td>
-                    </tr>
-                  </tbody>
+                  <tbody></tbody>
                 </table>
               </div>
             </div>
@@ -611,13 +522,16 @@
         </div>
       </div>
     </main>
+    <!-- Essential javascripts for application to work-->
     <script src="../../admin-template/docs/js/jquery-3.7.0.min.js"></script>
     <script src="../../admin-template/docs/js/bootstrap.min.js"></script>
     <script src="../../admin-template/docs/js/main.js"></script>
+    <!-- Page specific javascripts-->
     <link
       rel="stylesheet"
       href="https://cdn.datatables.net/v/bs5/dt-1.13.4/datatables.min.css"
     />
+    <!-- Data table plugin-->
     <script
       type="text/javascript"
       src="../../admin-template/docs/js/plugins/jquery.dataTables.min.js"
@@ -627,18 +541,9 @@
       src="../../admin-template/docs/js/plugins/dataTables.bootstrap.min.js"
     ></script>
     <script type="text/javascript">
-      // ĐÃ THÊM: Hàm JavaScript để xác nhận xoá
-      function xacNhanXoa(id) {
-        if (confirm("Bạn có chắc chắn muốn xoá sản phẩm " + id + " không?")) {
-          // Đây là nơi bạn sẽ gọi logic xoá, ví dụ:
-          // window.location.href = 'xoa-san-pham.php?id=' + id;
-          console.log("Đã xoá " + id);
-          // Hoặc bạn có thể dùng AJAX để xoá và cập nhật lại DataTables
-        }
-      }
-
       $("#sampleTable").DataTable();
     </script>
+    <!-- Google analytics script-->
     <script type="text/javascript">
       if (document.location.hostname == "pratikborsadiya.in") {
         (function (i, s, o, g, r, a, m) {
