@@ -3,9 +3,11 @@
   align-items: center; /* căn giữa theo chiều dọc */
   gap: 10px;      /* khoảng cách giữa các phần tử */
   flex-wrap: wrap;
+  background-color: blue;
 }
 .select-text {
     min-width: 100px;
+    max-width: none;
     flex: 1 !important;             /* để select chiếm hết chiều ngang còn lại */
     width: auto;
 }
