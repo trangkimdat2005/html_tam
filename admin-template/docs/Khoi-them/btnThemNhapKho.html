@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="description"
+    content="Vali is a responsive and free admin theme built with Bootstrap 5, SASS and PUG.js. It's fully customizable and modular.">
+  <title>Tạo Phiếu Nhập Kho - Vali Admin</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../js/plugins/select2/dist/css/select2.min.css">
+
+  <style>
+    #import-excel-input {
+      display: none;
+    }
+  </style>
+
+</head>
+
+<body class="app sidebar-mini">
+  <header class="app-header"><a class="app-header__logo" href="index.html">Vali</a>
+    <a class="app-sidebar__toggle" href="#" data-toggle="sidebar"
+      aria-label="Hide Sidebar"></a>
+    <ul class="app-nav">
+      <li class="app-search">
+        <input class="app-search__input" type="search" placeholder="Search">
+        <button class="app-search__button"><i class="bi bi-search"></i></button>
+      </li>
+      <li class="dropdown"><a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Show notifications"><i
+            class="bi bi-bell fs-5"></i></a>
+        <ul class="app-notification dropdown-menu dropdown-menu-right">
+          <li class="app-notification__title">You have 4 new notifications.</li>
+          <div class="app-notification__content">
+            <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><i
+                    class="bi bi-envelope fs-4 text-primary"></i></span>
+                <div>
+                  <p class="app-notification__message">Lisa sent you a mail</p>
+                  <p class="app-notification__meta">2 min ago</p>
+                </div>
+              </a></li>
+            <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><i
+                    class="bi bi-exclamation-triangle fs-4 text-warning"></i></span>
+                <div>
+                  <p class="app-notification__message">Mail server not working</p>
+                  <p class="app-notification__meta">5 min ago</p>
+                </div>
+              </a></li>
+          </div>
+          <li class="app-notification__footer"><a href="#">See all notifications.</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i
+            class="bi bi-person fs-4"></i></a>
+        <ul class="dropdown-menu settings-menu dropdown-menu-right">
+          <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-gear me-2 fs-5"></i> Settings</a></li>
+          <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-person me-2 fs-5"></i> Profile</a></li>
+          <li><a class="dropdown-item" href="page-login.html"><i class="bi bi-box-arrow-right me-2 fs-5"></i>
+              Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+  </header>
+
+  <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+  <aside class="app-sidebar">
+    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar"
+        src="https://randomuser.me/api/portraits/men/1.jpg" alt="User Image">
+      <div>
+        <p class="app-sidebar__user-name">John Doe</p>
+        <p class="app-sidebar__user-designation">Frontend Developer</p>
+      </div>
+    </div>
+    <ul class="app-menu">
+      <li><a class="app-menu__item" href="dashboard.html"><i class="app-menu__icon bi bi-speedometer"></i><span
+            class="app-menu__label">Bảng điều khiển</span></a></li>
+      <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
+            class="app-menu__icon bi bi-shop-window"></i><span class="app-menu__label">Quản lý kho hàng</span><i
+            class="treeview-indicator bi bi-chevron-right"></i></a>
+        <ul class="treeview-menu">
+          <li><a class=" treeview-item space-first-right-khoi" href="bootstrap-components.html"> </i> Danh sách phiếu
+              nhập</a></li>
+          <li><a class=" treeview-item space-first-right-khoi" href="." target="_blank" rel="noopener"> </i> Danh sách
+              phiếu xuất</a></li>
+          <li><a class=" treeview-item space-first-right-khoi" href="." target="_blank" rel="noopener"> </i> Vị trí sản
+              phẩm</a></li>
+          <li><a class=" treeview-item space-first-right-khoi" href="." target="_blank" rel="noopener"> </i> Danh sách
+              hàng tồn kho</a></li>
+        </ul>
+      </li>
+      </ul>
+  </aside>
+
+  <main class="app-content">
+    <div class="app-title">
+      <div>
+        <h1><i class="bi bi-box-arrow-in-down"></i> Tạo Phiếu Nhập Kho</h1>
+        <p>Thêm hàng hoá mới vào kho từ nhà cung cấp</p>
+      </div>
+      <ul class="app-breadcrumb breadcrumb">
+        <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
+        <li class="breadcrumb-item"><a href="#">Quản lý kho</a></li>
+        <li class="breadcrumb-item"><a href="#">Tạo phiếu nhập</a></li>
+      </ul>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tile">
+          
+          <h3 class="tile-title">Thông tin Phiếu Nhập</h3>
+          <div class="tile-body">
+            <div class="row">
+              <div class="col-md-4">
+                <label class="form-label">Nhà cung cấp</label>
+                <select class="form-control" id="select-nha-cung-cap">
+                  <option value="">-- Chọn nhà cung cấp --</option>
+                  <option value="NCC_VINAMILK">CTCP Sữa Việt Nam (Vinamilk)</option>
+                  <option value="NCC_ORION">CT TNHH Orion Vina</option>
+                  <option value="NCC_PEPSI">Suntory Pepsico Việt Nam</option>
+                </select>
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label">Nhân viên nhập</label>
+                <select class="form-control" id="select-nhan-vien">
+                  <option value="">-- Chọn nhân viên --</option>
+                  <option value="NV_001">Nguyễn Văn A (Quản lý)</option>
+                  <option value="NV_002">Trần Thị B (Nhân viên kho)</option>
+                </select>
+              </div>
+              
+              <div class="col-md-4">
+                <label class="form-label">Ngày nhập</label>
+                <input class="form-control" type="date" id="input-ngay-nhap">
+              </div>
+            </div>
+          </div>
+          
+          <hr>
+
+          <h3 class="tile-title">Chi Tiết Hàng Hoá Nhập</h3>
+          <div class="tile-body">
+            <div class="row mb-3">
+              <div class="col-md-4">
+                <label class="form-label">Tìm sản phẩm</label>
+                <select class="form-control" id="select-san-pham">
+                  <option value="">-- Tìm theo tên hoặc mã --</option>
+                  <option value="SPDV_001" data-name="Sting Dâu (Chai 330ml)">Sting Dâu (Chai 330ml)</option>
+                  <option value="SPDV_002" data-name="Bánh Chocopie (Hộp 12 cái)">Bánh Chocopie (Hộp 12 cái)</option>
+                  <option value="SPDV_003" data-name="Pepsi Lon (Lon 330ml)">Pepsi Lon (Lon 330ml)</option>
+                  <option value="SPDV_004" data-name="Thùng Sting Dâu (24 Chai)">Thùng Sting Dâu (24 Chai)</option>
+                </select>
+              </div>
+              
+              <div class="col-md-2">
+                <label class="form-label">Số lượng</label>
+                <input class="form-control" type="number" id="input-so-luong" min="1" value="1">
+              </div>
+
+              <div class="col-md-2">
+                <label class="form-label">Đơn giá nhập</label>
+                <input class="form-control" type="number" id="input-don-gia" min="0">
+              </div>
+
+              <div class="col-md-2">
+                <label class="form-label">Hạn sử dụng</label>
+                <input class="form-control" type="date" id="input-hsd">
+              </div>
+
+              <div class="col-md-2 d-flex align-items-end">
+                <button class="btn btn-primary" type="button" id="add-item-btn"><i class="bi bi-plus-lg"></i> Thêm vào phiếu</button>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Đơn giá nhập</th>
+                    <th>Hạn sử dụng</th>
+                    <th>Thành tiền</th>
+                    <th style="width: 50px;">Xoá</th>
+                  </tr>
+                </thead>
+                <tbody id="chi-tiet-phieu-nhap-body">
+                  </tbody>
+              </table>
+            </div>
+            
+            <div class="row mt-3">
+              <div class="col-12 text-end">
+                <h3 class="fw-bold">Tổng Tiền: <span id="tong-tien-phieu-nhap" class="text-primary">0 đ</span></h3>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="tile-footer">
+            <div class="d-flex justify-content-between">
+              <div>
+                <input type="file" id="import-excel-input" accept=".xlsx, .xls">
+                <button class="btn btn-success" type="button" id="import-excel-btn">
+                  <i class="bi bi-file-earmark-excel me-2"></i>Import từ Excel
+                </button>
+              </div>
+
+              <div>
+                <a class="btn btn-secondary" href="#"><i class="bi bi-x-circle-fill me-2"></i>Huỷ</a>
+                <button class="btn btn-primary" type="button"><i class="bi bi-check-circle-fill me-2"></i>Lưu Phiếu Nhập (Thêm)</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="../js/jquery-3.7.0.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/plugins/select2/dist/js/select2.min.js"></script>
+  <script src="../js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      // --- KHỞI TẠO SELECT2 ---
+      $('#select-nha-cung-cap').select2({ width: '100%' });
+      $('#select-nhan-vien').select2({ width: '100%' });
+      $('#select-san-pham').select2({ width: '100%' });
+
+      // --- TỰ ĐỘNG ĐIỀN NGÀY NHẬP LÀ HÔM NAY ---
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('input-ngay-nhap').value = today;
+      
+      // --- ĐỊNH DẠNG TIỀN TỆ ---
+      const formatter = new Intl.NumberFormat('vi-VN', {
+        style: 'currency',
+        currency: 'VND'
+      });
+      
+      // --- TRUY XUẤT PHẦN TỬ DOM ---
+      const addItemBtn = document.getElementById('add-item-btn');
+      const tableBody = document.getElementById('chi-tiet-phieu-nhap-body');
+      const totalSpan = document.getElementById('tong-tien-phieu-nhap');
+      
+      const productSelect = $('#select-san-pham');
+      const soLuongInput = document.getElementById('input-so-luong');
+      const donGiaInput = document.getElementById('input-don-gia');
+      const hsdInput = document.getElementById('input-hsd');
+      
+      // --- LOGIC NÚT IMPORT EXCEL ---
+      const importBtn = document.getElementById('import-excel-btn');
+      const importInput = document.getElementById('import-excel-input');
+      importBtn.addEventListener('click', function() {
+        importInput.click(); // Kích hoạt input file bị ẩn
+      });
+      
+      importInput.addEventListener('change', function() {
+        if (this.files.length > 0) {
+          const fileName = this.files[0].name;
+          console.log("Đã chọn file:", fileName);
+          alert("Đã chọn file: " + fileName + ". (Logic xử lý file Excel sẽ được lập trình ở đây)");
+          // Bạn sẽ cần dùng thư viện như SheetJS (xlsx) để đọc file này
+        }
+      });
+
+      // --- LOGIC THÊM SẢN PHẨM VÀO BẢNG ---
+      addItemBtn.addEventListener('click', function() {
+        const selectedOption = productSelect.find('option:selected');
+        const productId = selectedOption.val();
+        const productName = selectedOption.data('name');
+        const soLuong = parseInt(soLuongInput.value);
+        const donGia = parseFloat(donGiaInput.value);
+        const hsd = hsdInput.value;
+        
+        // Kiểm tra dữ liệu
+        if (!productId) {
+          alert("Vui lòng chọn một sản phẩm.");
+          return;
+        }
+        if (isNaN(soLuong) || soLuong <= 0) {
+          alert("Số lượng phải lớn hơn 0.");
+          return;
+        }
+        if (isNaN(donGia) || donGia < 0) {
+          alert("Vui lòng nhập đơn giá nhập.");
+          return;
+        }
+        if (!hsd) {
+           alert("Vui lòng nhập hạn sử dụng cho sản phẩm.");
+           return;
+        }
+        
+        const thanhTien = soLuong * donGia;
+        
+        // Tạo hàng mới
+        const row = tableBody.insertRow();
+        row.innerHTML = `
+          <td>${productName} (ID: ${productId})</td>
+          <td>${soLuong}</td>
+          <td>${formatter.format(donGia)}</td>
+          <td>${hsd}</td>
+          <td class="row-total" data-total="${thanhTien}">${formatter.format(thanhTien)}</td>
+          <td><button class="btn btn-danger btn-sm remove-item-btn"><i class="bi bi-trash"></i></button></td>
+        `;
+        
+        // Cập nhật tổng tiền
+        updateTotal();
+        
+        // Xoá trường nhập
+        productSelect.val('').trigger('change');
+        soLuongInput.value = 1;
+        donGiaInput.value = '';
+        hsdInput.value = '';
+      });
+
+      // --- LOGIC XOÁ SẢN PHẨM KHỎI BẢNG ---
+      tableBody.addEventListener('click', function(e) {
+        const removeButton = e.target.closest('.remove-item-btn');
+        if (removeButton) {
+          removeButton.closest('tr').remove();
+          updateTotal(); // Cập nhật lại tổng tiền
+        }
+      });
+      
+      // --- HÀM CẬP NHẬT TỔNG TIỀN (PhieuNhap.tongTien) ---
+      function updateTotal() {
+        let total = 0;
+        const allRows = tableBody.querySelectorAll('tr');
+        
+        allRows.forEach(row => {
+          const totalCell = row.querySelector('.row-total');
+          total += parseFloat(totalCell.getAttribute('data-total'));
+        });
+        
+        totalSpan.textContent = formatter.format(total);
+      }
+      
+    });
+  </script>
+
+  <script type="text/javascript">
+    if (document.location.hostname == 'pratikborsadiya.in') {
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-72504830-1', 'auto');
+      ga('send', 'pageview');
+    }
+  </script>
+</body>
+
+</html>
