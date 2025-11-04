@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="description"
+    content="Vali is a responsive and free admin theme built with Bootstrap 5, SASS and PUG.js. It's fully customizable and modular.">
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:site" content="@pratikborsadiya">
+  <meta property="twitter:creator" content="@pratikborsadiya">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Vali Admin">
+  <meta property="og:title" content="Vali - Free Bootstrap 5 admin theme">
+  <meta property="og:url" content="http://pratikborsadiya.in/blog/vali-admin">
+  <meta property="og:image" content="http://pratikborsadiya.in/blog/vali-admin/hero-social.png">
+  <meta property="og:description"
+    content="Vali is a responsive and free admin theme built with Bootstrap 5, SASS and PUG.js. It's fully customizable and modular.">
+  <title>Vali Admin - Free Bootstrap 5 Admin Template</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../assets/lib/bootstrap/css/main.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/lib/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/base.css" />
+  <style>
+    .product-card {
+      transition: box-shadow .3s ease, transform .3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card .card-img-top {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product-card .card-footer {
+      background-color: #fff;
+      border-top: none;
+    }
+
+    #cart-count-badge {
+      font-size: 0.6em;
+      padding: 0.3em 0.5em;
+      top: 10px;
+      right: -5px;
+    }
+
+    #cart-icon {
+      font-size: 1.25rem;
+    }
+
+    #cart-icon.pop {
+      animation: cartPop 0.5s ease;
+    }
+
+    @keyframes cartPop {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.4);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    #cartOffcanvas .offcanvas-body {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 0;
+    }
+
+    #cart-items-list {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 4px;
+      margin: -4px;
+    }
+
+    .cart-item img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+    }
+
+    .cart-item h6 {
+      max-width: 150px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .cart-item .form-control-sm {
+      width: 45px;
+    }
+
+    .cart-footer {
+      background: #fff;
+      border-top: 1px solid #dee2e6;
+      padding: 1rem;
+      margin-left: -1rem;
+      margin-right: -1rem;
+    }
+
+    .price-original {
+      text-decoration: line-through;
+      font-size: 0.9em;
+      color: #6c757d;
+    }
+
+    .price-discounted {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #dc3545;
+    }
+  </style>
+</head>
+
+<body class="app sidebar-mini">
+  <header class="app-header"><a class="app-header__logo" href="index.html">Vali</a>
+    <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+    <ul class="app-nav">
+      <li class="position-relative">
+        <a class="app-nav__item" id="cart-icon" href="#cartOffcanvas" data-bs-toggle="offcanvas" role="button"
+          aria-controls="cartOffcanvas" aria-label="Show Cart">
+          <i class="bi bi-cart fs-5"></i>
+          <span class="position-absolute translate-middle badge rounded-pill bg-danger" id="cart-count-badge">
+            0
+          </span>
+        </a>
+      </li>
+      <li class="dropdown"><a class="app-nav__item" href="#" data-bs-toggle="dropdown"
+          aria-label="Show notifications"><i class="bi bi-bell fs-5"></i></a>
+        <ul class="app-notification dropdown-menu dropdown-menu-right">
+          <li class="app-notification__title">You have 4 new notifications.</li>
+          <div class="app-notification__content">
+            <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><i
+                    class="bi bi-envelope fs-4 text-primary"></i></span>
+                <div>
+                  <p class="app-notification__message">Lisa sent you a mail</p>
+                  <p class="app-notification__meta">2 min ago</p>
+                </div>
+              </a></li>
+            <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><i
+                    class="bi bi-exclamation-triangle fs-4 text-warning"></i></span>
+                <div>
+                  <p class="app-notification__message">Mail server not working</p>
+                  <p class="app-notification__meta">5 min ago</p>
+                </div>
+              </a></li>
+            <li><a class="app-notification__item" href="javascript:;"><span class="app-notification__icon"><i
+                    class="bi bi-cash fs-4 text-success"></i></span>
+                <div>
+                  <p class="app-notification__message">Transaction complete</p>
+                  <p class="app-notification__meta">2 days ago</p>
+                </div>
+              </a></li>
+          </div>
+          <li class="app-notification__footer"><a href="#">See all notifications.</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="app-nav__item" href="#" data-bs-toggle="dropdown" aria-label="Open Profile Menu"><i
+            class="bi bi-person fs-4"></i></a>
+        <ul class="dropdown-menu settings-menu dropdown-menu-right">
+          <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-gear me-2 fs-5"></i> Settings</a></li>
+          <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-person me-2 fs-5"></i> Profile</a></li>
+          <li><a class="dropdown-item" href="page-login.html"><i class="bi bi-box-arrow-right me-2 fs-5"></i> Logout</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </header>
+
+  <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+  <aside class="app-sidebar">
+    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar"
+        src="https://randomuser.me/api/portraits/men/1.jpg" alt="User Image">
+      <div>
+        <p class="app-sidebar__user-name">John Doe</p>
+        <p class="app-sidebar__user-designation">Frontend Developer</p>
+      </div>
+    </div>
+    <ul class="app-menu">
+      
+      <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
+            class="app-menu__icon bi bi-cash-coin"></i><span class="app-menu__label">Danh mục sản phẩm</span><i
+            class="treeview-indicator bi bi-chevron-right"></i></a>
+        <ul class="treeview-menu">
+          <li><a class=" treeview-item space-first-right-khoi" href="bootstrap-components.html"> </i> Thịt</a></li>
+          <li><a class=" treeview-item space-first-right-khoi" href="https://icons.getbootstrap.com/" target="_blank"
+              rel="noopener"> </i> Cá chà bá</a></li>
+          <li><a class=" treeview-item space-first-right-khoi" href="https://icons.getbootstrap.com/" target="_blank"
+              rel="noopener"></i> Người yêu</a></li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+
+  <main class="app-content">
+    <div class="app-title">
+      <div>
+        <h1><i class="bi bi-shop"></i> Mua sắm</h1>
+        <p>Chọn sản phẩm và thêm vào giỏ hàng</p>
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="input-group">
+          <input class="form-control" type="text" id="productSearchInput" placeholder="Tìm kiếm sản phẩm...">
+          <button class="btn btn-primary" type="button" id="productSearchButton"><i class="bi bi-search"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" id="product-list">
+    </div>
+  </main>
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title" id="cartOffcanvasLabel">Giỏ hàng</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div id="cart-items-list">
+        <p class="text-muted text-center" id="cart-empty-msg">Giỏ hàng của bạn đang trống.</p>
+      </div>
+      <div class="cart-footer">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Mã khuyến mãi" id="promo-code-input">
+          <button class="btn btn-outline-secondary" type="button" id="apply-promo-btn">Áp dụng</button>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="select-all-cart-items">
+            <label class="form-check-label" for="select-all-cart-items">
+              Chọn tất cả
+            </label>
+          </div>
+        </div>
+        <div class="d-flex justify-content-between fs-5 fw-bold mb-3">
+          <span>Tổng cộng:</span>
+          <span id="cart-total-price" class="text-danger">0 ₫</span>
+        </div>
+        <button class="btn btn-primary btn-lg w-100" id="checkout-btn">Thanh toán</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/lib/jquery/jquery-3.7.0.min.js"></script>
+  <script src="../assets/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../assets/lib/bootstrap/js/main.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+  <script type="text/javascript">
+    const salesData = {
+      xAxis: { type: 'category', data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] },
+      yAxis: { type: 'value', axisLabel: { formatter: '${value}' } },
+      series: [{ data: [150, 230, 224, 218, 135, 147, 260], type: 'line', smooth: true }],
+      tooltip: { trigger: 'axis', formatter: "<b>{b0}:</b> ${c0}" }
+    }
+    const supportRequests = {
+      tooltip: { trigger: 'item' },
+      legend: { orient: 'vertical', left: 'left' },
+      series: [
+        {
+          name: 'Support Requests', type: 'pie', radius: '50%',
+          data: [{ value: 300, name: 'In Progress' }, { value: 50, name: 'Delayed' }, { value: 100, name: 'Complete' }],
+          emphasis: { itemStyle: { shadowBlur: 10, shadowOffsetX: 0, shadowColor: 'rgba(0, 0, 0, 0.5)' } }
+        }
+      ]
+    };
+    const salesChartElement = document.getElementById('salesChart');
+    if (salesChartElement) {
+      const salesChart = echarts.init(salesChartElement, null, { renderer: 'svg' });
+      salesChart.setOption(salesData);
+      new ResizeObserver(() => salesChart.resize()).observe(salesChartElement);
+    }
+    const supportChartElement = document.getElementById("supportRequestChart")
+    if (supportChartElement) {
+      const supportChart = echarts.init(supportChartElement, null, { renderer: 'svg' });
+      supportChart.setOption(supportRequests);
+      new ResizeObserver(() => supportChart.resize()).observe(supportChartElement);
+    }
+  </script>
+  <script type="text/javascript">
+    if (document.location.hostname == 'pratikborsadiya.in') {
+      (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+      ga('create', 'UA-72504830-1', 'auto');
+      ga('send', 'pageview');
+    }
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const productListData = [
+        { id: 'sp001', name: 'Nước ngọt Coca Cola', originalPrice: 12000, price: 10800, image: 'https://via.placeholder.com/300x200/FF0000/FFFFFF?text=Coca+Cola', discountBadge: 'Giảm 10%' },
+        { id: 'sp002', name: 'Bánh mì Sandwich Kẹp Thịt', originalPrice: null, price: 25000, image: 'https://via.placeholder.com/300x200/F5DEB3/000000?text=Sandwich', discountBadge: null },
+        { id: 'sp003', name: 'Sữa tươi Vinamilk 1L', originalPrice: 30000, price: 28000, image: 'https://via.placeholder.com/300x200/007bff/FFFFFF?text=Vinamilk', discountBadge: 'Giảm 2k' },
+        { id: 'sp004', name: 'Mì gói Hảo Hảo', originalPrice: null, price: 4000, image: 'https://via.placeholder.com/300x200/FFC107/000000?text=Hao+Hao', discountBadge: null },
+        { id: 'sp005', name: 'Snack Ostar Vị Kim Chi', originalPrice: 10000, price: 8000, image: 'https://via.placeholder.com/300x200/28A745/FFFFFF?text=Ostar', discountBadge: 'Giảm 20%' },
+        { id: 'sp006', name: 'Kem Celano', originalPrice: null, price: 20000, image: 'https://via.placeholder.com/300x200/17A2B8/FFFFFF?text=Celano', discountBadge: null },
+        { id: 'sp007', name: 'Nước suối Aquafina 500ml', originalPrice: null, price: 5000, image: 'https://via.placeholder.com/300x200/E8F0FE/000000?text=Aquafina', discountBadge: null },
+        { id: 'sp008', name: 'Bia 333 Lon', originalPrice: 15000, price: 14500, image: 'https://via.placeholder.com/300x200/DC3545/FFFFFF?text=Bia+333', discountBadge: 'Giảm 500đ' }
+      ];
+
+      const productListContainer = document.getElementById('product-list');
+      const searchInput = document.getElementById('productSearchInput');
+      const searchButton = document.getElementById('productSearchButton');
+      const cartBadge = document.getElementById('cart-count-badge');
+      const cartIcon = document.getElementById('cart-icon');
+      const cartItemsList = document.getElementById('cart-items-list');
+      const cartEmptyMsg = document.getElementById('cart-empty-msg');
+      const cartTotalPriceEl = document.getElementById('cart-total-price');
+      const selectAllCheckbox = document.getElementById('select-all-cart-items');
+
+      let cart = new Map();
+
+      function formatCurrency(number) {
+        return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(number);
+      }
+
+      function renderProducts(products) {
+        productListContainer.innerHTML = '';
+        if (products.length === 0) {
+          productListContainer.innerHTML = '<p class="text-center text-muted col-12">Không tìm thấy sản phẩm nào.</p>';
+          return;
+        }
+
+        products.forEach(product => {
+          const discountBadge = product.discountBadge
+            ? `<span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">${product.discountBadge}</span>`
+            : '';
+
+          const priceHtml = product.originalPrice
+            ? `<p class="card-text mb-0"><span class="price-original me-2">${formatCurrency(product.originalPrice)}</span><span class="price-discounted">${formatCurrency(product.price)}</span></p>`
+            : `<p class="card-text mb-0"><span class="price-discounted">${formatCurrency(product.price)}</span></p>`;
+
+          const isInCart = cart.has(product.id);
+          const btnClass = isInCart ? 'btn-success' : 'btn-primary';
+          const btnText = isInCart ? '<i class="bi bi-check-lg"></i> Đã thêm' : '<i class="bi bi-cart-plus"></i> Thêm vào giỏ';
+          const btnDisabled = isInCart ? 'disabled' : '';
+
+          const productCol = document.createElement('div');
+          productCol.className = 'col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-4';
+          productCol.innerHTML = `
+            <div class="card h-100 product-card">
+              <img src="${product.image}" class="card-img-top" alt="${product.name}">
+              ${discountBadge}
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">${product.name}</h5>
+                <div class="mt-auto">
+                  ${priceHtml}
+                </div>
+              </div>
+              <div class="card-footer">
+                <button class="btn ${btnClass} w-100 add-to-cart-btn" data-id="${product.id}" ${btnDisabled}>
+                  ${btnText}
+                </button>
+              </div>
+            </div>
+          `;
+          productListContainer.appendChild(productCol);
+        });
+      }
+
+      function renderCartItems() {
+        if (cart.size === 0) {
+          cartItemsList.innerHTML = '';
+          cartEmptyMsg.style.display = 'block';
+          updateCartTotal();
+          return;
+        }
+
+        cartEmptyMsg.style.display = 'none';
+        cartItemsList.innerHTML = '';
+
+        cart.forEach(item => {
+          const itemEl = document.createElement('div');
+          itemEl.className = 'd-flex align-items-center mb-3 cart-item';
+          itemEl.dataset.id = item.product.id;
+
+          itemEl.innerHTML = `
+            <input class="form-check-input me-2 cart-item-checkbox" type="checkbox" value="${item.product.id}" checked>
+            <img src="${item.product.image}" class="rounded me-2" alt="${item.product.name}">
+            <div class="flex-grow-1">
+              <h6 class="mb-0 text-truncate">${item.product.name}</h6>
+              <small class="text-muted">${formatCurrency(item.product.price)}</small>
+              <div class="d-flex align-items-center mt-1">
+                <button class="btn btn-sm btn-outline-secondary cart-qty-btn" data-id="${item.product.id}" data-action="decrease">-</button>
+                <input type="text" class="form-control form-control-sm text-center mx-1" value="${item.quantity}" readonly>
+                <button class="btn btn-sm btn-outline-secondary cart-qty-btn" data-id="${item.product.id}" data-action="increase">+</button>
+              </div>
+            </div>
+            <div class="fw-bold ms-auto me-2 text-nowrap">${formatCurrency(item.product.price * item.quantity)}</div>
+            <button class="btn btn-sm btn-outline-danger remove-from-cart-btn" data-id="${item.product.id}"><i class="bi bi-trash"></i></button>
+          `;
+          cartItemsList.appendChild(itemEl);
+        });
+
+        updateCartTotal();
+        updateSelectAllCheckboxState();
+      }
+
+      function filterProducts() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const filteredProducts = productListData.filter(product =>
+          product.name.toLowerCase().includes(searchTerm)
+        );
+        renderProducts(filteredProducts);
+      }
+
+      function addToCart(productId, buttonEl) {
+        const productToAdd = productListData.find(p => p.id === productId);
+        if (!productToAdd) return;
+
+        if (cart.has(productId)) {
+          let item = cart.get(productId);
+          item.quantity++;
+          cart.set(productId, item);
+        } else {
+          cart.set(productId, { product: productToAdd, quantity: 1 });
+        }
+
+        buttonEl.innerHTML = '<i class="bi bi-check-lg"></i> Đã thêm';
+        buttonEl.classList.add('btn-success');
+        buttonEl.classList.remove('btn-primary');
+        buttonEl.disabled = true;
+
+        cartIcon.classList.add('pop');
+        cartIcon.addEventListener('animationend', () => {
+          cartIcon.classList.remove('pop');
+        }, { once: true });
+
+        updateCartBadge();
+        renderCartItems();
+      }
+
+      function changeQuantity(productId, action) {
+        if (!cart.has(productId)) return;
+
+        let item = cart.get(productId);
+
+        if (action === 'increase') {
+          item.quantity++;
+        } else if (action === 'decrease') {
+          item.quantity--;
+        }
+
+        if (item.quantity <= 0) {
+          removeFromCart(productId);
+        } else {
+          cart.set(productId, item);
+          renderCartItems();
+          updateCartBadge();
+        }
+      }
+
+      function removeFromCart(productId) {
+        cart.delete(productId);
+
+        const productButton = document.querySelector(`.add-to-cart-btn[data-id="${productId}"]`);
+        if (productButton) {
+          productButton.innerHTML = '<i class="bi bi-cart-plus"></i> Thêm vào giỏ';
+          productButton.classList.remove('btn-success');
+          productButton.classList.add('btn-primary');
+          productButton.disabled = false;
+        }
+
+        renderCartItems();
+        updateCartBadge();
+      }
+
+      function updateCartBadge() {
+        let totalQuantity = 0;
+        for (const item of cart.values()) {
+          totalQuantity += item.quantity;
+        }
+        cartBadge.textContent = totalQuantity;
+      }
+
+      function updateCartTotal() {
+        let total = 0;
+        const checkedItems = document.querySelectorAll('.cart-item-checkbox:checked');
+
+        checkedItems.forEach(chk => {
+          const productId = chk.value;
+          if (cart.has(productId)) {
+            const item = cart.get(productId);
+            total += item.product.price * item.quantity;
+          }
+        });
+
+        cartTotalPriceEl.textContent = formatCurrency(total);
+      }
+
+      function updateSelectAllCheckboxState() {
+        const allCheckboxes = document.querySelectorAll('.cart-item-checkbox');
+        if (allCheckboxes.length === 0) {
+          selectAllCheckbox.checked = false;
+          return;
+        }
+        const allChecked = Array.from(allCheckboxes).every(chk => chk.checked);
+        selectAllCheckbox.checked = allChecked;
+      }
+
+      searchButton.addEventListener('click', filterProducts);
+      searchInput.addEventListener('keyup', function (event) {
+        if (event.key === 'Enter') {
+          filterProducts();
+        }
+      });
+
+      productListContainer.addEventListener('click', function (event) {
+        const button = event.target.closest('.add-to-cart-btn');
+        if (button) {
+          const productId = button.dataset.id;
+          addToCart(productId, button);
+        }
+      });
+
+      cartItemsList.addEventListener('click', function (event) {
+        const removeBtn = event.target.closest('.remove-from-cart-btn');
+        if (removeBtn) {
+          removeFromCart(removeBtn.dataset.id);
+          return;
+        }
+
+        const qtyBtn = event.target.closest('.cart-qty-btn');
+        if (qtyBtn) {
+          changeQuantity(qtyBtn.dataset.id, qtyBtn.dataset.action);
+          return;
+        }
+      });
+
+      cartItemsList.addEventListener('change', function (event) {
+        if (event.target.classList.contains('cart-item-checkbox')) {
+          updateCartTotal();
+          updateSelectAllCheckboxState();
+        }
+      });
+
+      selectAllCheckbox.addEventListener('change', function (event) {
+        const isChecked = event.target.checked;
+        document.querySelectorAll('.cart-item-checkbox').forEach(chk => chk.checked = isChecked);
+        updateCartTotal();
+      });
+
+      renderProducts(productListData);
+    });
+  </script>
+</body>
+
+</html>
