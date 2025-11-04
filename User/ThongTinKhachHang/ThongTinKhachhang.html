@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/admin-template/docs/css/main.min.css">
+</head>
+<body>
+    <div class="row">
+    <div class="col-md-12">
+        <div class="tile">
+            <div class="tile-title-w-btn">
+                <h3 class="title"><i class="bi bi-person-lines-fill me-2"></i> Hồ Sơ Khách Hàng</h3>
+            </div>
+            
+            <div class="tile-body">
+                <div class="row">
+                    
+                    <div class="col-lg-4 text-center border-end">
+                        <div class="profile-sidebar p-3">
+                            
+                            <div class="profile-avatar mb-3">
+                                <img
+                                    class="rounded-circle shadow-sm"
+                                    src="https://randomuser.me/api/portraits/women/44.jpg" 
+                                    alt="Avatar Khách hàng"
+                                    style="width: 150px; height: 150px; object-fit: cover;"
+                                />
+                            </div>
+
+                            <h4 class="mb-1 fw-bold" id="customer-hoTen">Nguyễn Thị Cẩm Trang</h4>
+                            
+                            <p class="text-muted small mb-3">
+                                Trạng thái: <span class="badge bg-success">Active</span> | Đăng ký: 15/08/2023
+                            </p>
+                            
+                            <hr>
+
+                            <div class="member-card p-3 rounded shadow-sm mb-4" style="background-color: #f8f9fa;">
+                                <h6 class="text-primary mb-2"><i class="bi bi-person-badge me-2"></i> Thẻ Thành Viên</h6>
+                                <p class="mb-1">
+                                    <span class="fw-bold me-2">Hạng:</span> 
+                                    <span class="badge bg-warning text-dark fs-6" id="member-hang">Gold</span> 
+                                </p>
+                                <p class="mb-0">
+                                    <span class="fw-bold me-2">Điểm Tích Lũy:</span> 
+                                    <span class="fw-bold text-success" id="member-diemTichLuy">1,450 điểm</span>
+                                </p>
+                            </div>
+                            
+                            <button class="btn btn-primary btn-lg w-100" onclick="editProfile()">
+                                <i class="bi bi-pencil-square me-2"></i> Chỉnh Sửa Thông Tin
+                            </button>
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8">
+                        <div class="profile-details p-3">
+                            <h5 class="mb-4 text-dark border-bottom pb-2"><i class="bi bi-info-circle me-2"></i> Thông Tin Chi Tiết</h5>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p class="fw-bold mb-1">Mã Khách Hàng (ID)</p>
+                                    <p id="customer-id">KH000123</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="fw-bold mb-1">Email</p>
+                                    <p id="customer-email">trang.ntc@example.com</p>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p class="fw-bold mb-1">Số Điện Thoại</p>
+                                    <p id="customer-sdt">0901 234 567</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="fw-bold mb-1">Ngày Đăng Ký</p>
+                                    <p id="customer-ngayDangKy">2023-08-15</p>
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-4">
+                                <div class="col-12">
+                                    <p class="fw-bold mb-1">Địa Chỉ</p>
+                                    <p id="customer-diaChi">45/A Nguyễn Văn Cừ, Quận 1, TP.HCM</p>
+                                </div>
+                            </div>
+
+                            <h5 class="mb-3 text-dark border-bottom pb-2"><i class="bi bi-clock-history me-2"></i> Hoạt Động Mua Hàng</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="fw-bold mb-1">Tổng Chi Tiêu</p>
+                                    <p class="fs-5 text-primary fw-bold" id="total-spent">15.500.000 đ</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="fw-bold mb-1">Số Lượng Hóa Đơn</p>
+                                    <p class="fs-5 fw-bold" id="total-orders">28 hóa đơn</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function editProfile() {
+        // Đây là nơi bạn sẽ thêm logic chuyển hướng hoặc mở modal chỉnh sửa
+        const customerName = document.getElementById('customer-hoTen').textContent;
+        alert(`Đang mở form chỉnh sửa thông tin cho khách hàng: ${customerName}`);
+        
+        // Ví dụ: window.location.href = 'edit_customer.html?id=KH000123';
+    }
+    
+    // (Các hàm khởi tạo khác nếu cần load dữ liệu động)
+</script>
+</body>
+</html>
