@@ -1,0 +1,120 @@
+main {
+    :root {
+        --color-primary: #006B3C;
+        --color-danger: #cc0000;
+        --color-background1: rgb(228, 233, 231);
+        --color-background2: #EEFFF1;
+        --color-white: #fff;
+        --color-text-dark: #333;
+    }
+
+    .swiper-category.sticky-top {
+        height: 160px;
+        z-index: 1020;
+        width: 100%;
+        background-color: var(--color-background2);
+    }
+
+    .swiper-wrapper {
+        display: flex;
+        gap: 15px;
+        padding: 10px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+        background-color: var(--color-white);
+        border-radius: 20px;
+        justify-content: center;
+    }
+
+    /* Ẩn thanh cuộn */
+    .swiper-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .swiper-wrapper {
+        scrollbar-width: none;
+    }
+
+    .swiper-slide {
+        width: 85px;
+        flex-shrink: 0;
+        display: block;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        cursor: pointer;
+        position: relative;
+        border: 2px solid transparent;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .swiper-slide .badge {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        padding: 3px 6px;
+        border-radius: 5px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .swiper-slide:hover {
+        background-color: var(--color-background2);
+        transform: scale(1.05);
+    }
+
+    .swiper-slide img {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    .swiper-slide p {
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #333;
+    }
+
+    .swiper-slide:hover p,
+    .swiper-slide.active p {
+        color: #006B3C;
+    }
+
+    h2#ThitBo,
+    h2#ThitHeo,
+    h2#ThitGa,
+    h2#HaiSan,
+    h2#Trung {
+        scroll-margin-top: 70px;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 0.5rem;
+        padding-left: 20px;
+        border-left: 30px solid #df7131;
+        border-top: 15px solid #17ab6b;
+        display: block;
+        background-color: #ffffff;
+        padding: 15px 20px;
+        border-radius: 8px 8px 0 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+    }
+
+    /* --- MEDIA QUERY --- */
+    @media (max-width: 992px) {
+        .swiper-wrapper {
+            justify-content: left;
+        }
+    }
+}
