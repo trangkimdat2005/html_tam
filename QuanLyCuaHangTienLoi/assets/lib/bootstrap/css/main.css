@@ -187,18 +187,6 @@
   --bs-form-invalid-border-color: #ea868f;
 }
 
-:root {
-  --color-logo: rgb(10, 180, 220);
-  --color-header: rgb(13, 202, 240);
-
-  --color-sidebar-bg: rgb(3, 80, 110);
-  --color-sidebar-hover: rgb(10, 120, 160);
-
-  --btn-add: rgb(10, 180, 220);   /* Thêm */
-  --btn-edit: rgb(0, 160, 180);   /* Sửa */
-  --btn-delete: rgb(200, 60, 80); /* Xoá */
-}
-
 *,
 *::before,
 *::after {
@@ -13819,7 +13807,8 @@ textarea.form-control-lg {
   overflow: hidden;
   -webkit-transition: max-height 0.3s ease;
   transition: max-height 0.3s ease;
-  background: #2a383e;
+  background: var(--color-sidebar-sub);
+  /* background: #2a383e; */
 }
 
 .treeview-item {
@@ -13835,7 +13824,8 @@ textarea.form-control-lg {
   color: #fff;
 }
 .treeview-item.active, .treeview-item:hover, .treeview-item:focus {
-  background: #0d1214;
+  /* background: #0d1214; */
+  background-color: var(--color-sidebar-hover);
   text-decoration: none;
   color: #fff;
 }
@@ -14905,4 +14895,53 @@ textarea.form-control-lg {
 .space-first-right-khoi {
   padding-left: 40px ;
    /* margin-left: 20px; */
+}
+:root {
+  --color-logo: rgb(10, 180, 220);
+  --color-header: rgb(13, 202, 240);
+
+  --color-sidebar-bg: rgb(3, 80, 110);
+  --color-sidebar-hover: rgb(10, 120, 160);
+
+  /* Nút hành động */
+  --btn-add: rgb(10, 180, 220);       /* Thêm */
+  --btn-add-hover: rgb(8, 160, 195);  /* Hover Thêm */
+
+  --btn-edit: rgb(0, 160, 180);       /* Sửa */
+  --btn-edit-hover: rgb(0, 145, 165); /* Hover Sửa */
+
+  --btn-delete: rgb(200, 60, 80);     /* Xoá */
+  --btn-delete-hover: rgb(175, 50, 65); /* Hover Xoá */
+
+  --color-sidebar-sub: rgb(10, 100, 135);
+}
+
+.btn-add-khoi { 
+  background-color: var(--btn-add);
+  color: #fff;
+  border: 0;
+  transition: 0.25s;
+}
+.btn-edit-khoi {
+  background-color: var(--btn-edit); 
+  color: #fff; 
+  border: 0;
+  transition: 0.25s;
+}
+.btn-delete-khoi { 
+  background-color: var(--btn-delete); 
+  color: #fff;
+  border: 0;
+  transition: 0.25s;
+}
+
+/* Hover riêng biệt cho từng nút */
+.btn-add-khoi:hover {
+  background-color: var(--btn-add-hover);
+}
+.btn-edit-khoi:hover {
+  background-color: var(--btn-edit-hover);
+}
+.btn-delete-khoi:hover {
+  background-color: var(--btn-delete-hover);
 }
