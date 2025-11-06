@@ -1,0 +1,100 @@
+/* CSS cho hiệu ứng trượt */
+    #product-list-col,
+    #product-form-col {
+      transition: width 0.4s ease-in-out;
+    }
+
+    #product-form-col {
+      overflow: hidden;
+      /* Ngăn thanh cuộn ngang khi co lại */
+    }
+
+    /* Trạng thái ban đầu (form ẩn) */
+    #product-list-col.col-md-12 {
+      width: 100%;
+    }
+
+    #product-form-col.col-md-0 {
+      width: 0;
+      opacity: 0;
+      padding: 0;
+      margin: 0;
+      /* Đảm bảo form bị ẩn hoàn toàn */
+    }
+
+    /* Trạng thái khi form mở (thêm class .form-open vào #main-row-container) */
+    .form-open #product-list-col {
+      width: 66.66667%;
+      /* Tương đương col-md-8 */
+    }
+
+    .form-open #product-form-col {
+      width: 33.33333%;
+      /* Tương đương col-md-4 */
+      opacity: 1;
+    }
+
+    /* CSS CHO AVATAR PREVIEW (Ảnh sản phẩm) */
+    .avatar-upload-container {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      margin-bottom: 20px;
+    }
+
+    .avatar-preview {
+      width: 100%;
+      height: 200px;
+      border-radius: 6px;
+      border: 3px solid #ddd;
+      object-fit: cover;
+      background-color: #f8f9fa;
+    }
+
+    .avatar-edit-input {
+      display: none;
+    }
+
+    .avatar-edit-label {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 34px;
+      height: 34px;
+      background: #009688;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 34px;
+      cursor: pointer;
+      border: 2px solid white;
+      font-size: 18px;
+    }
+
+    .avatar-edit-label:hover {
+      background: #007a6f;
+    }
+
+    /* === CSS MỚI: Để khoá form khi ở chế độ "Xem" === */
+    .form-readonly .form-control,
+    .form-readonly .form-check-input {
+      pointer-events: none;
+      /* Ngăn click */
+      background-color: #e9ecef;
+      /* Làm mờ đi */
+    }
+
+    .form-readonly .select2-container--default {
+      pointer-events: none;
+      background-color: #e9ecef;
+    }
+
+    .form-readonly .avatar-edit-label {
+      display: none;
+      /* Ẩn nút upload ảnh */
+    }
+
+    /* CSS MỚI: Giúp phân biệt hàng có thể click */
+    #sampleTable tbody tr:not(.no-click) {
+      cursor: pointer;
+    }

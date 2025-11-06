@@ -25,11 +25,12 @@
   <!-- Font-icon css-->
   <link rel="stylesheet" type="text/css"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link rel="stylesheet" type="text/css" href="../assets/css/base.css" />
     <link rel="stylesheet" href="../assets/lib/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/base.css" />
   <!-- Css riêng ở đây nha -->
-   <link rel="stylesheet" href="../assets/lib/select2/dist/css/select2.min.css">
-  <link rel="stylesheet" href="../assets/css/ThemDanhMuc.css">
+  <link rel="stylesheet" href="../assets/lib/select2/dist/css/select2.min.css">
+  <link rel="stylesheet" href="../assets/css/ThemMaKhuyenMai.css">
+
 </head>
 
 <body class="app sidebar-mini">
@@ -260,143 +261,164 @@
 
 
 
-
   <main class="app-content">
     <div class="app-title">
       <div>
-        <h1><i class="bi bi-bookmarks"></i> Quản lý Danh mục</h1>
-        <p>Quản lý các danh mục của sản phẩm</p>
+        <h1><i class="bi bi-percent"></i> Thêm Chương Trình Khuyến Mãi</h1>
+        <p>Tạo chương trình và mã giảm giá mới</p>
       </div>
-      <ul class="app-breadcrumb breadcrumb side">
+      <ul class="app-breadcrumb breadcrumb">
         <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-        <li class="breadcrumb-item">Quản lý hàng hoá</li>
-        <li class="breadcrumb-item active">
-          <a href="#">Quản lý danh mục</a>
-        </li>
+        <li class="breadcrumb-item"><a href="#">Quản lý khuyến mãi</a></li>
+        <li class="breadcrumb-item"><a href="#">Thêm mới</a></li>
       </ul>
     </div>
+    <div class="row">
 
-    <div class="row" id="main-row-container">
-      
-      <div class="col-md-12" id="category-list-col">
+      <div class="col-md-8">
         <div class="tile">
-          <div class="tile-title-w-btn d-flex justify-content-between align-items-center">
-            <h3 class="title" style="margin-bottom: 0">Danh Sách Danh Mục</h3>
-            <a class="btn btn-primary btn-add-khoi" href="#" id="show-add-form-btn">
-              <i class="fas fa-plus"></i> Thêm danh mục mới
-            </a>
-          </div>
-
+          <h3 class="tile-title">Thông tin Chương trình & Điều kiện</h3>
           <div class="tile-body">
-            <div class="table-responsive">
-              <table class="table table-hover table-bordered" id="sampleTable">
-                <thead>
-                  <tr>
-                    <th>Mã Danh Mục</th>
-                    <th>Tên Danh Mục</th>
-                    <th>Số Lượng Sản Phẩm</th>
-                    <th class="text-center">Thao tác</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>TP</td>
-                    <td>Thực phẩm</td>
-                    <td>1</td>
-                    <td class="text-center">
-                      <a class="btn btn-info btn-sm me-1 btn-edit-khoi " href="#" title="Sửa">
-                        <i class="fas fa-edit"></i>
-                      </a>
-                      <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
-                        <i class="fas fa-trash-alt"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>DU</td>
-                    <td>Đồ uống</td>
-                    <td>1</td>
-                    <td class="text-center">
-                      <a class="btn btn-info btn-sm me-1 btn-edit-khoi " href="#" title="Sửa">
-                        <i class="fas fa-edit"></i>
-                      </a>
-                      <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
-                        <i class="fas fa-trash-alt"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>HS</td>
-                    <td>Hải sản</td>
-                    <td>1</td>
-                    <td class="text-center">
-                      <a class="btn btn-info btn-sm me-1 btn-edit-khoi " href="#" title="Sửa">
-                        <i class="fas fa-edit"></i>
-                      </a>
-                      <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
-                        <i class="fas fa-trash-alt"></i>
-                      </a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <form id="form-khuyen-mai">
+              <div class="mb-3">
+                <label class="form-label">Tên chương trình </label>
+                <input class="form-control" type="text" placeholder="V.d: Khai trương giảm sốc, Sale hè 2025...">
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Mô tả </label>
+                <textarea class="form-control" rows="3" placeholder="Mô tả chi tiết chương trình"></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Mã Khuyến Mãi (Code) </label>
+                <div class="input-group">
+                  <input class="form-control" type="text" placeholder="V.d: SALE20, FREE_SHIP" id="ma-code-input">
+                  <button class="btn btn-primary" type="button" id="generate-code-btn">Tạo mã ngẫu nhiên</button>
+                </div>
+              </div>
+
+              <hr>
+              <h5 class="mb-3">Giá trị & Điều kiện</h5>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label">Hình thức giảm </label>
+                    <select class="form-select" id="select-hinh-thuc-giam">
+                      <option value="PhanTram">Phần trăm (%)</option>
+                      <option value="SoTien">Số tiền (VND)</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label" id="label-gia-tri">Giá trị giảm (%) </label>
+                    <input class="form-control" type="number" placeholder="V.d: 20">
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-3" id="field-giam-toi-da">
+                <label class="form-label">Giảm tối đa (VND) </label>
+                <input class="form-control" type="number" placeholder="V.d: 50000">
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label">Đơn hàng tối thiểu (VND) </label>
+                    <input class="form-control" type="number" placeholder="V.d: 100000" value="0">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label">Tổng số lần sử dụng </label>
+                    <input class="form-control" type="number" placeholder="V.d: 100">
+                  </div>
+                </div>
+              </div>
+
+            </form>
           </div>
         </div>
       </div>
-      
-      <div class="col-md-0" id="category-form-col">
 
-        <div id="add-form-wrapper">
-          <div class="tile">
-            <h3 class="tile-title">Thêm Danh Mục Mới</h3>
-            <p>Dữ liệu bám sát Bảng <strong>DanhMuc</strong> .</p>
-            <div class="tile-body">
-              <form id="add-category-form">
-                <div class="mb-3">
-                  <label class="form-label">Mã danh mục (id)</label>
-                  <input class="form-control" type="text" placeholder="Mã sẽ được tạo tự động" readonly>
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Tên danh mục</label>
-                  <input class="form-control" id="add-ten-input" type="text" placeholder="V.d: Đồ gia dụng" required>
-                </div>
-              </form>
+      <div class="col-md-4">
+        <div class="tile">
+          <h3 class="tile-title">Cài đặt</h3>
+          <div class="tile-body">
+            <div class="mb-3">
+              <label class="form-label">Trạng thái </label>
+              <select class="form-select">
+                <option value="HoatDong">Hoạt động</option>
+                <option value="TamDung">Tạm dừng</option>
+              </select>
             </div>
-            <div class="tile-footer">
-              <button class="btn btn-primary" type="button"><i class="bi bi-check-circle-fill me-2"></i>Thêm</button>
-              <a class="btn btn-secondary" href="#" id="cancel-add-form-btn"><i
-                  class="bi bi-x-circle-fill me-2"></i>Huỷ</a>
+            <div class="mb-3">
+              <label class="form-label">Ngày bắt đầu </label>
+              <input class="form-control" type="date">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Ngày kết thúc </label>
+              <input class="form-control" type="date">
             </div>
           </div>
-        </div>
-        
-        <div id="edit-form-wrapper" style="display: none;">
-          <div class="tile">
-            <h3 class="tile-title">Sửa Danh Mục</h3>
-            <p>Dữ liệu bám sát Bảng <strong>DanhMuc</strong> .</p>
-            <div class="tile-body">
-              <form id="edit-category-form">
-                <div class="mb-3">
-                  <label class="form-label">Mã danh mục (id)</label>
-                  <input class="form-control" id="edit-id-input" type="text" readonly>
-                </div>
-                <div class="mb-3">
-                  <label class="form-label">Tên danh mục</label>
-                  <input class="form-control" id="edit-ten-input" type="text" required>
-                </div>
-              </form>
-            </div>
-            <div class="tile-footer">
-              <button class="btn btn-primary" type="button"><i class="bi bi-check-circle-fill me-2"></i>Lưu</button>
-              <a class="btn btn-secondary" href="#" id="cancel-edit-form-btn"><i
-                  class="bi bi-x-circle-fill me-2"></i>Huỷ</a>
-            </div>
+          <div class="tile-footer">
+            <button class="btn btn-primary" type="button"><i class="bi bi-check-circle-fill me-2"></i>Lưu</button>
+            <a class="btn btn-secondary" href="#"><i class="bi bi-x-circle-fill me-2"></i>Huỷ</a>
           </div>
         </div>
 
-      </div> </div>
+        <div class="tile">
+          <h3 class="tile-title">Phạm vi áp dụng</h3>
+          <div class="tile-body">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="phamViApDung" id="radio-toan-bo" value="toan-bo" checked>
+              <label class="form-check-label" for="radio-toan-bo">
+                Toàn bộ cửa hàng
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="phamViApDung" id="radio-danh-muc" value="danh-muc">
+              <label class="form-check-label" for="radio-danh-muc">
+                Danh mục cụ thể
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="phamViApDung" id="radio-san-pham" value="san-pham">
+              <label class="form-check-label" for="radio-san-pham">
+                Sản phẩm cụ thể
+              </label>
+            </div>
+
+            <div class="mb-3 mt-3 form-field-hidden" id="field-chon-danh-muc">
+              <label class="form-label">Chọn danh mục </label>
+              <select class="form-control" id="select-danh-muc" multiple="multiple">
+                <option value="dm_01">Đồ uống</option>
+                <option value="dm_02">Đồ ăn nhanh</option>
+                <option value="dm_03">Hàng gia dụng</option>
+              </select>
+            </div>
+            
+            <div class="mb-3 mt-3 form-field-hidden" id="field-chon-san-pham">
+              <label class="form-label">Chọn sản phẩm </label>
+              <select class="form-control" id="select-san-pham" multiple="multiple">
+                <option value="sp_01">Sting Dâu</option>
+                <option value="sp_02">Bánh mì Sandwich</option>
+                <option value="sp_03">Coca Cola</option>
+                <option value="sp_04">Dao cạo râu</option>
+              </select>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
+
+
+
 
 
 
@@ -406,151 +428,77 @@
   <!-- Essential javascripts for application to work-->
   <script src="../assets/lib/jquery/jquery-3.7.0.min.js"></script>
   <script src="../assets/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../assets/lib/select2/dist/js/select2.full.min.js"></script>
   <script src="../assets/lib/bootstrap/js/main.js"></script>
-  <!-- Page specific javascripts-->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
-  
+
   <!-- js riêng ở đây nha! -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
 
+      // --- KHỞI TẠO SELECT2 CHO CÁC Ô CHỌN ---
+      $('#select-danh-muc').select2({
+        width: '100%',
+        placeholder: 'Chọn một hoặc nhiều danh mục'
+      });
+      $('#select-san-pham').select2({
+        width: '100%',
+        placeholder: 'Chọn một hoặc nhiều sản phẩm'
+      });
+
       // --- TRUY XUẤT PHẦN TỬ DOM ---
-      const mainRow = document.getElementById('main-row-container');
-      const listCol = document.getElementById('category-list-col');
-      const formCol = document.getElementById('category-form-col');
+      const selectHinhThucGiam = document.getElementById('select-hinh-thuc-giam');
+      const labelGiaTri = document.getElementById('label-gia-tri');
+      const fieldGiamToiDa = document.getElementById('field-giam-toi-da');
       
-      const showAddFormBtn = document.getElementById('show-add-form-btn');
-      const tableBody = document.getElementById('sampleTable').getElementsByTagName('tbody')[0];
+      const radioPhamVi = document.querySelectorAll('input[name="phamViApDung"]');
+      const fieldChonDanhMuc = document.getElementById('field-chon-danh-muc');
+      const fieldChonSanPham = document.getElementById('field-chon-san-pham');
 
-      // Form Wrappers
-      const addFormWrapper = document.getElementById('add-form-wrapper');
-      const editFormWrapper = document.getElementById('edit-form-wrapper');
-
-      // Nút Huỷ
-      const cancelAddBtn = document.getElementById('cancel-add-form-btn');
-      const cancelEditBtn = document.getElementById('cancel-edit-form-btn');
-
-      // Form Sửa
-      const editIdInput = document.getElementById('edit-id-input');
-      const editTenInput = document.getElementById('edit-ten-input');
-      
-      // Form Thêm
-      const addTenInput = document.getElementById('add-ten-input');
-
-      // --- HÀM MỞ FORM (CHUNG) ---
-      function openForm(mode) {
-        // 1. Co Bảng
-        listCol.classList.remove('col-md-12');
-        listCol.classList.add('col-md-8');
-        
-        // 2. Hiện Form
-        formCol.classList.remove('col-md-0');
-        formCol.classList.add('col-md-4');
-        
-        // 3. Thêm class điều khiển
-        mainRow.classList.add('form-open');
-        
-        // 4. Ẩn nút "Thêm"
-        showAddFormBtn.style.display = 'none';
-
-        // 5. Chọn form nào để hiển thị
-        if (mode === 'add') {
-          addFormWrapper.style.display = 'block';
-          editFormWrapper.style.display = 'none';
-          addTenInput.value = ''; // Xoá trắng trường tên
-        } else if (mode === 'edit') {
-          addFormWrapper.style.display = 'none';
-          editFormWrapper.style.display = 'block';
+      // --- LOGIC 1: THAY ĐỔI HÌNH THỨC GIẢM (%) HOẶC (VND) ---
+      selectHinhThucGiam.addEventListener('change', function () {
+        if (this.value === 'PhanTram') {
+          // Nếu là %, hiển thị ô "Giảm tối đa" và đổi nhãn
+          labelGiaTri.textContent = 'Giá trị giảm (%) ';
+          fieldGiamToiDa.classList.remove('form-field-hidden');
+        } else {
+          // Nếu là VND, ẩn ô "Giảm tối đa" và đổi nhãn
+          labelGiaTri.textContent = 'Giá trị giảm (VND) ';
+          fieldGiamToiDa.classList.add('form-field-hidden');
         }
-      }
-
-      // --- HÀM ĐÓNG FORM (CHUNG) ---
-      function closeForm() {
-        // 1. Phình Bảng
-        listCol.classList.remove('col-md-8');
-        listCol.classList.add('col-md-12');
-        
-        // 2. Ẩn Form
-        formCol.classList.remove('col-md-4');
-        formCol.classList.add('col-md-0');
-        
-        // 3. Xoá class điều khiển
-        mainRow.classList.remove('form-open');
-        
-        // 4. Hiện lại nút "Thêm"
-        showAddFormBtn.style.display = 'block';
-      }
-
-      // --- GÁN SỰ KIỆN CHO NÚT "THÊM" ---
-      showAddFormBtn.addEventListener('click', function(e) {
-        e.preventDefault(); 
-        openForm('add');
       });
+      // Kích hoạt sự kiện change một lần lúc tải trang để đảm bảo trạng thái đúng
+      selectHinhThucGiam.dispatchEvent(new Event('change'));
 
-      // --- GÁN SỰ KIỆN CHO CÁC NÚT "HUỶ" ---
-      cancelAddBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        closeForm();
-      });
       
-      cancelEditBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        closeForm();
-      });
-
-      // --- GÁN SỰ KIỆN CHO BẢNG (SỬA & XOÁ) ---
-      tableBody.addEventListener('click', function(e) {
-        // Chỉ bắt sự kiện nếu nhấn vào <a> bên trong <td>
-        const btn = e.target.closest('a'); 
-        if (!btn) return; 
-
-        e.preventDefault();
-        const row = btn.closest('tr');
-        
-        // Yêu cầu 1: XỬ LÝ NÚT SỬA (btn-edit-khoi)
-        if (btn.classList.contains('btn-edit-khoi')) {
-          // 1. Lấy dữ liệu từ bảng
-          const maDM = row.cells[0].textContent.trim();
-          const tenDM = row.cells[1].textContent.trim();
-
-          // 2. Điền vào form "Sửa"
-          editIdInput.value = maDM;
-          editTenInput.value = tenDM;
-
-          // 3. Mở form ở chế độ "edit"
-          openForm('edit');
-        }
-
-        // Yêu cầu 2: XỬ LÝ NÚT XOÁ (btn-delete-khoi)
-        if (btn.classList.contains('btn-delete-khoi')) {
-          const tenDM = row.cells[1].textContent.trim();
+      // --- LOGIC 2: THAY ĐỔI PHẠM VI ÁP DỤNG ---
+      radioPhamVi.forEach(radio => {
+        radio.addEventListener('change', function () {
+          // Ẩn tất cả các trường chọn trước
+          fieldChonDanhMuc.classList.add('form-field-hidden');
+          fieldChonSanPham.classList.add('form-field-hidden');
           
-          // 3. Hỏi xác nhận
-          if (confirm(`Bạn có chắc muốn xoá danh mục "${tenDM}" không?`)) {
-            // 4. Thực hiện xoá (ở đây là xoá hàng trong table)
-            row.remove();
-            
-            // Đóng form nếu nó đang mở
-            closeForm();
+          if (this.value === 'danh-muc') {
+            fieldChonDanhMuc.classList.remove('form-field-hidden');
+          } else if (this.value === 'san-pham') {
+            fieldChonSanPham.classList.remove('form-field-hidden');
           }
+          // Nếu là 'toan-bo' thì không làm gì cả (vì đã ẩn hết)
+        });
+      });
+
+      // --- LOGIC 3: TẠO MÃ NGẪU NHIÊN ---
+      document.getElementById('generate-code-btn').addEventListener('click', function() {
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        let result = '';
+        for (let i = 0; i < 8; i++) {
+          result += chars.charAt(Math.floor(Math.random() * chars.length));
         }
+        document.getElementById('ma-code-input').value = result;
       });
 
     });
   </script>
 
-  <script type="text/javascript">
-    if (document.location.hostname == 'pratikborsadiya.in') {
-      (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-          (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date(); a = s.createElement(o),
-          m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-      ga('create', 'UA-72504830-1', 'auto');
-      ga('send', 'pageview');
-    }
-  </script>
 
 </body>
 

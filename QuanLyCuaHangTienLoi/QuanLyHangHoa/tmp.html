@@ -26,14 +26,15 @@
   <link rel="stylesheet" type="text/css"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/base.css" />
-    <link rel="stylesheet" href="../assets/lib/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/lib/fontawesome/css/all.min.css" />
   <!-- Css riêng ở đây nha -->
-
+  <link rel="stylesheet" href="../assets/lib/select2/dist/css/select2.min.css">
+  <link rel="stylesheet" href="../assets/css/ThemNhanHieu.css">
 </head>
 
 <body class="app sidebar-mini">
   <!-- Navbar-->
-  <header class="app-header"><a class="app-header__logo" href="index.html">Vali</a>
+  <header class="app-header"><a class="app-header__logo" href=" /QuanLyCuaHangTienLoi/index.html">Vali</a>
     <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"
       aria-label="Hide Sidebar"></a>
     <!-- Navbar Right Menu-->
@@ -118,26 +119,30 @@
       </div>
     </div>
     <ul class="app-menu">
-      <li><a class="app-menu__item  " href="dashboard.html"><i class="app-menu__icon bi bi-speedometer"></i><span
-            class="app-menu__label">Bảng điều khiển</span></a></li>
+      <li><a class="app-menu__item  " href=" /QuanLyCuaHangTienLoi/index.html"><i
+            class="app-menu__icon bi bi-speedometer"></i><span class="app-menu__label">Bảng điều khiển</span></a></li>
 
       <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
             class="app-menu__icon bi bi-bar-chart-steps"></i><span class="app-menu__label">Quản lý hàng hoá</span><i
             class="treeview-indicator bi bi-chevron-right"></i></a>
         <ul class="treeview-menu">
-          <li><a class="treeview-item space-first-right-khoi" href="/htmlquanly/danhsachsanpham.html"></i> Danh sách sản
+          <li><a class="treeview-item space-first-right-khoi" href="../QuanLyHangHoa/DanhSachSanPham.html"></i> Danh
+              sách sản
               phẩm</a></li>
-          <li><a class="treeview-item space-first-right-khoi" href="/htmlquanly/quanlydanhmuc.html" target="_blank"
+          <li><a class="treeview-item space-first-right-khoi" href="../QuanLyHangHoa/DanhSachDanhMuc.html"
               rel="noopener"></i> Quản lý danh mục</a></li>
-          <li><a class="treeview-item space-first-right-khoi" href="/htmlquanly/cacnhanhieu.html"> Danh sách nhãn
+          <li><a class="treeview-item space-first-right-khoi" href="../QuanLyHangHoa/DanhSachNhanHieu.html"> Danh sách
+              nhãn
               hiệu</a></li>
-          <li><a class="treeview-item space-first-right-khoi" href="/htmlquanly/cacdonvi.html"> </i> Các đơn vị</a></li>
-          <li><a class="treeview-item space-first-right-khoi" href="/htmlquanly/lichsugiaban.html"> </i> Lịch sử giá
+          <li><a class="treeview-item space-first-right-khoi" href="../QuanLyHangHoa/DanhSachDonVi.html"> </i> Các đơn
+              vị</a></li>
+          <li><a class="treeview-item space-first-right-khoi" href="../QuanLyHangHoa/LichSuGiaBan.html"> </i> Lịch sử
+              giá
               bán</a></li>
         </ul>
       </li>
 
-      <li><a class="app-menu__item" href="/htmlquanly/quanlyhoadon.html"><i
+      <li><a class="app-menu__item" href="../QuanLyHoaDon/DanhSachHoaDon.html"><i
             class="app-menu__icon bi bi-receipt-cutoff"></i><span class="app-menu__label">Danh sách hoá đơn</span></a>
       </li>
 
@@ -145,11 +150,13 @@
             class="app-menu__icon bi-person-circle"></i><span class="app-menu__label">Quản lý nhân sự</span><i
             class="treeview-indicator bi bi-chevron-right"></i></a>
         <ul class="treeview-menu">
-          <li><a class=" treeview-item space-first-right-khoi" href="/htmlquanly/danhsachnhanvien.html"> </i> Danh sách
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyNhanSu/DanhSachNhanVien.html"> </i> Danh
+              sách
               nhân viên</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="/htmlquanly/lichlamviec.html" target="_blank"
-              rel="noopener"> </i> Lịch làm việc</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="/htmlquanly/phanconglamviec.html"> </i> Phân công
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyNhanSu/LichLamViec.html" rel="noopener">
+              </i> Lịch làm việc</a></li>
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyNhanSu/PhanCongCaLamViec.html"> </i> Phân
+              công
               ca làm việc</a></li>
         </ul>
       </li>
@@ -158,24 +165,27 @@
             class="app-menu__icon bi bi-people"></i><span class="app-menu__label">Quản lý khách hàng</span><i
             class="treeview-indicator bi bi-chevron-right"></i></a>
         <ul class="treeview-menu">
-          <li><a class=" treeview-item space-first-right-khoi" href="bootstrap-components.html"> </i> Danh sách khách
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhachHang/DanhSachKhachHang.html"> </i>
+              Danh sách khách
               hàng</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="https://icons.getbootstrap.com/" target="_blank"
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhachHang/TheThanhVien.html"
               rel="noopener"> </i> Thẻ thành viên</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="ui-cards.html"> </i> Lịch sử mua hàng</a></li>
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhachHang/LichSuMuaHang.html"> </i> Lịch
+              sử mua hàng</a></li>
         </ul>
       </li>
 
-      <li><a class="app-menu__item  " href="dashboard.html"><i class="app-menu__icon bi bi-percent"></i><span
-            class="app-menu__label">Quản lý khuyến mãi</span></a></li>
+      <li><a class="app-menu__item  " href="../QuanLyKhuyenMai/KhuyenMai.html"><i
+            class="app-menu__icon bi bi-percent"></i><span class="app-menu__label">Quản lý khuyến mãi</span></a></li>
 
       <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
             class="app-menu__icon bi bi-microsoft-teams"></i><span class="app-menu__label">Quản lý nhà cung cấp</span><i
             class="treeview-indicator bi bi-chevron-right"></i></a>
         <ul class="treeview-menu">
-          <li><a class=" treeview-item space-first-right-khoi" href="bootstrap-components.html"> </i> Danh sách các nhà
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyNhaCungCap/DanhSachNhaCungCap.html"> </i>
+              Danh sách các nhà
               cung cấp</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="https://icons.getbootstrap.com/" target="_blank"
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyNhaCungCap/LichSuGiaoDich.html"
               rel="noopener"> </i> Lịch sử giao dịch</a></li>
         </ul>
       </li>
@@ -184,15 +194,16 @@
             class="app-menu__icon bi bi-shop-window"></i><span class="app-menu__label">Quản lý kho hàng</span><i
             class="treeview-indicator bi bi-chevron-right"></i></a>
         <ul class="treeview-menu">
-          <li><a class=" treeview-item space-first-right-khoi" href="bootstrap-components.html"> </i> Danh sách phiếu
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhoHang/DanhSachPhieuNhap.html"> </i> Danh
+              sách phiếu
               nhập</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="https://icons.getbootstrap.com/" target="_blank"
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhoHang/DanhSachPhieuXuat.html"
               rel="noopener"> </i> Danh sách phiếu xuất</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="https://icons.getbootstrap.com/" target="_blank"
-              rel="noopener"> </i> Vị trí sản phẩm</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="https://icons.getbootstrap.com/" target="_blank"
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhoHang/ViTriSanPham.html" rel="noopener">
+              </i> Vị trí sản phẩm</a></li>
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhoHang/DanhSachHangTonKho.html"
               rel="noopener"> </i> Danh sách hàng tồn kho</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="https://icons.getbootstrap.com/" target="_blank"
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhoHang/KiemKeSanPham.html"
               rel="noopener"> </i> Kiểm kê sản phẩm</a></li>
         </ul>
       </li>
@@ -201,27 +212,30 @@
             class="app-menu__icon bi bi-building"></i><span class="app-menu__label">Phân tích & Báo cáo</span><i
             class="treeview-indicator bi bi-chevron-right"></i></a>
         <ul class="treeview-menu">
-          <li><a class=" treeview-item space-first-right-khoi" href="bootstrap-components.html"> </i> Báo cáo doanh
+          <li><a class=" treeview-item space-first-right-khoi" href="../PhanTichBaoCao/BaoCaoDoanhThu.html"> </i> Báo
+              cáo doanh
               thu</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="https://icons.getbootstrap.com/" target="_blank"
+          <li><a class=" treeview-item space-first-right-khoi" href="../PhanTichBaoCao/BaoCaoBanChay.html"
               rel="noopener"> </i> Báo cáo bán chạy</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="https://icons.getbootstrap.com/" target="_blank"
+          <li><a class=" treeview-item space-first-right-khoi" href="../PhanTichBaoCao/BaoCaoTonKho.html"
               rel="noopener"> </i> Báo cáo tồn kho</a></li>
         </ul>
       </li>
 
-      <li><a class="app-menu__item  " href="dashboard.html"><i class="app-menu__icon bi bi-card-checklist"></i><span
-            class="app-menu__label">Danh sách đơn hàng</span></a></li>
+      <li><a class="app-menu__item  " href="../QuanLyDonHang/DanhSachDonHang.html"><i
+            class="app-menu__icon bi bi-card-checklist"></i><span class="app-menu__label">Danh sách đơn hàng</span></a>
+      </li>
 
       <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
             class="app-menu__icon bi bi-shield-exclamation"></i><span class="app-menu__label">Quản lý bảo mật</span><i
             class="treeview-indicator bi bi-chevron-right"></i></a>
         <ul class="treeview-menu">
-          <li><a class=" treeview-item space-first-right-khoi" href="bootstrap-components.html"> </i> Tài khoản nhân
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyBaoMat/DanhSachTaiKhoanNhanVien.html">
+              </i> Tài khoản nhân
               viên</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="https://icons.getbootstrap.com/" target="_blank"
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyBaoMat/DanhSachTaiKhoanKhachHang.html"
               rel="noopener"> </i> Tài khoản khách hàng</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="https://icons.getbootstrap.com/" target="_blank"
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyBaoMat/DanhSachTaiKhoan.html"
               rel="noopener"> </i> Quản lý quyền</a></li>
         </ul>
       </li>
@@ -230,9 +244,10 @@
             class="app-menu__icon bi bi-upc-scan"></i><span class="app-menu__label">Quản lý barcode</span><i
             class="treeview-indicator bi bi-chevron-right"></i></a>
         <ul class="treeview-menu">
-          <li><a class=" treeview-item space-first-right-khoi" href="bootstrap-components.html"> </i> Định danh sản
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyBarCode/DinhDanhSanPham.html"> </i> Định
+              danh sản
               phẩm</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="https://icons.getbootstrap.com/" target="_blank"
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyBarCode/DanhSachTemNhan.html"
               rel="noopener"> </i> Danh sách tem nhãn</a></li>
         </ul>
       </li>
@@ -241,133 +256,174 @@
             class="app-menu__icon bi bi-cash-coin"></i><span class="app-menu__label">Giao dịch & hoàn trả</span><i
             class="treeview-indicator bi bi-chevron-right"></i></a>
         <ul class="treeview-menu">
-          <li><a class=" treeview-item space-first-right-khoi" href="bootstrap-components.html"> </i> Giao dịch thanh
+          <li><a class=" treeview-item space-first-right-khoi" href="../GiaoDichHoanTra/GiaoDichThanhToan.html"> </i>
+              Giao dịch thanh
               toán</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="https://icons.getbootstrap.com/" target="_blank"
+          <li><a class=" treeview-item space-first-right-khoi" href="../GiaoDichHoanTra/PhieuDoiTra.html"
               rel="noopener"> </i> Phiếu đổi trả</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="https://icons.getbootstrap.com/" target="_blank"
+          <li><a class=" treeview-item space-first-right-khoi" href="../GiaoDichHoanTra/ChinhSachDoiTra.html"
               rel="noopener"></i> Chính sách hoàn trả</a></li>
         </ul>
       </li>
-
-      <li><a class="app-menu__item  " href="dashboard.html"><i class="app-menu__icon bi bi-wallet"></i><span
-            class="app-menu__label">Thanh toán</span></a></li>
-
+      <li><a class="app-menu__item  " href="../ThanhToan/ThanhToan.html"><i
+            class="app-menu__icon bi bi-wallet"></i><span class="app-menu__label">Thanh toán</span></a></li>
     </ul>
   </aside>
   <!-- Main sidebar ở đây nha -->
 
 
 
-
-
-
-  
-    <main class="app-content">
-      <div class="app-title">
-        <div>
-          <h1><i class="bi bi-bookmarks"></i> Quản lý Danh mục</h1>
-          <p>Quản lý các danh mục của sản phẩm</p>
-        </div>
-        <ul class="app-breadcrumb breadcrumb side">
-          <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-          <li class="breadcrumb-item">Quản lý hàng hoá</li>
-          <li class="breadcrumb-item active">
-            <a href="#">Quản lý danh mục</a>
-          </li>
-        </ul>
+  <main class="app-content">
+    <div class="app-title">
+      <div>
+        <h1><i class="bi bi-tags"></i> Quản lý Nhãn hiệu</h1>
+        <p>Quản lý các nhãn hiệu của sản phẩm</p>
       </div>
+      <ul class="app-breadcrumb breadcrumb side">
+        <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
+        <li class="breadcrumb-item">Quản lý hàng hoá</li>
+        <li class="breadcrumb-item active">
+          <a href="#">Danh sách nhãn hiệu</a>
+        </li>
+      </ul>
+    </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="tile">
-            <div
-              class="tile-title-w-btn d-flex justify-content-between align-items-center"
-            >
-              <h3 class="title" style="margin-bottom: 0">Danh Sách Danh Mục</h3>
-              <a class="btn btn-primary" href="them-danh-muc.html">
-                <i class="fas fa-plus"></i> Thêm danh mục mới
-              </a>
-            </div>
+    <div class="row" id="main-row-container">
+      
+      <div class="col-md-12" id="list-col">
+        <div class="tile">
+          <div class="tile-title-w-btn d-flex justify-content-between align-items-center">
+            <h3 class="title" style="margin-bottom: 0">
+              Danh Sách Nhãn Hiệu
+            </h3>
+            <a class="btn btn-primary btn-add-khoi" href="#" id="show-add-form-btn">
+              <i class="fas fa-plus"></i> Thêm nhãn hiệu mới
+            </a>
+          </div>
 
-            <div class="tile-body">
-              <div class="table-responsive">
-                <table
-                  class="table table-hover table-bordered"
-                  id="sampleTable"
-                >
-                  <thead>
-                    <tr>
-                      <th>Mã Danh Mục</th>
-                      <th>Tên Danh Mục</th>
-                      <th>Số Lượng Sản Phẩm</th>
-                      <th class="text-center">Thao tác</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>TP</td>
-                      <td>Thực phẩm</td>
-                      <td>1</td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm me-1"
-                          href="#"
-                          title="Sửa"
-                        >
-                          <i class="fas fa-edit"></i>
-                        </a>
-                        <a class="btn btn-danger btn-sm" href="#" title="Xóa">
-                          <i class="fas fa-trash-alt"></i>
-                        </a>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>DU</td>
-                      <td>Đồ uống</td>
-                      <td>1</td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm me-1"
-                          href="#"
-                          title="Sửa"
-                        >
-                          <i class="fas fa-edit"></i>
-                        </a>
-                        <a class="btn btn-danger btn-sm" href="#" title="Xóa">
-                          <i class="fas fa-trash-alt"></i>
-                        </a>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>HS</td>
-                      <td>Hải sản</td>
-                      <td>1</td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm me-1"
-                          href="#"
-                          title="Sửa"
-                        >
-                          <i class="fas fa-edit"></i>
-                        </a>
-                        <a class="btn btn-danger btn-sm" href="#" title="Xóa">
-                          <i class="fas fa-trash-alt"></i>
-                        </a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+          <div class="tile-body">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered" id="sampleTable">
+                <thead>
+                  <tr>
+                    <th>Mã Nhãn Hiệu (id)</th>
+                    <th>Tên Nhãn Hiệu (ten)</th>
+                    <th>Số Lượng Sản Phẩm</th>
+                    <th class="text-center">Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>CP</td>
+                    <td>CP Foods</td>
+                    <td>1</td>
+                    <td class="text-center">
+                      <a class="btn btn-info btn-sm me-1 btn-edit-khoi " href="#" title="Sửa">
+                        <i class="fas fa-edit"></i>
+                      </a>
+                      <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
+                        <i class="fas fa-trash-alt"></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>TH</td>
+                    <td>TH True Milk</td>
+                    <td>1</td>
+                    <td class="text-center">
+                      <a class="btn btn-info btn-sm me-1 btn-edit-khoi " href="#" title="Sửa">
+                        <i class="fas fa-edit"></i>
+                      </a>
+                      <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
+                        <i class="fas fa-trash-alt"></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>KHONGCO</td>
+                    <td>(Không có)</td>
+                    <td>1</td>
+                    <td class="text-center">
+                      <a class="btn btn-info btn-sm me-1 btn-edit-khoi " href="#" title="Sửa">
+                        <i class="fas fa-edit"></i>
+                      </a>
+                      <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
+                        <i class="fas fa-trash-alt"></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>PEPSI</td>
+                    <td>PepsiCo</td>
+                    <td>5</td>
+                    <td class="text-center">
+                      <a class="btn btn-info btn-sm me-1 btn-edit-khoi " href="#" title="Sửa">
+                        <i class="fas fa-edit"></i>
+                      </a>
+                      <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
+                        <i class="fas fa-trash-alt"></i>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
       </div>
-    </main>
 
+      <div class="col-md-0" id="form-col">
 
+        <div id="add-form-wrapper">
+          <div class="tile">
+            <h3 class="tile-title">Thêm Nhãn Hiệu Mới</h3>
+            [cite_start]<p>Dữ liệu bám sát Bảng <strong>NhanHieu</strong>[cite: 3].</p>
+            <div class="tile-body">
+              <form id="add-brand-form">
+                <div class="mb-3">
+                  <label class="form-label">Mã Nhãn Hiệu (id)</label>
+                  <input class="form-control" type="text" placeholder="Mã sẽ được tạo tự động" readonly>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Tên Nhãn Hiệu</label>
+                  <input class="form-control" id="add-ten-input" type="text" placeholder="V.d: Vinamilk" required>
+                </div>
+              </form>
+            </div>
+            <div class="tile-footer">
+              <button class="btn btn-primary" type="button"><i class="bi bi-check-circle-fill me-2"></i>Thêm</button>
+              <a class="btn btn-secondary" href="#" id="cancel-add-form-btn"><i
+                  class="bi bi-x-circle-fill me-2"></i>Huỷ</a>
+            </div>
+          </div>
+        </div>
+        
+        <div id="edit-form-wrapper" style="display: none;">
+          <div class="tile">
+            <h3 class="tile-title">Sửa Nhãn Hiệu</h3>
+            [cite_start]<p>Dữ liệu bám sát Bảng <strong>NhanHieu</strong>[cite: 3].</p>
+            <div class="tile-body">
+              <form id="edit-brand-form">
+                <div class="mb-3">
+                  <label class="form-label">Mã Nhãn Hiệu (id)</label>
+                  <input class="form-control" id="edit-id-input" type="text" readonly>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Tên Nhãn Hiệu</label>
+                  <input class="form-control" id="edit-ten-input" type="text" required>
+                </div>
+              </form>
+            </div>
+            <div class="tile-footer">
+              <button class="btn btn-primary" type="button"><i class="bi bi-check-circle-fill me-2"></i>Lưu</button>
+              <a class="btn btn-secondary" href="#" id="cancel-edit-form-btn"><i
+                  class="bi bi-x-circle-fill me-2"></i>Huỷ</a>
+            </div>
+          </div>
+        </div>
+
+      </div> </div>
+  </main>
 
 
 
@@ -382,72 +438,138 @@
   <script src="../assets/lib/bootstrap/js/bootstrap.min.js"></script>
   <script src="../assets/lib/bootstrap/js/main.js"></script>
   <!-- Page specific javascripts-->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
-  <script type="text/javascript">
-    const salesData = {
-      xAxis: {
-        type: 'category',
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-      },
-      yAxis: {
-        type: 'value',
-        axisLabel: {
-          formatter: '${value}'
-        }
-      },
-      series: [
-        {
-          data: [150, 230, 224, 218, 135, 147, 260],
-          type: 'line',
-          smooth: true
-        }
-      ],
-      tooltip: {
-        trigger: 'axis',
-        formatter: "<b>{b0}:</b> ${c0}"
-      }
-    }
 
-    const supportRequests = {
-      tooltip: {
-        trigger: 'item'
-      },
-      legend: {
-        orient: 'vertical',
-        left: 'left'
-      },
-      series: [
-        {
-          name: 'Support Requests',
-          type: 'pie',
-          radius: '50%',
-          data: [
-            { value: 300, name: 'In Progress' },
-            { value: 50, name: 'Delayed' },
-            { value: 100, name: 'Complete' }
-          ],
-          emphasis: {
-            itemStyle: {
-              shadowBlur: 10,
-              shadowOffsetX: 0,
-              shadowColor: 'rgba(0, 0, 0, 0.5)'
-            }
+  <!-- js riêng ở đây nha! -->
+  <script src="../assets/lib/select2/dist/js/select2.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+      // --- TRUY XUẤT PHẦN TỬ DOM ---
+      const mainRow = document.getElementById('main-row-container');
+      const listCol = document.getElementById('list-col');
+      const formCol = document.getElementById('form-col');
+      
+      const showAddFormBtn = document.getElementById('show-add-form-btn');
+      const tableBody = document.getElementById('sampleTable').getElementsByTagName('tbody')[0];
+
+      // Form Wrappers
+      const addFormWrapper = document.getElementById('add-form-wrapper');
+      const editFormWrapper = document.getElementById('edit-form-wrapper');
+
+      // Nút Huỷ
+      const cancelAddBtn = document.getElementById('cancel-add-form-btn');
+      const cancelEditBtn = document.getElementById('cancel-edit-form-btn');
+
+      // Form Sửa Inputs
+      const editIdInput = document.getElementById('edit-id-input');
+      const editTenInput = document.getElementById('edit-ten-input');
+      
+      // Form Thêm Inputs
+      const addTenInput = document.getElementById('add-ten-input');
+
+      // --- HÀM MỞ FORM (CHUNG) ---
+      function openForm(mode) {
+        // 1. Co Bảng
+        listCol.classList.remove('col-md-12');
+        listCol.classList.add('col-md-8');
+        
+        // 2. Hiện Form
+        formCol.classList.remove('col-md-0');
+        formCol.classList.add('col-md-4');
+        
+        // 3. Thêm class điều khiển
+        mainRow.classList.add('form-open');
+        
+        // 4. Ẩn nút "Thêm"
+        showAddFormBtn.style.display = 'none';
+
+        // 5. Chọn form nào để hiển thị
+        if (mode === 'add') {
+          addFormWrapper.style.display = 'block';
+          editFormWrapper.style.display = 'none';
+          // Xoá trắng các trường
+          addTenInput.value = ''; 
+        } else if (mode === 'edit') {
+          addFormWrapper.style.display = 'none';
+          editFormWrapper.style.display = 'block';
+        }
+      }
+
+      // --- HÀM ĐÓNG FORM (CHUNG) ---
+      function closeForm() {
+        // 1. Phình Bảng
+        listCol.classList.remove('col-md-8');
+        listCol.classList.add('col-md-12');
+        
+        // 2. Ẩn Form
+        formCol.classList.remove('col-md-4');
+        formCol.classList.add('col-md-0');
+        
+        // 3. Xoá class điểu khiển
+        mainRow.classList.remove('form-open');
+        
+        // 4. Hiện lại nút "Thêm"
+        showAddFormBtn.style.display = 'block';
+      }
+
+      // --- GÁN SỰ KIỆN CHO NÚT "THÊM" ---
+      showAddFormBtn.addEventListener('click', function(e) {
+        e.preventDefault(); 
+        openForm('add');
+      });
+
+      // --- GÁN SỰ KIỆN CHO CÁC NÚT "HUỶ" ---
+      cancelAddBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        closeForm();
+      });
+      
+      cancelEditBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        closeForm();
+      });
+
+      // --- GÁN SỰ KIỆN CHO BẢNG (SỬA & XOÁ) ---
+      tableBody.addEventListener('click', function(e) {
+        // Chỉ bắt sự kiện nếu nhấn vào <a> bên trong <td>
+        const btn = e.target.closest('a'); 
+        if (!btn) return; 
+
+        e.preventDefault();
+        const row = btn.closest('tr');
+        
+        // Yêu cầu 1: XỬ LÝ NÚT SỬA (btn-edit-khoi)
+        if (btn.classList.contains('btn-edit-khoi')) {
+          // 1. Lấy dữ liệu từ bảng
+          const maNhanHieu = row.cells[0].textContent.trim();
+          const tenNhanHieu = row.cells[1].textContent.trim();
+
+          // 2. Điền vào form "Sửa"
+          editIdInput.value = maNhanHieu;
+          editTenInput.value = tenNhanHieu;
+
+          // 3. Mở form ở chế độ "edit"
+          openForm('edit');
+        }
+
+        // Yêu cầu 2: XỬ LÝ NÚT XOÁ (btn-delete-khoi)
+        if (btn.classList.contains('btn-delete-khoi')) {
+          const tenNhanHieu = row.cells[1].textContent.trim();
+          
+          // 3. Hỏi xác nhận
+          if (confirm(`Bạn có chắc muốn xoá nhãn hiệu "${tenNhanHieu}" không?`)) {
+            // 4. Thực hiện xoá (ở đây là xoá hàng trong table)
+            row.remove();
+            
+            // Đóng form nếu nó đang mở
+            closeForm();
           }
         }
-      ]
-    };
+      });
 
-    const salesChartElement = document.getElementById('salesChart');
-    const salesChart = echarts.init(salesChartElement, null, { renderer: 'svg' });
-    salesChart.setOption(salesData);
-    new ResizeObserver(() => salesChart.resize()).observe(salesChartElement);
-
-    const supportChartElement = document.getElementById("supportRequestChart")
-    const supportChart = echarts.init(supportChartElement, null, { renderer: 'svg' });
-    supportChart.setOption(supportRequests);
-    new ResizeObserver(() => supportChart.resize()).observe(supportChartElement);
+    });
   </script>
-  <!-- Google analytics script-->
+
   <script type="text/javascript">
     if (document.location.hostname == 'pratikborsadiya.in') {
       (function (i, s, o, g, r, a, m) {
@@ -460,9 +582,6 @@
       ga('send', 'pageview');
     }
   </script>
-  <!-- js riêng ở đây nha! -->
-
-
 
 </body>
 
