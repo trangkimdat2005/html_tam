@@ -356,7 +356,7 @@ sup {
 }
 
 a {
-  color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+  color: var(--btn-edit);
   text-decoration: underline;
 }
 a:hover {
@@ -2406,7 +2406,7 @@ progress {
 .form-control:focus {
   color: var(--bs-body-color);
   background-color: var(--bs-body-bg);
-  border-color: #00695C;
+  border-color: var(--btn-edit);
   outline: 0;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -2581,7 +2581,7 @@ textarea.form-control-lg {
   }
 }
 .form-select:focus {
-  border-color: #00695C;
+  border-color: var(--btn-edit);
   outline: 0;
   -webkit-box-shadow: 0 0 0 0 rgba(0, 105, 92, 0.25);
           box-shadow: 0 0 0 0 rgba(0, 105, 92, 0.25);
@@ -2670,14 +2670,14 @@ textarea.form-control-lg {
           filter: brightness(90%);
 }
 .form-check-input:focus {
-  border-color: #00695C;
+  border-color: var(--btn-edit);
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.25rem rgba(0, 105, 92, 0.25);
           box-shadow: 0 0 0 0.25rem rgba(0, 105, 92, 0.25);
 }
 .form-check-input:checked {
-  background-color: #00695C;
-  border-color: #00695C;
+  background-color: var(--btn-edit);
+  border-color: var(--btn-edit);
 }
 .form-check-input:checked[type=checkbox] {
   --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23FFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
@@ -2686,8 +2686,8 @@ textarea.form-control-lg {
   --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23FFF'/%3e%3c/svg%3e");
 }
 .form-check-input[type=checkbox]:indeterminate {
-  background-color: #00695C;
-  border-color: #00695C;
+  background-color: var(--btn-edit);
+  border-color: var(--btn-edit);
   --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23FFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e");
 }
 .form-check-input:disabled {
@@ -2785,7 +2785,7 @@ textarea.form-control-lg {
   margin-top: -0.25rem;
   -webkit-appearance: none;
           appearance: none;
-  background-color: #00695C;
+  background-color: var(--btn-edit);
   border: 0;
   border-radius: 1rem;
   -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
@@ -2816,7 +2816,7 @@ textarea.form-control-lg {
   height: 1rem;
   -moz-appearance: none;
        appearance: none;
-  background-color: #00695C;
+  background-color: var(--btn-edit);
   border: 0;
   border-radius: 1rem;
   -moz-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -3365,7 +3365,7 @@ textarea.form-control-lg {
   border-color: var(--bs-btn-disabled-border-color);
   opacity: var(--bs-btn-disabled-opacity);
 }
-
+/* 
 .btn-primary {
   --bs-btn-color: #FFF;
   --bs-btn-bg: #00695C;
@@ -3434,23 +3434,6 @@ textarea.form-control-lg {
   --bs-btn-disabled-border-color: #0dcaf0;
 }
 
-.btn-warning {
-  --bs-btn-color: #000;
-  --bs-btn-bg: #ffc107;
-  --bs-btn-border-color: #ffc107;
-  --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #ffca2c;
-  --bs-btn-hover-border-color: #ffc720;
-  --bs-btn-focus-shadow-rgb: 217, 164, 6;
-  --bs-btn-active-color: #000;
-  --bs-btn-active-bg: #ffcd39;
-  --bs-btn-active-border-color: #ffc720;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #ffc107;
-  --bs-btn-disabled-border-color: #ffc107;
-}
-
 .btn-danger {
   --bs-btn-color: #FFF;
   --bs-btn-bg: #dc3545;
@@ -3466,6 +3449,109 @@ textarea.form-control-lg {
   --bs-btn-disabled-color: #FFF;
   --bs-btn-disabled-bg: #dc3545;
   --bs-btn-disabled-border-color: #dc3545;
+} */
+
+.btn-primary {
+  --bs-btn-color: #FFF;
+  --bs-btn-bg: var(--btn-add);              /* Thay thế bằng màu btn-add */
+  --bs-btn-border-color: var(--btn-add);    /* Thay thế bằng màu btn-add */
+  --bs-btn-hover-color: #FFF;
+  --bs-btn-hover-bg: var(--btn-add-hover);  /* Thay thế bằng màu btn-add-hover */
+  --bs-btn-hover-border-color: var(--btn-add-hover); /* Thay thế bằng màu btn-add-hover */
+  --bs-btn-focus-shadow-rgb: 38, 128, 116;
+  --bs-btn-active-color: #FFF;
+  --bs-btn-active-bg: var(--btn-add-hover); /* Thay thế bằng màu btn-add-hover */
+  --bs-btn-active-border-color: var(--btn-add-hover); /* Thay thế bằng màu btn-add-hover */
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #FFF;
+  --bs-btn-disabled-bg: var(--btn-add);    /* Thay thế bằng màu btn-add */
+  --bs-btn-disabled-border-color: var(--btn-add); /* Thay thế bằng màu btn-add */
+}
+
+.btn-secondary {
+  --bs-btn-color: #FFF;
+  --bs-btn-bg: #6c757d;
+  --bs-btn-border-color: #6c757d;
+  --bs-btn-hover-color: #FFF;
+  --bs-btn-hover-bg: #5c636a;
+  --bs-btn-hover-border-color: #565e64;
+  --bs-btn-focus-shadow-rgb: 130, 138, 145;
+  --bs-btn-active-color: #FFF;
+  --bs-btn-active-bg: #565e64;
+  --bs-btn-active-border-color: #51585e;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #FFF;
+  --bs-btn-disabled-bg: #6c757d;
+  --bs-btn-disabled-border-color: #6c757d;
+}
+
+.btn-success {
+  --bs-btn-color: #FFF;
+  --bs-btn-bg: var(--btn-edit);            /* Thay thế bằng màu btn-edit */
+  --bs-btn-border-color: var(--btn-edit);  /* Thay thế bằng màu btn-edit */
+  --bs-btn-hover-color: #FFF;
+  --bs-btn-hover-bg: var(--btn-edit-hover); /* Thay thế bằng màu btn-edit-hover */
+  --bs-btn-hover-border-color: var(--btn-edit-hover); /* Thay thế bằng màu btn-edit-hover */
+  --bs-btn-focus-shadow-rgb: 60, 153, 110;
+  --bs-btn-active-color: #FFF;
+  --bs-btn-active-bg: var(--btn-edit-hover); /* Thay thế bằng màu btn-edit-hover */
+  --bs-btn-active-border-color: var(--btn-edit-hover); /* Thay thế bằng màu btn-edit-hover */
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #FFF;
+  --bs-btn-disabled-bg: var(--btn-edit);   /* Thay thế bằng màu btn-edit */
+  --bs-btn-disabled-border-color: var(--btn-edit); /* Thay thế bằng màu btn-edit */
+}
+
+.btn-info {
+  --bs-btn-color: #000;
+  --bs-btn-bg: var(--color-logo);         /* Thay thế bằng màu color-logo */
+  --bs-btn-border-color: var(--color-logo); /* Thay thế bằng màu color-logo */
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: var(--color-header);  /* Thay thế bằng màu color-header */
+  --bs-btn-hover-border-color: var(--color-header); /* Thay thế bằng màu color-header */
+  --bs-btn-focus-shadow-rgb: 11, 172, 204;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: var(--color-header); /* Thay thế bằng màu color-header */
+  --bs-btn-active-border-color: var(--color-header); /* Thay thế bằng màu color-header */
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-bg: var(--color-logo); /* Thay thế bằng màu color-logo */
+  --bs-btn-disabled-border-color: var(--color-logo); /* Thay thế bằng màu color-logo */
+}
+
+.btn-danger {
+  --bs-btn-color: #FFF;
+  --bs-btn-bg: var(--btn-delete);          /* Thay thế bằng màu btn-delete */
+  --bs-btn-border-color: var(--btn-delete); /* Thay thế bằng màu btn-delete */
+  --bs-btn-hover-color: #FFF;
+  --bs-btn-hover-bg: var(--btn-delete-hover); /* Thay thế bằng màu btn-delete-hover */
+  --bs-btn-hover-border-color: var(--btn-delete-hover); /* Thay thế bằng màu btn-delete-hover */
+  --bs-btn-focus-shadow-rgb: 225, 83, 97;
+  --bs-btn-active-color: #FFF;
+  --bs-btn-active-bg: var(--btn-delete-hover); /* Thay thế bằng màu btn-delete-hover */
+  --bs-btn-active-border-color: var(--btn-delete-hover); /* Thay thế bằng màu btn-delete-hover */
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #FFF;
+  --bs-btn-disabled-bg: var(--btn-delete);  /* Thay thế bằng màu btn-delete */
+  --bs-btn-disabled-border-color: var(--btn-delete); /* Thay thế bằng màu btn-delete */
+}
+
+
+.btn-warning {
+  --bs-btn-color: #000;
+  --bs-btn-bg: #ffc107;
+  --bs-btn-border-color: #ffc107;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #ffca2c;
+  --bs-btn-hover-border-color: #ffc720;
+  --bs-btn-focus-shadow-rgb: 217, 164, 6;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #ffcd39;
+  --bs-btn-active-border-color: #ffc720;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-bg: #ffc107;
+  --bs-btn-disabled-border-color: #ffc107;
 }
 
 .btn-light {
@@ -13771,7 +13857,7 @@ textarea.form-control-lg {
   /* background: #0d1214; */
   /* background-color: rgb(5, 100, 135); */
   background-color: var(--color-sidebar-hover);
-  border-left-color: #00695C;
+  border-left-color: var(--btn-edit);
   text-decoration: none;
   color: #fff;
 }
@@ -13791,8 +13877,8 @@ textarea.form-control-lg {
 }
 
 .treeview.is-expanded [data-toggle=treeview] {
-  border-left-color: #00695C;
-  background: #0d1214;
+  border-left-color: var(--btn-edit);
+  background: #2c353b;
 }
 .treeview.is-expanded .treeview-menu {
   max-height: 100vh;
@@ -13892,7 +13978,7 @@ textarea.form-control-lg {
   .sidebar-mini.sidenav-toggled .treeview:hover .app-menu__item {
     overflow: visible;
     background: #0d1214;
-    border-left-color: #00695C;
+    border-left-color:  var(--btn-edit);
     color: #fff;
   }
   .sidebar-mini.sidenav-toggled .treeview:hover .app-menu__label {
@@ -14422,7 +14508,7 @@ textarea.form-control-lg {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  border: 1px solid #00695C;
+  border: 1px solid var(--btn-edit);
   outline: none;
   padding: 5px 10px;
 }
@@ -14526,7 +14612,7 @@ textarea.form-control-lg {
   margin: 0 auto 8px;
   padding: 15px;
   border-radius: 50%;
-  background-color: #00695C;
+  background-color:  var(--btn-edit);
 }
 
 .feature-icon {
@@ -14819,7 +14905,7 @@ textarea.form-control-lg {
   border-radius: 0;
 }
 .user .user-tabs .nav-link.active {
-  border-left-color: #00695C;
+  border-left-color:  var(--btn-edit);
   border-bottom: 0;
 }
 .user .user-tabs .nav-link:hover, .user .user-tabs .nav-link:active {
