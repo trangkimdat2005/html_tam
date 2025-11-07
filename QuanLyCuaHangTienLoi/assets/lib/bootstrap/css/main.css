@@ -14210,7 +14210,7 @@ textarea.form-control-lg {
   z-index: -1;
 }
 .material-half-bg .cover {
-  background-color: #00695C;
+  background-color: var(--btn-edit);
   height: 50vh;
 }
 
