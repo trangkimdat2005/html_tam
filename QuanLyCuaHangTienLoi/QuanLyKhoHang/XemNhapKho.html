@@ -25,10 +25,11 @@
   <!-- Font-icon css-->
   <link rel="stylesheet" type="text/css"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link rel="stylesheet" type="text/css" href="../assets/css/base.css" />
     <link rel="stylesheet" href="../assets/lib/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/base.css" />
   <!-- Css riêng ở đây nha -->
-
+  <link rel="stylesheet" href="../assets/lib/select2/dist/css/select2.min.css">
+  <link rel="stylesheet" href="../assets/css/XemNhapKho.css">
 </head>
 
 <body class="app sidebar-mini">
@@ -259,149 +260,133 @@
 
 
 
-
-  
-    <main class="app-content">
-      <div class="app-title">
-        <div>
-          <h1><i class="bi bi-receipt-cutoff"></i> Quản lý Hoá Đơn</h1>
-          <p>Quản lý và tra cứu lịch sử các đơn hàng/hoá đơn đã bán</p>
-        </div>
-        <ul class="app-breadcrumb breadcrumb side">
-          <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-          <li class="breadcrumb-item active">
-            <a href="#">Quản lý Hoá đơn</a>
-          </li>
-        </ul>
+  <main class="app-content">
+    <div class="app-title">
+      <div>
+        <h1><i class="bi bi-file-earmark-text"></i> Chi Tiết Phiếu Nhập Kho</h1>
+        <p>Mã phiếu: PN20251108-001</p>
       </div>
+      <ul class="app-breadcrumb breadcrumb">
+        <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
+        <li class="breadcrumb-item"><a href="#">Quản lý kho</a></li>
+        <li class="breadcrumb-item"><a href="#">Danh sách phiếu nhập</a></li>
+        <li class="breadcrumb-item"><a href="#">Chi tiết</a></li>
+      </ul>
+    </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="tile">
-            <div class="tile-body">
-              <div class="row mb-3">
-                <div class="col-md-3">
-                  <label class="form-label">Từ ngày</label>
-                  <input class="form-control" type="date" />
-                </div>
-                <div class="col-md-3">
-                  <label class="form-label">Đến ngày</label>
-                  <input class="form-control" type="date" />
-                </div>
-                <div class="col-md-3">
-                  <label class="form-label">Trạng thái</label>
-                  <select class="form-select">
-                    <option value="">Tất cả trạng thái</option>
-                    <option value="DaThanhToan">Đã Thanh Toán</option>
-                    <option value="ChuaThanhToan">Chưa Thanh Toán</option>
-                    <option value="Huy">Đã Hủy</option>
-                  </select>
-                </div>
-                <div class="col-md-3 d-flex align-items-end">
-                  <button class="btn btn-primary btn-add-khoi" type="button">
-                    <i class="fas fa-filter"></i> Lọc
-                  </button>
-                </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tile" id="phieu-nhap-container">
+          
+          <h3 class="tile-title">Thông tin Phiếu Nhập (PN20251108-001)</h3>
+          <div class="tile-body">
+            <div class="row">
+              <div class="col-md-4">
+                <label class="form-label">Nhà cung cấp</label>
+                <select class="form-control" id="select-nha-cung-cap" disabled>
+                  <option value="">-- Chọn nhà cung cấp --</option>
+                  <option value="NCC_VINAMILK" selected>CTCP Sữa Việt Nam (Vinamilk)</option>
+                  <option value="NCC_ORION">CT TNHH Orion Vina</option>
+                  <option value="NCC_PEPSI">Suntory Pepsico Việt Nam</option>
+                </select>
               </div>
 
-              <div class="table-responsive">
-                <table
-                  class="table table-hover table-bordered"
-                  id="sampleTable"
-                >
-                  <thead>
-                    <tr>
-                      <th>Mã Hóa Đơn</th>
-                      <th>Ngày Lập</th>
-                      <th>Nhân Viên Lập</th>
-                      <th>Khách Hàng</th>
-                      <th>Tổng Tiền</th>
-                      <th>Trạng Thái</th>
-                      <th class="text-center">Thao tác</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>HD001</td>
-                      <td>02/11/2025, 14:30</td>
-                      <td>John Doe</td>
-                      <td>Khách lẻ</td>
-                      <td>151,000 đ</td>
-                      <td>
-                        <span class="badge bg-success">Đã Thanh Toán</span>
-                      </td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm me-1 btn-edit-khoi "
-                          href="../QuanLyDonHang/XemChiTietHoaDon.html"
-                          title="Xem chi tiết"
-                        >
-                          <i class="fas fa-eye"></i>
-                        </a>
-                        <a
-                          class="btn btn-secondary btn-sm"
-                          href="#"
-                          title="In hóa đơn"
-                        >
-                          <i class="fas fa-print"></i>
-                        </a>
-                      </td>
-                    </tr>
+              <div class="col-md-4">
+                <label class="form-label">Nhân viên nhập</label>
+                <select class="form-control" id="select-nhan-vien" disabled>
+                  <option value="">-- Chọn nhân viên --</option>
+                  <option value="NV_001">Nguyễn Văn A (Quản lý)</option>
+                  <option value="NV_002" selected>Trần Thị B (Nhân viên kho)</option>
+                </select>
+              </div>
+              
+              <div class="col-md-4">
+                <label class="form-label">Ngày nhập</label>
+                <input class="form-control" type="date" id="input-ngay-nhap" value="2025-11-08" disabled>
+              </div>
+            </div>
+          </div>
+          
+          <hr>
 
-                    <tr>
-                      <td>HD002</td>
-                      <td>02/11/2025, 10:15</td>
-                      <td>Jane Smith</td>
-                      <td>Nguyễn Văn A</td>
-                      <td>50,000 đ</td>
-                      <td><span class="badge bg-danger">Đã Hủy</span></td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm"
-                          href="../QuanLyDonHang/XemChiTietHoaDon.html"
-                          title="Xem chi tiết"
-                        >
-                          <i class="fas fa-eye"></i>
-                        </a>
-                      </td>
-                    </tr>
+          <h3 class="tile-title">Chi Tiết Hàng Hoá Nhập</h3>
+          <div class="tile-body">
+            <div class="row mb-3" id="item-entry-form">
+              <div class="col-md-4">
+                <label class="form-label">Tìm sản phẩm</label>
+                <select class="form-control" id="select-san-pham">
+                  <option value="">-- Tìm theo tên hoặc mã --</option>
+                  <option value="SPDV_001" data-name="Sting Dâu (Chai 330ml)">Sting Dâu (Chai 330ml)</option>
+                  <option value="SPDV_002" data-name="Bánh Chocopie (Hộp 12 cái)">Bánh Chocopie (Hộp 12 cái)</option>
+                  <option value="SPDV_003" data-name="Pepsi Lon (Lon 330ml)">Pepsi Lon (Lon 330ml)</option>
+                  <option value="SPDV_004" data-name="Thùng Sting Dâu (24 Chai)">Thùng Sting Dâu (24 Chai)</option>
+                </select>
+              </div>
+              
+              <div class="col-md-2">
+                <label class="form-label">Số lượng</label>
+                <input class="form-control" type="number" id="input-so-luong" min="1" value="1">
+              </div>
 
-                    <tr>
-                      <td>HD003</td>
-                      <td>01/11/2025, 08:05</td>
-                      <td>John Doe</td>
-                      <td>Trần Thị B</td>
-                      <td>12,000 đ</td>
-                      <td>
-                        <span class="badge bg-warning">Chưa Thanh Toán</span>
-                      </td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm me-1 btn-edit-khoi "
-                          href="../QuanLyDonHang/XemChiTietHoaDon.html"
-                          title="Xem chi tiết"
-                        >
-                          <i class="fas fa-eye"></i>
-                        </a>
-                        <a
-                          class="btn btn-secondary btn-sm"
-                          href="#"
-                          title="In hóa đơn"
-                        >
-                          <i class="fas fa-print"></i>
-                        </a>
-                      </td>
-                    </tr>
+              <div class="col-md-2">
+                <label class="form-label">Đơn giá nhập</label>
+                <input class="form-control" type="number" id="input-don-gia" min="0">
+              </div>
+
+              <div class="col-md-2">
+                <label class="form-label">Hạn sử dụng</label>
+                <input class="form-control" type="date" id="input-hsd">
+              </div>
+
+              <div class="col-md-2 d-flex align-items-end">
+                <button class="btn btn-primary" type="button" id="add-item-btn"><i class="bi bi-plus-lg"></i> Thêm vào phiếu</button>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Đơn giá nhập</th>
+                    <th>Hạn sử dụng</th>
+                    <th>Thành tiền</th>
+                    <th class="delete-column" style="width: 50px;">Xoá</th>
+                  </tr>
+                </thead>
+                <tbody id="chi-tiet-phieu-nhap-body">
                   </tbody>
-                </table>
+              </table>
+            </div>
+            
+            <div class="row mt-3">
+              <div class="col-12 text-end">
+                <h3 class="fw-bold">Tổng Tiền: <span id="tong-tien-phieu-nhap" class="text-primary">0 đ</span></h3>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="tile-footer">
+            <div class="d-flex justify-content-end">
+              <div>
+                <a class="btn btn-secondary" href="DanhSachPhieuNhap.html"><i class="bi bi-x-circle-fill me-2"></i>Quay lại</a>
+                
+                <button class="btn btn-warning" type="button" id="btn-edit">
+                  <i class="bi bi-pencil-square me-2"></i>Chỉnh sửa
+                </button>
+                
+                <button class="btn btn-primary" type="button" id="btn-save">
+                  <i class="bi bi-check-circle-fill me-2"></i>Lưu thay đổi
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </main>
-
-
+    </div>
+  </main>
 
 
 
@@ -414,13 +399,11 @@
   <!-- Essential javascripts for application to work-->
   <script src="../assets/lib/jquery/jquery-3.7.0.min.js"></script>
   <script src="../assets/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../assets/lib/select2/dist/js/select2.full.min.js"></script>
   <script src="../assets/lib/bootstrap/js/main.js"></script>
-  <!-- Page specific javascripts-->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+
   <!-- js riêng ở đây nha! -->
-
-
-
+  <script src="../assets/js/XemNhapKho.js"></script>
 </body>
 
 </html>

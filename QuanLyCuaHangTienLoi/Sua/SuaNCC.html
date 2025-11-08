@@ -29,7 +29,6 @@
   <link rel="stylesheet" type="text/css" href="../assets/css/base.css" />
   <!-- Css riêng ở đây nha -->
   <link rel="stylesheet" href="../assets/lib/select2/dist/css/select2.min.css">
-  <link rel="stylesheet" href="../assets/css/ThemMaKhuyenMai.css">
 
 </head>
 
@@ -260,163 +259,66 @@
 
 
 
-
   <main class="app-content">
     <div class="app-title">
       <div>
-        <h1><i class="bi bi-percent"></i> Thêm Chương Trình Khuyến Mãi</h1>
-        <p>Tạo chương trình và mã giảm giá mới</p>
+        <h1><i class="bi bi-pencil-square"></i> Chỉnh Sửa Nhà Cung Cấp</h1>
+        <p>Cập nhật thông tin nhà cung cấp</p>
       </div>
       <ul class="app-breadcrumb breadcrumb">
         <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-        <li class="breadcrumb-item"><a href="#">Quản lý khuyến mãi</a></li>
-        <li class="breadcrumb-item"><a href="#">Thêm mới</a></li>
+        <li class="breadcrumb-item"><a href="#">Quản lý nhà cung cấp</a></li>
+        <li class="breadcrumb-item"><a href="#">Chỉnh sửa</a></li>
       </ul>
     </div>
+
     <div class="row">
-
-      <div class="col-md-8">
+      <div class="col-md-8 mx-auto" id="customer-form-container">
         <div class="tile">
-          <h3 class="tile-title">Thông tin Chương trình & Điều kiện</h3>
+          <h3 class="tile-title">Thông tin Nhà Cung Cấp (NCC001)</h3>
+          <p>Dữ liệu sẽ được cập nhật vào bảng <strong>NhaCungCap</strong> .</p>
           <div class="tile-body">
-            <form id="form-khuyen-mai">
-              <div class="mb-3">
-                <label class="form-label">Tên chương trình </label>
-                <input class="form-control" type="text" placeholder="V.d: Khai trương giảm sốc, Sale hè 2025...">
-              </div>
+            <form>
+            <div class="mb-3">
+                <label class="form-label">Mã nhà cung cấp (id)</label>
+                <input class="form-control" type="text" value="NCC001" readonly>
+            </div>
 
               <div class="mb-3">
-                <label class="form-label">Mô tả </label>
-                <textarea class="form-control" rows="3" placeholder="Mô tả chi tiết chương trình"></textarea>
+                <label class="form-label">Tên nhà cung cấp</label>
+                <input class="form-control" type="text" value="Công ty Cổ phần Sữa Việt Nam (Vinamilk)" required>
               </div>
 
               <div class="mb-3">
-                <label class="form-label">Mã Khuyến Mãi (Code) </label>
-                <div class="input-group">
-                  <input class="form-control" type="text" placeholder="V.d: SALE20, FREE_SHIP" id="ma-code-input">
-                  <button class="btn btn-primary" type="button" id="generate-code-btn">Tạo mã ngẫu nhiên</button>
-                </div>
+                <label class="form-label">Số điện thoại</label>
+                <input class="form-control" type="tel" value="02854155555" required>
               </div>
 
-              <hr>
-              <h5 class="mb-3">Giá trị & Điều kiện</h5>
-
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="mb-3">
-                    <label class="form-label">Hình thức giảm </label>
-                    <select class="form-select" id="select-hinh-thuc-giam">
-                      <option value="PhanTram">Phần trăm (%)</option>
-                      <option value="SoTien">Số tiền (VND)</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="mb-3">
-                    <label class="form-label" id="label-gia-tri">Giá trị giảm (%) </label>
-                    <input class="form-control" type="number" placeholder="V.d: 20">
-                  </div>
-                </div>
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input class="form-control" type="email" value="info@vinamilk.com.vn" required>
               </div>
 
-              <div class="mb-3" id="field-giam-toi-da">
-                <label class="form-label">Giảm tối đa (VND) </label>
-                <input class="form-control" type="number" placeholder="V.d: 50000">
+              <div class="mb-3">
+                <label class="form-label">Địa chỉ</label>
+                <textarea class="form-control" rows="3" required>Số 10, Tân Trào, P. Tân Phú, Q.7, TP. HCM</textarea>
               </div>
-              
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="mb-3">
-                    <label class="form-label">Đơn hàng tối thiểu (VND) </label>
-                    <input class="form-control" type="number" placeholder="V.d: 100000" value="0">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="mb-3">
-                    <label class="form-label">Tổng số lần sử dụng </label>
-                    <input class="form-control" type="number" placeholder="V.d: 100">
-                  </div>
-                </div>
+
+              <div class="mb-3">
+                <label class="form-label">Mã số thuế</label>
+                <input class="form-control" type="text" value="0300588569" required>
               </div>
 
             </form>
           </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="tile">
-          <h3 class="tile-title">Cài đặt</h3>
-          <div class="tile-body">
-            <div class="mb-3">
-              <label class="form-label">Trạng thái </label>
-              <select class="form-select">
-                <option value="HoatDong">Hoạt động</option>
-                <option value="TamDung">Tạm dừng</option>
-              </select>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Ngày bắt đầu </label>
-              <input class="form-control" type="date">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Ngày kết thúc </label>
-              <input class="form-control" type="date">
-            </div>
-          </div>
           <div class="tile-footer">
-            <button class="btn btn-primary" type="button"><i class="bi bi-check-circle-fill me-2"></i>Lưu</button>
+            <button class="btn btn-primary" type="button"><i class="bi bi-check-circle-fill me-2"></i>Lưu thay đổi</button>
             <a class="btn btn-secondary" href="#"><i class="bi bi-x-circle-fill me-2"></i>Huỷ</a>
-          </div>
-        </div>
-
-        <div class="tile">
-          <h3 class="tile-title">Phạm vi áp dụng</h3>
-          <div class="tile-body">
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="phamViApDung" id="radio-toan-bo" value="toan-bo" checked>
-              <label class="form-check-label" for="radio-toan-bo">
-                Toàn bộ cửa hàng
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="phamViApDung" id="radio-danh-muc" value="danh-muc">
-              <label class="form-check-label" for="radio-danh-muc">
-                Danh mục cụ thể
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="phamViApDung" id="radio-san-pham" value="san-pham">
-              <label class="form-check-label" for="radio-san-pham">
-                Sản phẩm cụ thể
-              </label>
-            </div>
-
-            <div class="mb-3 mt-3 form-field-hidden" id="field-chon-danh-muc">
-              <label class="form-label">Chọn danh mục </label>
-              <select class="form-control" id="select-danh-muc" multiple="multiple">
-                <option value="dm_01">Đồ uống</option>
-                <option value="dm_02">Đồ ăn nhanh</option>
-                <option value="dm_03">Hàng gia dụng</option>
-              </select>
-            </div>
-            
-            <div class="mb-3 mt-3 form-field-hidden" id="field-chon-san-pham">
-              <label class="form-label">Chọn sản phẩm </label>
-              <select class="form-control" id="select-san-pham" multiple="multiple">
-                <option value="sp_01">Sting Dâu</option>
-                <option value="sp_02">Bánh mì Sandwich</option>
-                <option value="sp_03">Coca Cola</option>
-                <option value="sp_04">Dao cạo râu</option>
-              </select>
-            </div>
-
           </div>
         </div>
       </div>
     </div>
   </main>
-
 
 
 
@@ -432,8 +334,6 @@
   <script src="../assets/lib/bootstrap/js/main.js"></script>
 
   <!-- js riêng ở đây nha! -->
-  <script src="../assets/js/ThemKhuyenMai.js"></script>
-
 </body>
 
 </html>

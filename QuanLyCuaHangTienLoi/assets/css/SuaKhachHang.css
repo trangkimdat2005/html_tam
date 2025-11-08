@@ -1,0 +1,59 @@
+#membership-form-container {
+    display: none;
+    /* Mặc định ẩn form thẻ */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#customer-form-container {
+    transition: all 0.5s ease-in-out;
+    /* Hiệu ứng di chuyển */
+}
+
+/* === CSS MỚI CHO AVATAR === */
+.avatar-upload-container {
+    position: relative;
+    width: 128px;
+    height: 128px;
+    margin: 15px auto 25px auto;
+    /* Căn giữa */
+}
+
+.avatar-preview {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    object-fit: cover;
+    /* Đảm bảo ảnh lấp đầy vòng tròn */
+    background-color: #f8f9fa;
+}
+
+.avatar-edit-input {
+    display: none;
+    /* Ẩn input file mặc định */
+}
+
+.avatar-edit-label {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 34px;
+    height: 34px;
+    background: #009688;
+    /* Màu primary của theme */
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 34px;
+    /* Căn icon vào giữa */
+    cursor: pointer;
+    border: 2px solid white;
+    font-size: 18px;
+}
+
+.avatar-edit-label:hover {
+    background: #007a6f;
+}
+
+/* === HẾT CSS MỚI === */

@@ -1,0 +1,23 @@
+    #item-entry-form,
+    .delete-column,
+    #btn-save {
+        display: none;
+    }
+
+    /* Hiển thị các thành phần khi ở chế độ CHỈNH SỬA */
+    #phieu-nhap-container.edit-mode #item-entry-form {
+        display: flex;
+        /* Sử dụng flex để giữ layout cho row */
+    }
+
+    #phieu-nhap-container.edit-mode .delete-column {
+        display: table-cell;
+    }
+
+    #phieu-nhap-container.edit-mode #btn-save {
+        display: inline-block;
+    }
+
+    #phieu-nhap-container.edit-mode #btn-edit {
+        display: none;
+    }

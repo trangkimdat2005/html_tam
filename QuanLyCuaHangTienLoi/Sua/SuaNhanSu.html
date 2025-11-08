@@ -29,7 +29,7 @@
   <link rel="stylesheet" type="text/css" href="../assets/css/base.css" />
   <!-- Css riêng ở đây nha -->
   <link rel="stylesheet" href="../assets/lib/select2/dist/css/select2.min.css">
-  <link rel="stylesheet" href="../assets/css/ThemKhachHang.css">
+  <link rel="stylesheet" href="../assets/css/SuaNhanSu.css">
 
 </head>
 
@@ -261,70 +261,96 @@
 
 
 
-
   <main class="app-content">
     <div class="app-title">
       <div>
-        <h1><i class="bi bi-person-plus-fill"></i> Thêm Khách Hàng Mới</h1>
-        <p>Thêm thông tin khách hàng và tạo thẻ thành viên</p>
+        <h1><i class="bi bi-person-plus-fill"></i> Sửa Nhân Viên & Phân Ca</h1>
+        <p>Sửa nhân viên mới và xếp lịch làm việc ban đầu</p>
       </div>
       <ul class="app-breadcrumb breadcrumb">
         <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-        <li class="breadcrumb-item"><a href="#">Quản lý khách hàng</a></li>
-        <li class="breadcrumb-item"><a href="#">Thêm mới</a></li>
+        <li class="breadcrumb-item"><a href="#">Quản lý nhân sự</a></li>
+        <li class="breadcrumb-item"><a href="#">Sửa nhân viên</a></li>
       </ul>
     </div>
+    <div class="row">
 
-    <div class="row" id="main-form-row">
-
-      <div class="col-md-6" id="membership-form-container">
+      <div class="col-md-8">
         <div class="tile">
-          <h3 class="tile-title">Thông tin Thẻ Thành Viên</h3>
-          <p>Dữ liệu sẽ được lưu vào bảng <strong>TheThanhVien</strong>.</p>
-          <div class="tile-body">
+          <h3 class="tile-title">Phân Công Ca Làm Việc</h3>
+          <p>Chọn các ca làm việc cho nhân viên trong tuần. (Dữ liệu sẽ được lưu vào bảng <strong>PhanCongCaLamViec</strong>)</p>
 
-            <div class="mb-3">
-              <label class="form-label">Hạng thẻ</label>
-              <select class="form-select" id="select-hang-the">
-                <option value="Silver">Silver (Mặc định)</option>
-                <option value="Gold">Gold</option>
-                <option value="Platinum">Platinum</option>
-              </select>
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label">Điểm tích luỹ ban đầu</label>
-              <input class="form-control" type="number" value="0">
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label">Ngày cấp thẻ</label>
-              <input class="form-control" type="date" id="input-ngay-cap">
-            </div>
-
+          <div class="table-responsive">
+            <table class="table table-bordered shift-schedule-table">
+              <thead>
+                <tr>
+                  <th>Ca làm việc (từ Bảng CaLamViec)</th>
+                  <th>Thứ 2</th>
+                  <th>Thứ 3</th>
+                  <th>Thứ 4</th>
+                  <th>Thứ 5</th>
+                  <th>Thứ 6</th>
+                  <th>Thứ 7</th>
+                  <th>Chủ Nhật</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="shift-label">Ca Sáng (06:00 - 14:00)</td>
+                  <td><input class="form-check-input" type="checkbox" data-day="T2" data-shift-id="CA_SANG"></td>
+                  <td><input class="form-check-input" type="checkbox" data-day="T3" data-shift-id="CA_SANG"></td>
+                  <td><input class="form-check-input" type="checkbox" data-day="T4" data-shift-id="CA_SANG"></td>
+                  <td><input class="form-check-input" type="checkbox" data-day="T5" data-shift-id="CA_SANG"></td>
+                  <td><input class="form-check-input" type="checkbox" data-day="T6" data-shift-id="CA_SANG"></td>
+                  <td><input class="form-check-input" type="checkbox" data-day="T7" data-shift-id="CA_SANG"></td>
+                  <td><input class="form-check-input" type="checkbox" data-day="CN" data-shift-id="CA_SANG"></td>
+                </tr>
+                <tr>
+                  <td class="shift-label">Ca Chiều (14:00 - 22:00)</td>
+                  <td><input class="form-check-input" type="checkbox" data-day="T2" data-shift-id="CA_CHIEU"></td>
+                  <td><input class="form-check-input" type="checkbox" data-day="T3" data-shift-id="CA_CHIEU"></td>
+                  <td><input class="form-check-input" type="checkbox" data-day="T4" data-shift-id="CA_CHIEU"></td>
+                  <td><input class="form-check-input" type="checkbox" data-day="T5" data-shift-id="CA_CHIEU"></td>
+                  <td><input class="form-check-input" type="checkbox" data-day="T6" data-shift-id="CA_CHIEU"></td>
+                  <td><input class="form-check-input" type="checkbox" data-day="T7" data-shift-id="CA_CHIEU"></td>
+                  <td><input class="form-check-input" type="checkbox" data-day="CN" data-shift-id="CA_CHIEU"></td>
+                </tr>
+                <tr>
+                  <td class="shift-label">Ca Tối (18:00 - 22:00)</td>
+                  <td><input class="form-check-input" type="checkbox" data-day="T2" data-shift-id="CA_TOI"></td>
+                  <td><input class="form-check-input" type="checkbox" data-day="T3" data-shift-id="CA_TOI"></td>
+                  <td><input class="form-check-input" type="checkbox" data-day="T4" data-shift-id="CA_TOI"></td>
+                  <td><input class="form-check-input" type="checkbox" data-day="T5" data-shift-id="CA_TOI"></td>
+                  <td><input class="form-check-input" type="checkbox" data-day="T6" data-shift-id="CA_TOI"></td>
+                  <td><input class="form-check-input" type="checkbox" data-day="T7" data-shift-id="CA_TOI"></td>
+                  <td><input class="form-check-input" type="checkbox" data-day="CN" data-shift-id="CA_TOI"></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
 
-      <div class="col-md-6 mx-auto" id="customer-form-container">
+      <div class="col-md-4">
         <div class="tile">
-          <h3 class="tile-title">Thông tin Khách Hàng</h3>
-          <p>Dữ liệu sẽ được lưu vào bảng <strong>KhachHang</strong>.</p>
+          <h3 class="tile-title">Thông tin Nhân viên</h3>
+          <p>Dữ liệu sẽ được lưu vào bảng <strong>NhanVien</strong></p>
           <div class="tile-body">
-            
-            <div class="avatar-upload-container">
+            <form>
+
+              <div class="avatar-upload-container">
                 <img class="avatar-preview" id="avatarPreview" src="https://via.placeholder.com/128?text=Avatar"
                   alt="Avatar">
                 <input class="avatar-edit-input" type="file" id="avatarUpload" accept=".png, .jpg, .jpeg">
                 <label class="avatar-edit-label" for="avatarUpload"><i class="bi bi-camera-fill"></i></label>
-            </div>
+              </div>
 
-            <div class="mb-3">
-              <label class="form-label">Họ và tên</label>
-              <input class="form-control" type="text" placeholder="V.d: Nguyễn Văn B">
-            </div>
+              <div class="mb-3">
+                <label class="form-label">Họ và tên</label>
+                <input class="form-control" type="text" placeholder="V.d: Nguyễn Văn A">
+              </div>
 
-            <div class="mb-3">
+              <div class="mb-3">
                 <label class="form-label">Giới tính</label>
                 <div>
                   <div class="form-check form-check-inline">
@@ -336,56 +362,58 @@
                     <label class="form-check-label" for="radioNu">Nữ</label>
                   </div>
                 </div>
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label">Số điện thoại</label>
-              <input class="form-control" type="tel" placeholder="V.d: 091xxxx789">
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label">Email</label>
-              <input class="form-control" type="email" placeholder="V.d: v.b@email.com">
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label">Địa chỉ</label>
-              <input class="form-control" type="text" placeholder="V.d: 456 Lê Lợi, Q.3">
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label">Ngày đăng ký</label>
-              <input class="form-control" type="date" id="input-ngay-dang-ky">
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label">Trạng thái</label>
-              <select class="form-select" id="select-trang-thai">
-                <option value="Active">Active (Mặc định)</option>
-                <option value="Inactive">Inactive</option>
-              </select>
-            </div>
-
-            <hr>
-
-            <div class="mb-3">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="toggle-membership-form">
-                <label class="form-check-label" for="toggle-membership-form">
-                  Mở Thẻ Thành Viên
-                </label>
               </div>
-            </div>
+              <div class="mb-3">
+                <label class="form-label">Chức vụ</label>
+                <select class="form-select" id="select-chuc-vu">
+                  <option value="Admin">Admin</option>
+                  <option value="QuanLy">Quản lí</option>
+                  <option value="NhanVien">Nhân viên</option>
+                </select>
+              </div>
 
+              <div class="mb-3">
+                <label class="form-label">Lương cơ bản</label>
+                <input class="form-control" type="number" placeholder="V.d: 5000000">
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Số điện thoại</label>
+                <input class="form-control" type="tel" placeholder="V.d: 090xxxx123">
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input class="form-control" type="email" placeholder="V.d: example@gmail.com">
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Địa chỉ</label>
+                <input class="form-control" type="text" placeholder="V.d: 123 Nguyễn Huệ, Q.1">
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Ngày vào làm</label>
+                <input class="form-control" type="date">
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Trạng thái</label>
+                <select class="form-select" id="select-trang-thai">
+                  <option value="DangLam">Đang làm</option>
+                  <option value="NghiPhep">Nghỉ phép</option>
+                  <option value="DaNghi">Đã nghỉ</option>
+                </select>
+              </div>
+
+            </form>
           </div>
           <div class="tile-footer">
-            <button class="btn btn-primary" type="button"><i class="bi bi-check-circle-fill me-2"></i>Lưu thông
-              tin</button>
+            <button class="btn btn-primary" type="button"><i class="bi bi-check-circle-fill me-2"></i>Xác nhận</button>&nbsp;&nbsp;&nbsp;
             <a class="btn btn-secondary" href="#"><i class="bi bi-x-circle-fill me-2"></i>Huỷ</a>
           </div>
         </div>
       </div>
-
     </div>
   </main>
 
@@ -404,7 +432,7 @@
   <script src="../assets/lib/bootstrap/js/main.js"></script>
 
   <!-- js riêng ở đây nha! -->
-  <script src="../assets/js/ThemKhachHang.js"> </script>
+  <script src="../assets/js/SuaNhanSu.js"></Script>
 </body>
 
 </html>

@@ -1,0 +1,18 @@
+    .info-group {
+        margin-bottom: 1.25rem;
+    }
+
+    .info-group label {
+        font-weight: bold;
+        color: #555;
+        display: block;
+        font-size: 0.9rem;
+        margin-bottom: 2px;
+    }
+
+    .info-group p {
+        font-size: 1.1rem;
+        margin: 0;
+        padding: 5px 0;
+        border-bottom: 1px solid #eee;
+    }

@@ -3503,7 +3503,7 @@ textarea.form-control-lg {
 }
 
 .btn-info {
-  --bs-btn-color: #000;
+  --bs-btn-color: #fff;
   --bs-btn-bg: var(--color-logo);         /* Thay thế bằng màu color-logo */
   --bs-btn-border-color: var(--color-logo); /* Thay thế bằng màu color-logo */
   --bs-btn-hover-color: #000;
@@ -3538,7 +3538,7 @@ textarea.form-control-lg {
 
 
 .btn-warning {
-  --bs-btn-color: #000;
+  --bs-btn-color: #fff;
   --bs-btn-bg: #ffc107;
   --bs-btn-border-color: #ffc107;
   --bs-btn-hover-color: #000;

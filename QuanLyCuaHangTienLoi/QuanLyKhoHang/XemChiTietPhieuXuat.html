@@ -28,8 +28,7 @@
     <link rel="stylesheet" href="../assets/lib/fontawesome/css/all.min.css" />
   <link rel="stylesheet" type="text/css" href="../assets/css/base.css" />
   <!-- Css riêng ở đây nha -->
-  <link rel="stylesheet" href="../assets/lib/select2/dist/css/select2.min.css">
-
+   <link rel="stylesheet" href="../assets/css/XemChiTietPhieuXuat.css">
 </head>
 
 <body class="app sidebar-mini">
@@ -260,62 +259,106 @@
 
 
 
-  <main class="app-content">
+
+<main class="app-content">
     <div class="app-title">
       <div>
-        <h1><i class="bi bi-truck"></i> Thêm Nhà Cung Cấp</h1>
-        <p>Thêm thông tin nhà cung cấp mới vào hệ thống</p>
+        <h1><i class="bi bi-file-earmark-text"></i> Chi Tiết Phiếu Xuất Kho</h1>
+        <p>Thông tin chi tiết của phiếu xuất PX20251108-001</p>
       </div>
       <ul class="app-breadcrumb breadcrumb">
         <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-        <li class="breadcrumb-item"><a href="#">Quản lý nhà cung cấp</a></li>
-        <li class="breadcrumb-item"><a href="#">Thêm mới</a></li>
+        <li class="breadcrumb-item"><a href="#">Quản lý kho</a></li>
+        <li class="breadcrumb-item"><a href="#">Danh sách phiếu xuất</a></li>
+        <li class="breadcrumb-item"><a href="#">Chi tiết</a></li>
       </ul>
     </div>
 
     <div class="row">
-      <div class="col-md-8 mx-auto" id="customer-form-container">
+      <div class="col-md-12">
         <div class="tile">
-          <h3 class="tile-title">Thông tin Nhà Cung Cấp</h3>
-          <p>Dữ liệu sẽ được lưu vào bảng <strong>NhaCungCap</strong> .</p>
+          
+          <h3 class="tile-title">Thông tin Phiếu Xuất (PX20251108-001)</h3>
           <div class="tile-body">
-            <form>
-            <div class="mb-3">
-                <label class="form-label">Mã nhà cung cấp (id)</label>
-                <input class="form-control" type="text" placeholder="Mã sẽ được tạo tự động" readonly>
+            <div class="row">
+              
+              <div class="col-md-4 info-group">
+                <label>Mã Phiếu Xuất</label>
+                <p>PX20251108-001</p>
+              </div>
+              <div class="col-md-4 info-group">
+                <label>Khách Hàng (khachHangId)</label>
+                <p>Trần Thị B (KH002)</p>
+              </div>
+              <div class="col-md-4 info-group">
+                <label>Ngày Xuất (ngayXuat)</label>
+                <p>08/11/2025</p>
+              </div>
+              <div class="col-md-4 info-group">
+                <label>Nhân Viên Xuất (nhanVienId)</label>
+                <p>Nguyễn Văn A (NV001)</p>
+              </div>
+
             </div>
-
-              <div class="mb-3">
-                <label class="form-label">Tên nhà cung cấp</label>
-                <input class="form-control" type="text" placeholder="V.d: Công ty Cổ phần Sữa Việt Nam" required>
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label">Số điện thoại</label>
-                <input class="form-control" type="tel" placeholder="V.d: 028xxxxxxx" required>
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input class="form-control" type="email" placeholder="V.d: info@vinamilk.com.vn" required>
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label">Địa chỉ</label>
-                <textarea class="form-control" rows="3" placeholder="V.d: Số 10, Tân Trào, P. Tân Phú, Q.7, TP. HCM" required></textarea>
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label">Mã số thuế</label>
-                <input class="form-control" type="text" placeholder="V.d: 0300588569" required>
-              </div>
-
-            </form>
           </div>
+          
+          <hr>
+
+          <h3 class="tile-title">Danh Sách Sản Phẩm (ChiTietPhieuXuat)</h3>
+          <div class="tile-body">
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Sản phẩm (sanPhamDonViId)</th>
+                    <th class="text-end">Số lượng (soLuong)</th>
+                    <th class="text-end">Đơn giá (donGia)</th>
+                    <th class="text-end">Thành tiền</th>
+                  </tr>
+                </thead>
+                <tbody id="chi-tiet-phieu-xuat-body">
+                  <tr>
+                    <td>1</td>
+                    <td>Sting Dâu (Chai 330ml) (SPDV_001)</td>
+                    <td class="text-end">10</td>
+                    <td class="text-end">8,000 đ</td>
+                    <td class="text-end">80,000 đ</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Bánh Chocopie (Hộp 12 cái) (SPDV_002)</td>
+                    <td class="text-end">5</td>
+                    <td class="text-end">45,000 đ</td>
+                    <td class="text-end">225,000 đ</td>
+                  </tr>
+                   <tr>
+                    <td>3</td>
+                    <td>Pepsi Lon (Lon 330ml) (SPDV_003)</td>
+                    <td class="text-end">24</td>
+                    <td class="text-end">7,500 đ</td>
+                    <td class="text-end">180,000 đ</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="4" class="fw-bold text-end">Tổng Tiền (tongTien)</td>
+                    <td class="fw-bold text-end h5 text-primary">485,000 đ</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+
           <div class="tile-footer">
-            <button class="btn btn-primary" type="button"><i class="bi bi-check-circle-fill me-2"></i>Lưu thông
-              tin</button>
-            <a class="btn btn-secondary" href="#"><i class="bi bi-x-circle-fill me-2"></i>Huỷ</a>
+            <div class="d-flex justify-content-end">
+              <div>
+                <a class="btn btn-secondary" href="DanhSachPhieuXuat.html"><i class="bi bi-x-circle-fill me-2"></i>Quay lại</a>
+                <button class="btn btn-primary" type="button" onclick="window.print();">
+                  <i class="bi bi-printer-fill me-2"></i>In Phiếu
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -330,13 +373,17 @@
 
 
 
+
   <!-- Essential javascripts for application to work-->
   <script src="../assets/lib/jquery/jquery-3.7.0.min.js"></script>
   <script src="../assets/lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="../assets/lib/select2/dist/js/select2.full.min.js"></script>
   <script src="../assets/lib/bootstrap/js/main.js"></script>
-
+  <!-- Page specific javascripts-->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
   <!-- js riêng ở đây nha! -->
+
+
+
 </body>
 
 </html>
