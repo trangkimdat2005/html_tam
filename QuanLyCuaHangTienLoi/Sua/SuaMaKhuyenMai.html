@@ -29,7 +29,7 @@
   <link rel="stylesheet" type="text/css" href="../assets/css/base.css" />
   <!-- Css riêng ở đây nha -->
   <link rel="stylesheet" href="../assets/lib/select2/dist/css/select2.min.css">
-  <link rel="stylesheet" href="../assets/css/ThemNhanSu.css">
+  <link rel="stylesheet" href="../assets/css/SuaMaKhuyenMai.css">
 
 </head>
 
@@ -264,124 +264,154 @@
   <main class="app-content">
     <div class="app-title">
       <div>
-        <h1><i class="bi bi-box-arrow-in-down"></i> Tạo Phiếu Nhập Kho</h1>
-        <p>Thêm hàng hoá mới vào kho từ nhà cung cấp</p>
+        <h1><i class="bi bi-pencil-square"></i> Chỉnh Sửa Mã Khuyến Mãi</h1>
+        <p>Chỉnh sửa thông tin cho mã SALEHE2025</p>
       </div>
       <ul class="app-breadcrumb breadcrumb">
         <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-        <li class="breadcrumb-item"><a href="#">Quản lý kho</a></li>
-        <li class="breadcrumb-item"><a href="#">Tạo phiếu nhập</a></li>
+        <li class="breadcrumb-item"><a href="#">Quản lý khuyến mãi</a></li>
+        <li class="breadcrumb-item"><a href="#">Chỉnh sửa</a></li>
       </ul>
     </div>
-
     <div class="row">
-      <div class="col-md-12">
+
+      <div class="col-md-8">
         <div class="tile">
-          
-          <h3 class="tile-title">Thông tin Phiếu Nhập</h3>
+          <h3 class="tile-title">Thông tin Chương trình & Điều kiện</h3>
           <div class="tile-body">
-            <div class="row">
-              <div class="col-md-4">
-                <label class="form-label">Nhà cung cấp</label>
-                <select class="form-control" id="select-nha-cung-cap">
-                  <option value="">-- Chọn nhà cung cấp --</option>
-                  <option value="NCC_VINAMILK">CTCP Sữa Việt Nam (Vinamilk)</option>
-                  <option value="NCC_ORION">CT TNHH Orion Vina</option>
-                  <option value="NCC_PEPSI">Suntory Pepsico Việt Nam</option>
-                </select>
+            <form id="form-khuyen-mai">
+              <div class="mb-3">
+                <label class="form-label">Tên chương trình </label>
+                <input class="form-control" type="text" value="Sale Hè 2025">
               </div>
 
-              <div class="col-md-4">
-                <label class="form-label">Nhân viên nhập</label>
-                <select class="form-control" id="select-nhan-vien">
-                  <option value="">-- Chọn nhân viên --</option>
-                  <option value="NV_001">Nguyễn Văn A (Quản lý)</option>
-                  <option value="NV_002">Trần Thị B (Nhân viên kho)</option>
-                </select>
+              <div class="mb-3">
+                <label class="form-label">Mô tả </label>
+                <textarea class="form-control" rows="3">Giảm giá đặc biệt cho các mặt hàng đồ uống và giải khát.</textarea>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Mã Khuyến Mãi (Code) </label>
+                <div class="input-group">
+                  <input class="form-control" type="text" value="SALEHE2025" id="ma-code-input" readonly>
+                  <button class="btn btn-primary" type="button" id="generate-code-btn" style="display: none;">Tạo mã ngẫu nhiên</button>
+                </div>
+              </div>
+
+              <hr>
+              <h5 class="mb-3">Giá trị & Điều kiện</h5>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label">Hình thức giảm (giamTheo)</label>
+                    <select class="form-select" id="select-hinh-thuc-giam">
+                      <option value="PhanTram" selected>Phần trăm (%)</option>
+                      <option value="SoTien">Số tiền (VND)</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label" id="label-gia-tri">Giá trị giảm (%) (giaTri)</label>
+                    <input class="form-control" type="number" value="15">
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-3" id="field-giam-toi-da">
+                <label class="form-label">Giảm tối đa (VND) (giaTriToiDa)</label>
+                <input class="form-control" type="number" value="50000">
               </div>
               
-              <div class="col-md-4">
-                <label class="form-label">Ngày nhập</label>
-                <input class="form-control" type="date" id="input-ngay-nhap">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label">Đơn hàng tối thiểu (VND) (giaTriToiThieu)</label>
+                    <input class="form-control" type="number" value="100000">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label">Tổng số lần sử dụng (soLanSuDung)</label>
+                    <input class="form-control" type="number" value="100">
+                  </div>
+                </div>
               </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="tile">
+          <h3 class="tile-title">Cài đặt</h3>
+          <div class="tile-body">
+            <div class="mb-3">
+              <label class="form-label">Trạng thái (trangThai)</label>
+              <select class="form-select">
+                <option value="HoatDong" selected>Hoạt động</option>
+                <option value="TamDung">Tạm dừng</option>
+                <option value="HetHan">Hết hạn</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Ngày bắt đầu (ngayBatDau)</label>
+              <input class="form-control" type="date" value="2025-11-01">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Ngày kết thúc (ngayKetThuc)</label>
+              <input class="form-control" type="date" value="2025-11-30">
             </div>
           </div>
-          
-          <hr>
+          <div class="tile-footer">
+            <button class="btn btn-primary" type="button"><i class="bi bi-check-circle-fill me-2"></i>Lưu thay đổi</button>
+            <a class="btn btn-secondary" href="#"><i class="bi bi-x-circle-fill me-2"></i>Huỷ</a>
+          </div>
+        </div>
 
-          <h3 class="tile-title">Chi Tiết Hàng Hoá Nhập</h3>
+        <div class="tile">
+          <h3 class="tile-title">Phạm vi áp dụng</h3>
           <div class="tile-body">
-            <div class="row mb-3">
-              <div class="col-md-4">
-                <label class="form-label">Tìm sản phẩm</label>
-                <select class="form-control" id="select-san-pham">
-                  <option value="">-- Tìm theo tên hoặc mã --</option>
-                  <option value="SPDV_001" data-name="Sting Dâu (Chai 330ml)">Sting Dâu (Chai 330ml)</option>
-                  <option value="SPDV_002" data-name="Bánh Chocopie (Hộp 12 cái)">Bánh Chocopie (Hộp 12 cái)</option>
-                  <option value="SPDV_003" data-name="Pepsi Lon (Lon 330ml)">Pepsi Lon (Lon 330ml)</option>
-                  <option value="SPDV_004" data-name="Thùng Sting Dâu (24 Chai)">Thùng Sting Dâu (24 Chai)</option>
-                </select>
-              </div>
-              
-              <div class="col-md-2">
-                <label class="form-label">Số lượng</label>
-                <input class="form-control" type="number" id="input-so-luong" min="1" value="1">
-              </div>
-
-              <div class="col-md-2">
-                <label class="form-label">Đơn giá nhập</label>
-                <input class="form-control" type="number" id="input-don-gia" min="0">
-              </div>
-
-              <div class="col-md-2">
-                <label class="form-label">Hạn sử dụng</label>
-                <input class="form-control" type="date" id="input-hsd">
-              </div>
-
-              <div class="col-md-2 d-flex align-items-end">
-                <button class="btn btn-primary" type="button" id="add-item-btn"><i class="bi bi-plus-lg"></i> Thêm vào phiếu</button>
-              </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="phamViApDung" id="radio-toan-bo" value="toan-bo">
+              <label class="form-check-label" for="radio-toan-bo">
+                Toàn bộ cửa hàng (DieuKienApDungToanBo)
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="phamViApDung" id="radio-danh-muc" value="danh-muc" checked>
+              <label class="form-check-label" for="radio-danh-muc">
+                Danh mục cụ thể (DieuKienApDungDanhMuc)
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="phamViApDung" id="radio-san-pham" value="san-pham">
+              <label class="form-check-label" for="radio-san-pham">
+                Sản phẩm cụ thể (DieuKienApDungSanPham)
+              </label>
             </div>
 
-            <div class="table-responsive">
-              <table class="table table-bordered">
-                <thead>
-                  <tr>
-                    <th>Sản phẩm</th>
-                    <th>Số lượng</th>
-                    <th>Đơn giá nhập</th>
-                    <th>Hạn sử dụng</th>
-                    <th>Thành tiền</th>
-                    <th style="width: 50px;">Xoá</th>
-                  </tr>
-                </thead>
-                <tbody id="chi-tiet-phieu-nhap-body">
-                  </tbody>
-              </table>
+            <div class="mb-3 mt-3 form-field-hidden" id="field-chon-danh-muc">
+              <label class="form-label">Chọn danh mục </label>
+              <select class="form-control" id="select-danh-muc" multiple="multiple">
+                <option value="dm_01" selected>Đồ uống</option>
+                <option value="dm_02">Đồ ăn nhanh</option>
+                <option value="dm_03">Hàng gia dụng</option>
+              </select>
             </div>
             
-            <div class="row mt-3">
-              <div class="col-12 text-end">
-                <h3 class="fw-bold">Tổng Tiền: <span id="tong-tien-phieu-nhap" class="text-primary">0 đ</span></h3>
-              </div>
+            <div class="mb-3 mt-3 form-field-hidden" id="field-chon-san-pham">
+              <label class="form-label">Chọn sản phẩm </label>
+              <select class="form-control" id="select-san-pham" multiple="multiple">
+                <option value="sp_01">Sting Dâu</option>
+                <option value="sp_02">Bánh mì Sandwich</option>
+                <option value="sp_03">Coca Cola</option>
+                <option value="sp_04">Dao cạo râu</option>
+              </select>
             </div>
 
-          </div>
-
-          <div class="tile-footer">
-            <div class="d-flex justify-content-between">
-              <div>
-                <input type="file" id="import-excel-input" accept=".xlsx, .xls">
-                <button class="btn btn-success" type="button" id="import-excel-btn">
-                  <i class="bi bi-file-earmark-excel me-2"></i>Import từ Excel
-                </button>
-              </div>
-
-              <div>
-                <a class="btn btn-secondary" href="#"><i class="bi bi-x-circle-fill me-2"></i>Huỷ</a>
-                <button class="btn btn-primary" type="button"><i class="bi bi-check-circle-fill me-2"></i>Lưu Phiếu Nhập (Thêm)</button>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -403,7 +433,8 @@
   <script src="../assets/lib/bootstrap/js/main.js"></script>
 
   <!-- js riêng ở đây nha! -->
-  <script src="../assets/js/NhapKho.js"></script>
+  <script src="../assets/js/SuaMaKhuyenMai.js"></script>
+
 </body>
 
 </html>

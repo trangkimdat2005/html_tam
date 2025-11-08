@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="../assets/lib/fontawesome/css/all.min.css" />
   <link rel="stylesheet" type="text/css" href="../assets/css/base.css" />
   <!-- Css riêng ở đây nha -->
-
+<link rel="stylesheet" href="../assets/css/DanhSachTemNhan.css" >
 </head>
 
 <body class="app sidebar-mini">
@@ -261,138 +261,184 @@
 
 
   
-    <main class="app-content">
-      <div class="app-title">
-        <div>
-          <h1><i class="bi bi-ticket-perforated"></i> Quản lý Tem Nhãn</h1>
-          <p>Quản lý và in tem nhãn cho sản phẩm</p>
-        </div>
-        <ul class="app-breadcrumb breadcrumb side">
-          <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-          <li class="breadcrumb-item">Quản lý barcode</li>
-          <li class="breadcrumb-item active">
-            <a href="#">Danh sách tem nhãn</a>
-          </li>
-        </ul>
+  <main class="app-content">
+    <div class="app-title">
+      <div>
+        <h1><i class="bi bi-ticket-perforated"></i> Quản lý Tem Nhãn</h1>
+        <p>Quản lý và in tem nhãn cho sản phẩm</p>
       </div>
+      <ul class="app-breadcrumb breadcrumb side">
+        <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
+        <li class="breadcrumb-item">Quản lý barcode</li>
+        <li class="breadcrumb-item active">
+          <a href="#">Danh sách tem nhãn</a>
+        </li>
+      </ul>
+    </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="tile">
-            <div
-              class="tile-title-w-btn d-flex justify-content-between align-items-center"
-            >
-              <h3 class="title" style="margin-bottom: 0">Danh Sách Tem Nhãn</h3>
-              <a class="btn btn-primary btn-add-khoi" href="tao-tem-nhan.html">
-                <i class="fas fa-plus"></i> Tạo mẫu tem mới
-              </a>
-            </div>
+    <div class="row" id="main-row-container">
+      
+      <div class="col-md-12" id="list-col">
+        <div class="tile">
+          <div class="tile-title-w-btn d-flex justify-content-between align-items-center">
+            <h3 class="title" style="margin-bottom: 0">Danh Sách Tem Nhãn</h3>
+            <a class="btn btn-primary btn-add-khoi" href="#" id="show-add-form-btn">
+              <i class="fas fa-plus"></i> Tạo mẫu tem mới
+            </a>
+          </div>
 
-            <div class="tile-body">
-              <div class="table-responsive">
-                <table
-                  class="table table-hover table-bordered"
-                  id="sampleTable"
-                >
-                  <thead>
-                    <tr>
-                      <th>Tên Sản Phẩm</th>
-                      <th>Đơn Vị Tính</th>
-                      <th>Mã Code (Định danh)</th>
-                      <th>Nội Dung Tem</th>
-                      <th>Ngày In</th>
-                      <th class="text-center">Thao tác</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Sữa tươi TH True Milk</td>
-                      <td>Lốc 4</td>
-                      <td>8935049001438</td>
-                      <td>Sữa TH (Lốc), HSD: 12/2026</td>
-                      <td>01/11/2025</td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-secondary btn-sm me-1"
-                          href="#"
-                          title="In tem"
-                        >
-                          <i class="fas fa-print"></i>
-                        </a>
-                        <a
-                          class="btn btn-info btn-sm me-1 btn-edit-khoi "
-                          href="#"
-                          title="Sửa mẫu tem"
-                        >
-                          <i class="fas fa-edit"></i>
-                        </a>
-                        <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
-                          <i class="fas fa-trash-alt"></i>
-                        </a>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>Thịt gà công nghiệp</td>
-                      <td>KG</td>
-                      <td>CK001-KG-LOHANG123</td>
-                      <td>Thịt gà CP (KG), HSD: 05/11/2025</td>
-                      <td>01/11/2025</td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-secondary btn-sm me-1"
-                          href="#"
-                          title="In tem"
-                        >
-                          <i class="fas fa-print"></i>
-                        </a>
-                        <a
-                          class="btn btn-info btn-sm me-1 btn-edit-khoi "
-                          href="#"
-                          title="Sửa mẫu tem"
-                        >
-                          <i class="fas fa-edit"></i>
-                        </a>
-                        <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
-                          <i class="fas fa-trash-alt"></i>
-                        </a>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>Cá hồi Na Uy</td>
-                      <td>Gram</td>
-                      <td>CH002-GRAM</td>
-                      <td>Cá hồi Na Uy (Gram), HSD: 03/11/2025</td>
-                      <td>31/10/2025</td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-secondary btn-sm me-1"
-                          href="#"
-                          title="In tem"
-                        >
-                          <i class="fas fa-print"></i>
-                        </a>
-                        <a
-                          class="btn btn-info btn-sm me-1 btn-edit-khoi "
-                          href="#"
-                          title="Sửa mẫu tem"
-                        >
-                          <i class="fas fa-edit"></i>
-                        </a>
-                        <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
-                          <i class="fas fa-trash-alt"></i>
-                        </a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+          <div class="tile-body">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered" id="sampleTable">
+                <thead>
+                  <tr>
+                    <th>Tên Sản Phẩm</th>
+                    <th>Đơn Vị Tính</th>
+                    <th>Mã Code (Định danh)</th>
+                    <th>Nội Dung Tem</th>
+                    <th>Ngày In</th>
+                    <th class="text-center">Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-id="TEM001" 
+                      data-ma-dinh-danh-id="MDD_001" 
+                      data-noi-dung="Sữa TH (Lốc), HSD: 12/2026" 
+                      data-ngay-in="2025-11-01"
+                      data-image-url="https://barcode.tec-it.com/barcode.ashx?data=8935049001438&code=EAN13&dpi=96"
+                      data-ma-code="8935049001438">
+                    <td>Sữa tươi TH True Milk</td>
+                    <td>Lốc 4</td>
+                    <td>8935049001438</td>
+                    <td>Sữa TH (Lốc), HSD: 12/2026</td>
+                    <td>01/11/2025</td>
+                    <td class="text-center">
+                      <a class="btn btn-secondary btn-sm me-1" href="#" title="In tem">
+                        <i class="fas fa-print"></i>
+                      </a>
+                      <a class="btn btn-info btn-sm me-1 btn-edit-khoi " href="#" title="Sửa mẫu tem">
+                        <i class="fas fa-edit"></i>
+                      </a>
+                      <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
+                        <i class="fas fa-trash-alt"></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr data-id="TEM002" 
+                      data-ma-dinh-danh-id="MDD_002" 
+                      data-noi-dung="Thịt gà CP (KG), HSD: 05/11/2025" 
+                      data-ngay-in="2025-11-01"
+                      data-image-url="https://barcode.tec-it.com/barcode.ashx?data=CK001-KG-LOHANG123&code=Code128&dpi=96"
+                      data-ma-code="CK001-KG-LOHANG123">
+                    <td>Thịt gà công nghiệp</td>
+                    <td>KG</td>
+                    <td>CK001-KG-LOHANG123</td>
+                    <td>Thịt gà CP (KG), HSD: 05/11/2025</td>
+                    <td>01/11/2025</td>
+                    <td class="text-center">
+                      <a class="btn btn-secondary btn-sm me-1" href="#" title="In tem">
+                        <i class="fas fa-print"></i>
+                      </a>
+                      <a class="btn btn-info btn-sm me-1 btn-edit-khoi " href="#" title="Sửa mẫu tem">
+                        <i class="fas fa-edit"></i>
+                      </a>
+                      <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
+                        <i class="fas fa-trash-alt"></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <tr data-id="TEM003" 
+                      data-ma-dinh-danh-id="MDD_003" 
+                      data-noi-dung="Cá hồi Na Uy (Gram), HSD: 03/11/2025" 
+                      data-ngay-in="2025-10-31"
+                      data-image-url="https://barcode.tec-it.com/barcode.ashx?data=CH002-GRAM&code=Code128&dpi=96"
+                      data-ma-code="CH002-GRAM">
+                    <td>Cá hồi Na Uy</td>
+                    <td>Gram</td>
+                    <td>CH002-GRAM</td>
+                    <td>Cá hồi Na Uy (Gram), HSD: 03/11/2025</td>
+                    <td>31/10/2025</td>
+                    <td class="text-center">
+                      <a class="btn btn-secondary btn-sm me-1" href="#" title="In tem">
+                        <i class="fas fa-print"></i>
+                      </a>
+                      <a class="btn btn-info btn-sm me-1 btn-edit-khoi " href="#" title="Sửa mẫu tem">
+                        <i class="fas fa-edit"></i>
+                      </a>
+                      <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
+                        <i class="fas fa-trash-alt"></i>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
       </div>
-    </main>
+
+      <div class="col-md-0" id="form-col">
+        <div class="tile">
+          <h3 class="tile-title" id="form-title">Tạo Mẫu Tem Mới</h3>
+          <div class="tile-body">
+            <form id="label-form">
+              
+              <div class="image-upload-container">
+                <img class="image-preview" id="form-image-preview" src="https://via.placeholder.com/200?text=Ảnh+Code" alt="Ảnh Code">
+                <input class="image-edit-input" type="file" id="form-image-upload" accept=".png, .jpg, .jpeg">
+                <label class="image-edit-label" for="form-image-upload"><i class="bi bi-camera-fill"></i></label>
+              </div>
+              
+              <div class="mb-3">
+                <label class="form-label">Mã Tem Nhãn (id)</label>
+                <input class="form-control" type="text" id="form-label-id" placeholder="Mã sẽ được tạo tự động" readonly>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Mã Định Danh Sản Phẩm</label>
+                <select class="form-control" id="form-select-identifier" style="width: 100%;">
+                  <option value="">-- Chọn mã định danh --</option>
+                  <option value="MDD_001" data-image-url="https://barcode.tec-it.com/barcode.ashx?data=8935049001438&code=EAN13&dpi=96" data-ma-code="8935049001438">
+                    8935049001438 (Sữa TH)
+                  </option>
+                  <option value="MDD_002" data-image-url="https://barcode.tec-it.com/barcode.ashx?data=CK001-KG-LOHANG123&code=Code128&dpi=96" data-ma-code="CK001-KG-LOHANG123">
+                    CK001-KG-LOHANG123 (Thịt gà)
+                  </option>
+                  <option value="MDD_003" data-image-url="https://barcode.tec-it.com/barcode.ashx?data=CH002-GRAM&code=Code128&dpi=96" data-ma-code="CH002-GRAM">
+                    CH002-GRAM (Cá hồi)
+                  </option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Nội Dung Tem</label>
+                <textarea class="form-control" id="form-label-content" rows="4" placeholder="Nội dung hiển thị trên tem"></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Ngày In</label>
+                <input class="form-control" type="date" id="form-label-date">
+              </div>
+
+            </form>
+          </div>
+          <div class="tile-footer">
+            <button class="btn btn-primary" type="button" id="btn-submit">
+              <i class="bi bi-check-circle-fill me-2"></i>Thêm
+            </button>
+            
+            <button class="btn btn-info" type="button" id="btn-edit-mode" style="display: none;">
+              <i class="fas fa-edit me-2"></i>Chỉnh sửa
+            </button>
+            
+            <a class="btn btn-secondary" href="#" id="btn-cancel">
+              <i class="bi bi-x-circle-fill me-2"></i>Huỷ
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 
 
 
@@ -411,7 +457,7 @@
   <!-- Page specific javascripts-->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
   <!-- js riêng ở đây nha! -->
-
+    <script src="../assets/js/DanhSachTemNhan.js"></script>
 
 
 </body>

@@ -28,8 +28,6 @@
     <link rel="stylesheet" href="../assets/lib/fontawesome/css/all.min.css" />
   <link rel="stylesheet" type="text/css" href="../assets/css/base.css" />
   <!-- Css riêng ở đây nha -->
-  <link rel="stylesheet" href="../assets/lib/select2/dist/css/select2.min.css">
-  <link rel="stylesheet" href="../assets/css/ThemNhanSu.css">
 
 </head>
 
@@ -261,157 +259,285 @@
 
 
 
+
+  
   <main class="app-content">
     <div class="app-title">
       <div>
-        <h1><i class="bi bi-person-plus-fill"></i> Thêm Nhân Viên & Phân Ca</h1>
-        <p>Thêm nhân viên mới và xếp lịch làm việc ban đầu</p>
+        <h1><i class="bi bi-calendar-check"></i> Lịch sử Mua hàng</h1>
+        <p>Chi tiết các hoá đơn của khách hàng</p>
       </div>
-      <ul class="app-breadcrumb breadcrumb">
+      <ul class="app-breadcrumb breadcrumb side">
         <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-        <li class="breadcrumb-item"><a href="#">Quản lý nhân sự</a></li>
-        <li class="breadcrumb-item"><a href="#">Thêm nhân viên</a></li>
+        <li class="breadcrumb-item"><a href="#">Quản lý khách hàng</a></li>
+        <li class="breadcrumb-item active"><a href="#">Lịch sử mua hàng</a></li>
       </ul>
     </div>
+
     <div class="row">
-
-      <div class="col-md-8">
+      <div class="col-md-12">
         <div class="tile">
-          <h3 class="tile-title">Phân Công Ca Làm Việc</h3>
-          <p>Chọn các ca làm việc cho nhân viên trong tuần. (Dữ liệu sẽ được lưu vào bảng <strong>PhanCongCaLamViec</strong>)</p>
-
-          <div class="table-responsive">
-            <table class="table table-bordered shift-schedule-table">
-              <thead>
-                <tr>
-                  <th>Ca làm việc (từ Bảng CaLamViec)</th>
-                  <th>Thứ 2</th>
-                  <th>Thứ 3</th>
-                  <th>Thứ 4</th>
-                  <th>Thứ 5</th>
-                  <th>Thứ 6</th>
-                  <th>Thứ 7</th>
-                  <th>Chủ Nhật</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="shift-label">Ca Sáng (06:00 - 14:00)</td>
-                  <td><input class="form-check-input" type="checkbox" data-day="T2" data-shift-id="CA_SANG"></td>
-                  <td><input class="form-check-input" type="checkbox" data-day="T3" data-shift-id="CA_SANG"></td>
-                  <td><input class="form-check-input" type="checkbox" data-day="T4" data-shift-id="CA_SANG"></td>
-                  <td><input class="form-check-input" type="checkbox" data-day="T5" data-shift-id="CA_SANG"></td>
-                  <td><input class="form-check-input" type="checkbox" data-day="T6" data-shift-id="CA_SANG"></td>
-                  <td><input class="form-check-input" type="checkbox" data-day="T7" data-shift-id="CA_SANG"></td>
-                  <td><input class="form-check-input" type="checkbox" data-day="CN" data-shift-id="CA_SANG"></td>
-                </tr>
-                <tr>
-                  <td class="shift-label">Ca Chiều (14:00 - 22:00)</td>
-                  <td><input class="form-check-input" type="checkbox" data-day="T2" data-shift-id="CA_CHIEU"></td>
-                  <td><input class="form-check-input" type="checkbox" data-day="T3" data-shift-id="CA_CHIEU"></td>
-                  <td><input class="form-check-input" type="checkbox" data-day="T4" data-shift-id="CA_CHIEU"></td>
-                  <td><input class="form-check-input" type="checkbox" data-day="T5" data-shift-id="CA_CHIEU"></td>
-                  <td><input class="form-check-input" type="checkbox" data-day="T6" data-shift-id="CA_CHIEU"></td>
-                  <td><input class="form-check-input" type="checkbox" data-day="T7" data-shift-id="CA_CHIEU"></td>
-                  <td><input class="form-check-input" type="checkbox" data-day="CN" data-shift-id="CA_CHIEU"></td>
-                </tr>
-                <tr>
-                  <td class="shift-label">Ca Tối (18:00 - 22:00)</td>
-                  <td><input class="form-check-input" type="checkbox" data-day="T2" data-shift-id="CA_TOI"></td>
-                  <td><input class="form-check-input" type="checkbox" data-day="T3" data-shift-id="CA_TOI"></td>
-                  <td><input class="form-check-input" type="checkbox" data-day="T4" data-shift-id="CA_TOI"></td>
-                  <td><input class="form-check-input" type="checkbox" data-day="T5" data-shift-id="CA_TOI"></td>
-                  <td><input class="form-check-input" type="checkbox" data-day="T6" data-shift-id="CA_TOI"></td>
-                  <td><input class="form-check-input" type="checkbox" data-day="T7" data-shift-id="CA_TOI"></td>
-                  <td><input class="form-check-input" type="checkbox" data-day="CN" data-shift-id="CA_TOI"></td>
-                </tr>
-              </tbody>
-            </table>
+          <h3 class="tile-title">Thông tin Khách hàng (nguyenvana)</h3>
+          <div class="tile-body">
+            <div class="row">
+              <div class="col-md-6">
+                <p><strong>Tên Khách Hàng:</strong> Nguyễn Văn A</p>
+                <p><strong>Số Điện Thoại:</strong> 090xxxx123</p>
+              </div>
+              <div class="col-md-6">
+                <p><strong>Email:</strong> nguyenvana@gmail.com</p>
+                <p><strong>Địa chỉ:</strong> 123 Đường ABC, Q.1, TP. HCM</p>
+              </div>
+            </div>
+            <hr>
+            <p><strong>Thẻ Thành Viên:</strong> Hạng <span class="badge bg-warning">Gold</span> - <strong>1500
+                điểm</strong> (Ngày cấp: 01/01/2025)</p>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="col-md-4">
+    <div class="row">
+      <div class="col-md-12">
         <div class="tile">
-          <h3 class="tile-title">Thông tin Nhân viên</h3>
-          <p>Dữ liệu sẽ được lưu vào bảng <strong>NhanVien</strong></p>
-          <div class="tile-body">
-            <form>
+          <h3 class="tile-title">Danh sách Hoá đơn đã mua</h3>
 
-              <div class="avatar-upload-container">
-                <img class="avatar-preview" id="avatarPreview" src="https://via.placeholder.com/128?text=Avatar"
-                  alt="Avatar">
-                <input class="avatar-edit-input" type="file" id="avatarUpload" accept=".png, .jpg, .jpeg">
-                <label class="avatar-edit-label" for="avatarUpload"><i class="bi bi-camera-fill"></i></label>
-              </div>
+          <div class="accordion" id="historyAccordion">
 
-              <div class="mb-3">
-                <label class="form-label">Họ và tên</label>
-                <input class="form-control" type="text" placeholder="V.d: Nguyễn Văn A">
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label">Giới tính</label>
-                <div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gioiTinh" id="radioNam" value="Nam" checked>
-                    <label class="form-check-label" for="radioNam">Nam</label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gioiTinh" id="radioNu" value="Nu">
-                    <label class="form-check-label" for="radioNu">Nữ</label>
-                  </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                  aria-expanded="true" aria-controls="collapseOne">
+                  <strong>Mã Hoá Đơn: HD001</strong> &nbsp; | &nbsp; Ngày mua: 01/11/2025 &nbsp; | &nbsp; <span
+                    class="ms-auto fw-bold text-primary">Tổng tiền: 150,000 đ</span>
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                data-bs-parent="#historyAccordion">
+                <div class="accordion-body">
+                  <h5 class="mb-3">Chi tiết hoá đơn HD001 (Bảng ChiTietHoaDon )</h5>
+                  <table class="table table-sm table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Đơn giá</th>
+                        <th>Thành tiền</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Sting Dâu (Chai)</td>
+                        <td>2</td>
+                        <td>10,000 đ</td>
+                        <td>20,000 đ</td>
+                      </tr>
+                      <tr>
+                        <td>Bánh Chocopie (Hộp)</td>
+                        <td>1</td>
+                        <td>55,000 đ</td>
+                        <td>55,000 đ</td>
+                      </tr>
+                      <tr>
+                        <td>Thịt gà công nghiệp (KG)</td>
+                        <td>1</td>
+                        <td>75,000 đ</td>
+                        <td>75,000 đ</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
-              <div class="mb-3">
-                <label class="form-label">Chức vụ</label>
-                <select class="form-select" id="select-chuc-vu">
-                  <option value="Admin">Admin</option>
-                  <option value="QuanLy">Quản lí</option>
-                  <option value="NhanVien">Nhân viên</option>
-                </select>
-              </div>
+            </div>
 
-              <div class="mb-3">
-                <label class="form-label">Lương cơ bản</label>
-                <input class="form-control" type="number" placeholder="V.d: 5000000">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <strong>Mã Hoá Đơn: HD002</strong> &nbsp; | &nbsp; Ngày mua: 28/10/2025 &nbsp; | &nbsp; <span
+                    class="ms-auto fw-bold text-primary">Tổng tiền: 38,000 đ</span>
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                data-bs-parent="#historyAccordion">
+                <div class="accordion-body">
+                  <h5 class="mb-3">Chi tiết hoá đơn HD002 (Bảng ChiTietHoaDon )</h5>
+                  <table class="table table-sm table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Đơn giá</th>
+                        <th>Thành tiền</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Sữa tươi TH True Milk (Lốc 4)</td>
+                        <td>1</td>
+                        <td>38,000 đ</td>
+                        <td>38,000 đ</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
+            </div>
 
-              <div class="mb-3">
-                <label class="form-label">Số điện thoại</label>
-                <input class="form-control" type="tel" placeholder="V.d: 090xxxx123">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <strong>Mã Hoá Đơn: HD003</strong> &nbsp; | &nbsp; Ngày mua: 15/09/2025 &nbsp; | &nbsp; <span
+                    class="ms-auto fw-bold text-primary">Tổng tiền: 65,000 đ</span>
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                data-bs-parent="#historyAccordion">
+                <div class="accordion-body">
+                  <h5 class="mb-3">Chi tiết hoá đơn HD003 (Bảng ChiTietHoaDon )</h5>
+                  <table class="table table-sm table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Đơn giá</th>
+                        <th>Thành tiền</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Cá hồi Na Uy (Fillet)</td>
+                        <td>1</td>
+                        <td>65,000 đ</td>
+                        <td>65,000 đ</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
+            </div>
 
-              <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input class="form-control" type="email" placeholder="V.d: example@gmail.com">
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label">Địa chỉ</label>
-                <input class="form-control" type="text" placeholder="V.d: 123 Nguyễn Huệ, Q.1">
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label">Ngày vào làm</label>
-                <input class="form-control" type="date">
-              </div>
-
-              <div class="mb-3">
-                <label class="form-label">Trạng thái</label>
-                <select class="form-select" id="select-trang-thai">
-                  <option value="DangLam">Đang làm</option>
-                  <option value="NghiPhep">Nghỉ phép</option>
-                  <option value="DaNghi">Đã nghỉ</option>
-                </select>
-              </div>
-
-            </form>
           </div>
-          <div class="tile-footer">
-            <button class="btn btn-primary" type="button"><i class="bi bi-check-circle-fill me-2"></i>Thêm
-              mới</button>&nbsp;&nbsp;&nbsp;
-            <a class="btn btn-secondary" href="#"><i class="bi bi-x-circle-fill me-2"></i>Huỷ</a>
+        </div>
+                <div class="tile">
+          <h3 class="tile-title">Danh sách Hoá đơn đã mua</h3>
+
+          <div class="accordion" id="historyAccordion">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                  aria-expanded="true" aria-controls="collapseOne">
+                  <strong>Mã Hoá Đơn: HD001</strong> &nbsp; | &nbsp; Ngày mua: 01/11/2025 &nbsp; | &nbsp; <span
+                    class="ms-auto fw-bold text-primary">Tổng tiền: 150,000 đ</span>
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                data-bs-parent="#historyAccordion">
+                <div class="accordion-body">
+                  <h5 class="mb-3">Chi tiết hoá đơn HD001 (Bảng ChiTietHoaDon )</h5>
+                  <table class="table table-sm table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Đơn giá</th>
+                        <th>Thành tiền</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Sting Dâu (Chai)</td>
+                        <td>2</td>
+                        <td>10,000 đ</td>
+                        <td>20,000 đ</td>
+                      </tr>
+                      <tr>
+                        <td>Bánh Chocopie (Hộp)</td>
+                        <td>1</td>
+                        <td>55,000 đ</td>
+                        <td>55,000 đ</td>
+                      </tr>
+                      <tr>
+                        <td>Thịt gà công nghiệp (KG)</td>
+                        <td>1</td>
+                        <td>75,000 đ</td>
+                        <td>75,000 đ</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <strong>Mã Hoá Đơn: HD002</strong> &nbsp; | &nbsp; Ngày mua: 28/10/2025 &nbsp; | &nbsp; <span
+                    class="ms-auto fw-bold text-primary">Tổng tiền: 38,000 đ</span>
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                data-bs-parent="#historyAccordion">
+                <div class="accordion-body">
+                  <h5 class="mb-3">Chi tiết hoá đơn HD002 (Bảng ChiTietHoaDon )</h5>
+                  <table class="table table-sm table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Đơn giá</th>
+                        <th>Thành tiền</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Sữa tươi TH True Milk (Lốc 4)</td>
+                        <td>1</td>
+                        <td>38,000 đ</td>
+                        <td>38,000 đ</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <strong>Mã Hoá Đơn: HD003</strong> &nbsp; | &nbsp; Ngày mua: 15/09/2025 &nbsp; | &nbsp; <span
+                    class="ms-auto fw-bold text-primary">Tổng tiền: 65,000 đ</span>
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                data-bs-parent="#historyAccordion">
+                <div class="accordion-body">
+                  <h5 class="mb-3">Chi tiết hoá đơn HD003 (Bảng ChiTietHoaDon )</h5>
+                  <table class="table table-sm table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Đơn giá</th>
+                        <th>Thành tiền</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Cá hồi Na Uy (Fillet)</td>
+                        <td>1</td>
+                        <td>65,000 đ</td>
+                        <td>65,000 đ</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -426,14 +552,18 @@
 
 
 
+
+
   <!-- Essential javascripts for application to work-->
   <script src="../assets/lib/jquery/jquery-3.7.0.min.js"></script>
   <script src="../assets/lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="../assets/lib/select2/dist/js/select2.full.min.js"></script>
   <script src="../assets/lib/bootstrap/js/main.js"></script>
-
+  <!-- Page specific javascripts-->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
   <!-- js riêng ở đây nha! -->
-  <script src="../assets/js/ThemNhanSu.js"></Script>
+
+
+
 </body>
 
 </html>

@@ -1,0 +1,29 @@
+.info-group {
+    margin-bottom: 1.25rem;
+  }
+  .info-group label {
+    font-weight: bold;
+    color: #555;
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+  }
+  .info-group p {
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  /* CSS cho cột chênh lệch */
+  .chenh-lech-am {
+    color: #dc3545; /* Đỏ */
+    font-weight: bold;
+  }
+  .chenh-lech-duong {
+    color: #198754; /* Xanh lá */
+    font-weight: bold;
+  }
+  .chenh-lech-khop {
+    color: #6c757d; /* Xám */
+  }

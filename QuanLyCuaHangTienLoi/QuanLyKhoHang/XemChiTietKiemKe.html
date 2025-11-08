@@ -25,10 +25,10 @@
   <!-- Font-icon css-->
   <link rel="stylesheet" type="text/css"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link rel="stylesheet" type="text/css" href="../assets/css/base.css" />
     <link rel="stylesheet" href="../assets/lib/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/base.css" />
   <!-- Css riêng ở đây nha -->
-
+<link rel="stylesheet" href="../assets/css/XemChiTietKiemKe.css">
 </head>
 
 <body class="app sidebar-mini">
@@ -259,147 +259,104 @@
 
 
 
-
-  
-    <main class="app-content">
-      <div class="app-title">
-        <div>
-          <h1><i class="bi bi-receipt-cutoff"></i> Quản lý Hoá Đơn</h1>
-          <p>Quản lý và tra cứu lịch sử các đơn hàng/hoá đơn đã bán</p>
-        </div>
-        <ul class="app-breadcrumb breadcrumb side">
-          <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-          <li class="breadcrumb-item active">
-            <a href="#">Quản lý Hoá đơn</a>
-          </li>
-        </ul>
+<main class="app-content">
+    <div class="app-title">
+      <div>
+        <h1><i class="bi bi-clipboard-check"></i> Chi Tiết Phiếu Kiểm Kê</h1>
+        <p>Thông tin chi tiết của phiếu kiểm kê KK001</p>
       </div>
+      <ul class="app-breadcrumb breadcrumb">
+        <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
+        <li class="breadcrumb-item"><a href="#">Quản lý kho</a></li>
+        <li class="breadcrumb-item"><a href="#">Kiểm kê sản phẩm</a></li>
+        <li class="breadcrumb-item"><a href="#">Chi tiết</a></li>
+      </ul>
+    </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="tile">
-            <div class="tile-body">
-              <div class="row mb-3">
-                <div class="col-md-3">
-                  <label class="form-label">Từ ngày</label>
-                  <input class="form-control" type="date" />
-                </div>
-                <div class="col-md-3">
-                  <label class="form-label">Đến ngày</label>
-                  <input class="form-control" type="date" />
-                </div>
-                <div class="col-md-3">
-                  <label class="form-label">Trạng thái</label>
-                  <select class="form-select">
-                    <option value="">Tất cả trạng thái</option>
-                    <option value="DaThanhToan">Đã Thanh Toán</option>
-                    <option value="ChuaThanhToan">Chưa Thanh Toán</option>
-                    <option value="Huy">Đã Hủy</option>
-                  </select>
-                </div>
-                <div class="col-md-3 d-flex align-items-end">
-                  <button class="btn btn-primary btn-add-khoi" type="button">
-                    <i class="fas fa-filter"></i> Lọc
-                  </button>
-                </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tile">
+          
+          <h3 class="tile-title">Thông tin Phiếu Kiểm Kê (KK001)</h3>
+          <div class="tile-body">
+            <div class="row">
+              
+              <div class="col-md-4 info-group">
+                <label>Mã Phiếu Kiểm Kê (id)</label>
+                <p>KK001</p>
               </div>
+              <div class="col-md-4 info-group">
+                <label>Ngày Kiểm Kê (ngayKiemKe)</label>
+                <p>01/11/2025</p>
+              </div>
+              <div class="col-md-4 info-group">
+                <label>Nhân Viên Thực Hiện (nhanVienId)</label>
+                <p>John Doe (NV001)</p>
+              </div>
+              
+            </div>
+          </div>
+          
+          <hr>
 
-              <div class="table-responsive">
-                <table
-                  class="table table-hover table-bordered"
-                  id="sampleTable"
-                >
-                  <thead>
-                    <tr>
-                      <th>Mã Hóa Đơn</th>
-                      <th>Ngày Lập</th>
-                      <th>Nhân Viên Lập</th>
-                      <th>Khách Hàng</th>
-                      <th>Tổng Tiền</th>
-                      <th>Trạng Thái</th>
-                      <th class="text-center">Thao tác</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>HD001</td>
-                      <td>02/11/2025, 14:30</td>
-                      <td>John Doe</td>
-                      <td>Khách lẻ</td>
-                      <td>151,000 đ</td>
-                      <td>
-                        <span class="badge bg-success">Đã Thanh Toán</span>
-                      </td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm me-1 btn-edit-khoi "
-                          href="../QuanLyDonHang/XemChiTietHoaDon.html"
-                          title="Xem chi tiết"
-                        >
-                          <i class="fas fa-eye"></i>
-                        </a>
-                        <a
-                          class="btn btn-secondary btn-sm"
-                          href="#"
-                          title="In hóa đơn"
-                        >
-                          <i class="fas fa-print"></i>
-                        </a>
-                      </td>
-                    </tr>
+          <h3 class="tile-title">Chi Tiết Sản Phẩm Đã Kiểm Kê</h3>
+          <div class="tile-body">
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Sản phẩm (sanPhamDonViID)</th>
+                    <th class="text-end">Tồn Hệ Thống (Từ TonKho)</th>
+                    <th class="text-end">Tồn Thực Tế (Đếm được)</th>
+                    <th class="text-end">Chênh Lệch</th>
+                    <th>Kết Quả (ketQua)</th>
+                  </tr>
+                </thead>
+                <tbody id="chi-tiet-kiem-ke-body">
+                  <tr>
+                    <td>1</td>
+                    <td>Sữa TH True Milk (Hộp 1L) (SPDV_005)</td>
+                    <td class="text-end">100</td>
+                    <td class="text-end">98</td>
+                    <td class="text-end chenh-lech-am">-2</td>
+                    <td>Lệch 2</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Thịt gà C.P (Khay 500g) (SPDV_006)</td>
+                    <td class="text-end">50</td>
+                    <td class="text-end">51</td>
+                    <td class="text-end chenh-lech-duong">+1</td>
+                    <td>Thừa 1</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Sting Dâu (Chai 330ml) (SPDV_001)</td>
+                    <td class="text-end">150</td>
+                    <td class="text-end">150</td>
+                    <td class="text-end chenh-lech-khop">0</td>
+                    <td>Khớp</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
 
-                    <tr>
-                      <td>HD002</td>
-                      <td>02/11/2025, 10:15</td>
-                      <td>Jane Smith</td>
-                      <td>Nguyễn Văn A</td>
-                      <td>50,000 đ</td>
-                      <td><span class="badge bg-danger">Đã Hủy</span></td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm"
-                          href="../QuanLyDonHang/XemChiTietHoaDon.html"
-                          title="Xem chi tiết"
-                        >
-                          <i class="fas fa-eye"></i>
-                        </a>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>HD003</td>
-                      <td>01/11/2025, 08:05</td>
-                      <td>John Doe</td>
-                      <td>Trần Thị B</td>
-                      <td>12,000 đ</td>
-                      <td>
-                        <span class="badge bg-warning">Chưa Thanh Toán</span>
-                      </td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm me-1 btn-edit-khoi "
-                          href="../QuanLyDonHang/XemChiTietHoaDon.html"
-                          title="Xem chi tiết"
-                        >
-                          <i class="fas fa-eye"></i>
-                        </a>
-                        <a
-                          class="btn btn-secondary btn-sm"
-                          href="#"
-                          title="In hóa đơn"
-                        >
-                          <i class="fas fa-print"></i>
-                        </a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+          <div class="tile-footer">
+            <div class="d-flex justify-content-end">
+              <div>
+                <a class="btn btn-secondary" href="KiemKeSanPham.html"><i class="bi bi-x-circle-fill me-2"></i>Quay lại</a>
+                <button class="btn btn-primary" type="button" onclick="window.print();">
+                  <i class="bi bi-printer-fill me-2"></i>In Phiếu
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
 
 

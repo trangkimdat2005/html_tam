@@ -1,0 +1,17 @@
+    /* CSS cho cột chênh lệch */
+    .chenh-lech-am {
+        color: #dc3545;
+        /* Đỏ */
+        font-weight: bold;
+    }
+
+    .chenh-lech-duong {
+        color: #198754;
+        /* Xanh lá */
+        font-weight: bold;
+    }
+
+    .chenh-lech-khop {
+        color: #6c757d;
+        /* Xám */
+    }

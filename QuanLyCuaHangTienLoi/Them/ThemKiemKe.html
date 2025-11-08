@@ -25,10 +25,11 @@
   <!-- Font-icon css-->
   <link rel="stylesheet" type="text/css"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../assets/lib/fontawesome/css/all.min.css" />
   <link rel="stylesheet" type="text/css" href="../assets/css/base.css" />
-    <link rel="stylesheet" href="../assets/lib/fontawesome/css/all.min.css" />
   <!-- Css riêng ở đây nha -->
-
+     <link rel="stylesheet" href="../assets/lib/select2/dist/css/select2.min.css">
+     <link rel="stylesheet" href="../assets/css/ThemKiemKe.css">
 </head>
 
 <body class="app sidebar-mini">
@@ -118,21 +119,25 @@
       </div>
     </div>
     <ul class="app-menu">
-      <li><a class="app-menu__item  " href=" /QuanLyCuaHangTienLoi/index.html"><i class="app-menu__icon bi bi-speedometer"></i><span
-            class="app-menu__label">Bảng điều khiển</span></a></li>
+      <li><a class="app-menu__item  " href=" /QuanLyCuaHangTienLoi/index.html"><i
+            class="app-menu__icon bi bi-speedometer"></i><span class="app-menu__label">Bảng điều khiển</span></a></li>
 
       <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
             class="app-menu__icon bi bi-bar-chart-steps"></i><span class="app-menu__label">Quản lý hàng hoá</span><i
             class="treeview-indicator bi bi-chevron-right"></i></a>
         <ul class="treeview-menu">
-          <li><a class="treeview-item space-first-right-khoi" href="../QuanLyHangHoa/DanhSachSanPham.html"></i> Danh sách sản
+          <li><a class="treeview-item space-first-right-khoi" href="../QuanLyHangHoa/DanhSachSanPham.html"></i> Danh
+              sách sản
               phẩm</a></li>
-          <li><a class="treeview-item space-first-right-khoi" href="../QuanLyHangHoa/DanhSachDanhMuc.html" 
+          <li><a class="treeview-item space-first-right-khoi" href="../QuanLyHangHoa/DanhSachDanhMuc.html"
               rel="noopener"></i> Quản lý danh mục</a></li>
-          <li><a class="treeview-item space-first-right-khoi" href="../QuanLyHangHoa/DanhSachNhanHieu.html"> Danh sách nhãn
+          <li><a class="treeview-item space-first-right-khoi" href="../QuanLyHangHoa/DanhSachNhanHieu.html"> Danh sách
+              nhãn
               hiệu</a></li>
-          <li><a class="treeview-item space-first-right-khoi" href="../QuanLyHangHoa/DanhSachDonVi.html"> </i> Các đơn vị</a></li>
-          <li><a class="treeview-item space-first-right-khoi" href="../QuanLyHangHoa/LichSuGiaBan.html"> </i> Lịch sử giá
+          <li><a class="treeview-item space-first-right-khoi" href="../QuanLyHangHoa/DanhSachDonVi.html"> </i> Các đơn
+              vị</a></li>
+          <li><a class="treeview-item space-first-right-khoi" href="../QuanLyHangHoa/LichSuGiaBan.html"> </i> Lịch sử
+              giá
               bán</a></li>
         </ul>
       </li>
@@ -145,11 +150,13 @@
             class="app-menu__icon bi-person-circle"></i><span class="app-menu__label">Quản lý nhân sự</span><i
             class="treeview-indicator bi bi-chevron-right"></i></a>
         <ul class="treeview-menu">
-          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyNhanSu/DanhSachNhanVien.html"> </i> Danh sách
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyNhanSu/DanhSachNhanVien.html"> </i> Danh
+              sách
               nhân viên</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyNhanSu/LichLamViec.html" 
-              rel="noopener"> </i> Lịch làm việc</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyNhanSu/PhanCongCaLamViec.html"> </i> Phân công
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyNhanSu/LichLamViec.html" rel="noopener">
+              </i> Lịch làm việc</a></li>
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyNhanSu/PhanCongCaLamViec.html"> </i> Phân
+              công
               ca làm việc</a></li>
         </ul>
       </li>
@@ -158,24 +165,27 @@
             class="app-menu__icon bi bi-people"></i><span class="app-menu__label">Quản lý khách hàng</span><i
             class="treeview-indicator bi bi-chevron-right"></i></a>
         <ul class="treeview-menu">
-          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhachHang/DanhSachKhachHang.html"> </i> Danh sách khách
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhachHang/DanhSachKhachHang.html"> </i>
+              Danh sách khách
               hàng</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhachHang/TheThanhVien.html" 
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhachHang/TheThanhVien.html"
               rel="noopener"> </i> Thẻ thành viên</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhachHang/LichSuMuaHang.html"> </i> Lịch sử mua hàng</a></li>
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhachHang/LichSuMuaHang.html"> </i> Lịch
+              sử mua hàng</a></li>
         </ul>
       </li>
 
-      <li><a class="app-menu__item  " href="../QuanLyKhuyenMai/KhuyenMai.html"><i class="app-menu__icon bi bi-percent"></i><span
-            class="app-menu__label">Quản lý khuyến mãi</span></a></li>
+      <li><a class="app-menu__item  " href="../QuanLyKhuyenMai/KhuyenMai.html"><i
+            class="app-menu__icon bi bi-percent"></i><span class="app-menu__label">Quản lý khuyến mãi</span></a></li>
 
       <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
             class="app-menu__icon bi bi-microsoft-teams"></i><span class="app-menu__label">Quản lý nhà cung cấp</span><i
             class="treeview-indicator bi bi-chevron-right"></i></a>
         <ul class="treeview-menu">
-          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyNhaCungCap/DanhSachNhaCungCap.html"> </i> Danh sách các nhà
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyNhaCungCap/DanhSachNhaCungCap.html"> </i>
+              Danh sách các nhà
               cung cấp</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyNhaCungCap/LichSuGiaoDich.html" 
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyNhaCungCap/LichSuGiaoDich.html"
               rel="noopener"> </i> Lịch sử giao dịch</a></li>
         </ul>
       </li>
@@ -184,15 +194,16 @@
             class="app-menu__icon bi bi-shop-window"></i><span class="app-menu__label">Quản lý kho hàng</span><i
             class="treeview-indicator bi bi-chevron-right"></i></a>
         <ul class="treeview-menu">
-          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhoHang/DanhSachPhieuNhap.html"> </i> Danh sách phiếu
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhoHang/DanhSachPhieuNhap.html"> </i> Danh
+              sách phiếu
               nhập</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhoHang/DanhSachPhieuXuat.html" 
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhoHang/DanhSachPhieuXuat.html"
               rel="noopener"> </i> Danh sách phiếu xuất</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhoHang/ViTriSanPham.html" 
-              rel="noopener"> </i> Vị trí sản phẩm</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhoHang/DanhSachHangTonKho.html" 
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhoHang/ViTriSanPham.html" rel="noopener">
+              </i> Vị trí sản phẩm</a></li>
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhoHang/DanhSachHangTonKho.html"
               rel="noopener"> </i> Danh sách hàng tồn kho</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhoHang/KiemKeSanPham.html" 
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyKhoHang/KiemKeSanPham.html"
               rel="noopener"> </i> Kiểm kê sản phẩm</a></li>
         </ul>
       </li>
@@ -201,27 +212,30 @@
             class="app-menu__icon bi bi-building"></i><span class="app-menu__label">Phân tích & Báo cáo</span><i
             class="treeview-indicator bi bi-chevron-right"></i></a>
         <ul class="treeview-menu">
-          <li><a class=" treeview-item space-first-right-khoi" href="../PhanTichBaoCao/BaoCaoDoanhThu.html"> </i> Báo cáo doanh
+          <li><a class=" treeview-item space-first-right-khoi" href="../PhanTichBaoCao/BaoCaoDoanhThu.html"> </i> Báo
+              cáo doanh
               thu</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="../PhanTichBaoCao/BaoCaoBanChay.html" 
+          <li><a class=" treeview-item space-first-right-khoi" href="../PhanTichBaoCao/BaoCaoBanChay.html"
               rel="noopener"> </i> Báo cáo bán chạy</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="../PhanTichBaoCao/BaoCaoTonKho.html" 
+          <li><a class=" treeview-item space-first-right-khoi" href="../PhanTichBaoCao/BaoCaoTonKho.html"
               rel="noopener"> </i> Báo cáo tồn kho</a></li>
         </ul>
       </li>
 
-      <li><a class="app-menu__item  " href="../QuanLyDonHang/DanhSachDonHang.html"><i class="app-menu__icon bi bi-card-checklist"></i><span
-            class="app-menu__label">Danh sách đơn hàng</span></a></li>
+      <li><a class="app-menu__item  " href="../QuanLyDonHang/DanhSachDonHang.html"><i
+            class="app-menu__icon bi bi-card-checklist"></i><span class="app-menu__label">Danh sách đơn hàng</span></a>
+      </li>
 
       <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
             class="app-menu__icon bi bi-shield-exclamation"></i><span class="app-menu__label">Quản lý bảo mật</span><i
             class="treeview-indicator bi bi-chevron-right"></i></a>
         <ul class="treeview-menu">
-          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyBaoMat/DanhSachTaiKhoanNhanVien.html"> </i> Tài khoản nhân
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyBaoMat/DanhSachTaiKhoanNhanVien.html">
+              </i> Tài khoản nhân
               viên</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyBaoMat/DanhSachTaiKhoanKhachHang.html" 
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyBaoMat/DanhSachTaiKhoanKhachHang.html"
               rel="noopener"> </i> Tài khoản khách hàng</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyBaoMat/DanhSachTaiKhoan.html" 
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyBaoMat/DanhSachTaiKhoan.html"
               rel="noopener"> </i> Quản lý quyền</a></li>
         </ul>
       </li>
@@ -230,9 +244,10 @@
             class="app-menu__icon bi bi-upc-scan"></i><span class="app-menu__label">Quản lý barcode</span><i
             class="treeview-indicator bi bi-chevron-right"></i></a>
         <ul class="treeview-menu">
-          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyBarCode/DinhDanhSanPham.html"> </i> Định danh sản
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyBarCode/DinhDanhSanPham.html"> </i> Định
+              danh sản
               phẩm</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyBarCode/DanhSachTemNhan.html" 
+          <li><a class=" treeview-item space-first-right-khoi" href="../QuanLyBarCode/DanhSachTemNhan.html"
               rel="noopener"> </i> Danh sách tem nhãn</a></li>
         </ul>
       </li>
@@ -241,16 +256,17 @@
             class="app-menu__icon bi bi-cash-coin"></i><span class="app-menu__label">Giao dịch & hoàn trả</span><i
             class="treeview-indicator bi bi-chevron-right"></i></a>
         <ul class="treeview-menu">
-          <li><a class=" treeview-item space-first-right-khoi" href="../GiaoDichHoanTra/GiaoDichThanhToan.html"> </i> Giao dịch thanh
+          <li><a class=" treeview-item space-first-right-khoi" href="../GiaoDichHoanTra/GiaoDichThanhToan.html"> </i>
+              Giao dịch thanh
               toán</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="../GiaoDichHoanTra/PhieuDoiTra.html" 
+          <li><a class=" treeview-item space-first-right-khoi" href="../GiaoDichHoanTra/PhieuDoiTra.html"
               rel="noopener"> </i> Phiếu đổi trả</a></li>
-          <li><a class=" treeview-item space-first-right-khoi" href="../GiaoDichHoanTra/ChinhSachDoiTra.html" 
+          <li><a class=" treeview-item space-first-right-khoi" href="../GiaoDichHoanTra/ChinhSachDoiTra.html"
               rel="noopener"></i> Chính sách hoàn trả</a></li>
         </ul>
       </li>
-      <li><a class="app-menu__item  " href="../ThanhToan/ThanhToan.html"><i class="app-menu__icon bi bi-wallet"></i><span
-            class="app-menu__label">Thanh toán</span></a></li>
+      <li><a class="app-menu__item  " href="../ThanhToan/ThanhToan.html"><i
+            class="app-menu__icon bi bi-wallet"></i><span class="app-menu__label">Thanh toán</span></a></li>
     </ul>
   </aside>
   <!-- Main sidebar ở đây nha -->
@@ -260,146 +276,110 @@
 
 
 
-  
-    <main class="app-content">
-      <div class="app-title">
-        <div>
-          <h1><i class="bi bi-receipt-cutoff"></i> Quản lý Hoá Đơn</h1>
-          <p>Quản lý và tra cứu lịch sử các đơn hàng/hoá đơn đã bán</p>
-        </div>
-        <ul class="app-breadcrumb breadcrumb side">
-          <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-          <li class="breadcrumb-item active">
-            <a href="#">Quản lý Hoá đơn</a>
-          </li>
-        </ul>
+  <main class="app-content">
+    <div class="app-title">
+      <div>
+        <h1><i class="bi bi-clipboard-plus"></i> Tạo Phiếu Kiểm Kê Kho</h1>
+        <p>Lập phiếu ghi nhận số lượng tồn kho thực tế</p>
       </div>
+      <ul class="app-breadcrumb breadcrumb">
+        <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
+        <li class="breadcrumb-item"><a href="#">Quản lý kho</a></li>
+        <li class="breadcrumb-item"><a href="#">Kiểm kê sản phẩm</a></li>
+        <li class="breadcrumb-item"><a href="#">Tạo phiếu mới</a></li>
+      </ul>
+    </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="tile">
-            <div class="tile-body">
-              <div class="row mb-3">
-                <div class="col-md-3">
-                  <label class="form-label">Từ ngày</label>
-                  <input class="form-control" type="date" />
-                </div>
-                <div class="col-md-3">
-                  <label class="form-label">Đến ngày</label>
-                  <input class="form-control" type="date" />
-                </div>
-                <div class="col-md-3">
-                  <label class="form-label">Trạng thái</label>
-                  <select class="form-select">
-                    <option value="">Tất cả trạng thái</option>
-                    <option value="DaThanhToan">Đã Thanh Toán</option>
-                    <option value="ChuaThanhToan">Chưa Thanh Toán</option>
-                    <option value="Huy">Đã Hủy</option>
-                  </select>
-                </div>
-                <div class="col-md-3 d-flex align-items-end">
-                  <button class="btn btn-primary btn-add-khoi" type="button">
-                    <i class="fas fa-filter"></i> Lọc
-                  </button>
-                </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tile">
+
+          <h3 class="tile-title">Thông Tin Chung</h3>
+          <div class="tile-body">
+            <div class="row">
+              <div class="col-md-6">
+                <label class="form-label">Nhân viên thực hiện (nhanVienId)</label>
+                <select class="form-control" id="select-nhan-vien">
+                  <option value="">-- Chọn nhân viên --</option>
+                  <option value="NV001">Nguyễn Văn A (Quản lý)</option>
+                  <option value="NV002" selected>Trần Thị B (Nhân viên kho)</option>
+                  <option value="NV003">John Doe (Nhân viên kho)</option>
+                </select>
               </div>
 
-              <div class="table-responsive">
-                <table
-                  class="table table-hover table-bordered"
-                  id="sampleTable"
-                >
-                  <thead>
-                    <tr>
-                      <th>Mã Hóa Đơn</th>
-                      <th>Ngày Lập</th>
-                      <th>Nhân Viên Lập</th>
-                      <th>Khách Hàng</th>
-                      <th>Tổng Tiền</th>
-                      <th>Trạng Thái</th>
-                      <th class="text-center">Thao tác</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>HD001</td>
-                      <td>02/11/2025, 14:30</td>
-                      <td>John Doe</td>
-                      <td>Khách lẻ</td>
-                      <td>151,000 đ</td>
-                      <td>
-                        <span class="badge bg-success">Đã Thanh Toán</span>
-                      </td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm me-1 btn-edit-khoi "
-                          href="../QuanLyDonHang/XemChiTietHoaDon.html"
-                          title="Xem chi tiết"
-                        >
-                          <i class="fas fa-eye"></i>
-                        </a>
-                        <a
-                          class="btn btn-secondary btn-sm"
-                          href="#"
-                          title="In hóa đơn"
-                        >
-                          <i class="fas fa-print"></i>
-                        </a>
-                      </td>
-                    </tr>
+              <div class="col-md-6">
+                <label class="form-label">Ngày Kiểm Kê (ngayKiemKe)</label>
+                <input class="form-control" type="date" id="input-ngay-kiem-ke">
+              </div>
+            </div>
+          </div>
 
-                    <tr>
-                      <td>HD002</td>
-                      <td>02/11/2025, 10:15</td>
-                      <td>Jane Smith</td>
-                      <td>Nguyễn Văn A</td>
-                      <td>50,000 đ</td>
-                      <td><span class="badge bg-danger">Đã Hủy</span></td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm"
-                          href="../QuanLyDonHang/XemChiTietHoaDon.html"
-                          title="Xem chi tiết"
-                        >
-                          <i class="fas fa-eye"></i>
-                        </a>
-                      </td>
-                    </tr>
+          <hr>
 
-                    <tr>
-                      <td>HD003</td>
-                      <td>01/11/2025, 08:05</td>
-                      <td>John Doe</td>
-                      <td>Trần Thị B</td>
-                      <td>12,000 đ</td>
-                      <td>
-                        <span class="badge bg-warning">Chưa Thanh Toán</span>
-                      </td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm me-1 btn-edit-khoi "
-                          href="../QuanLyDonHang/XemChiTietHoaDon.html"
-                          title="Xem chi tiết"
-                        >
-                          <i class="fas fa-eye"></i>
-                        </a>
-                        <a
-                          class="btn btn-secondary btn-sm"
-                          href="#"
-                          title="In hóa đơn"
-                        >
-                          <i class="fas fa-print"></i>
-                        </a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+          <h3 class="tile-title">Chi Tiết Sản Phẩm Kiểm Kê</h3>
+          <div class="tile-body">
+            <div class="row mb-3 gx-2">
+              <div class="col-md-4">
+                <label class="form-label">Sản phẩm (sanPhamDonViID)</label>
+                <select class="form-control" id="select-san-pham">
+                  <option value="">-- Tìm theo tên hoặc mã --</option>
+                  <option value="SPDV_001" data-name="Sting Dâu (Chai 330ml)">Sting Dâu (Chai 330ml)</option>
+                  <option value="SPDV_002" data-name="Bánh Chocopie (Hộp 12 cái)">Bánh Chocopie (Hộp 12 cái)</option>
+                  <option value="SPDV_003" data-name="Pepsi Lon (Lon 330ml)">Pepsi Lon (Lon 330ml)</option>
+                  <option value="SPDV_005" data-name="Sữa TH True Milk (Hộp 1L)">Sữa TH True Milk (Hộp 1L)</option>
+                  <option value="SPDV_006" data-name="Thịt gà C.P (Khay 500g)">Thịt gà C.P (Khay 500g)</option>
+                </select>
+              </div>
+
+              <div class="col-md-2">
+                <label class="form-label">Số lượng thực tế</label>
+                <input class="form-control" type="number" id="input-thuc-te" min="0">
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label">Ghi chú (ketQua)</label>
+                <input class="form-control" type="text" id="input-ghi-chu" placeholder="Ghi chú nếu có...">
+              </div>
+
+              <div class="col-md-2 d-flex align-items-end">
+                <button class="btn btn-primary w-100" type="button" id="add-item-btn">
+                  <i class="bi bi-plus-lg"></i> Thêm
+                </button>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Sản phẩm</th>
+                    <th class="text-end">Tồn Hệ Thống</th>
+                    <th class="text-end">Tồn Thực Tế</th>
+                    <th class="text-end">Chênh Lệch</th>
+                    <th>Ghi chú (Kết quả)</th>
+                    <th style="width: 50px;">Xoá</th>
+                  </tr>
+                </thead>
+                <tbody id="kiem-ke-body">
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="tile-footer">
+            <div class="d-flex justify-content-end">
+              <div>
+                <a class="btn btn-secondary" href="#"><i class="bi bi-x-circle-fill me-2"></i>Huỷ</a>
+                <button class="btn btn-primary" type="button" id="btn-save-phieu">
+                  <i class="bi bi-check-circle-fill me-2"></i>Lưu Phiếu Kiểm Kê
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
 
 
@@ -418,8 +398,8 @@
   <!-- Page specific javascripts-->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
   <!-- js riêng ở đây nha! -->
-
-
+  <script src="../assets/lib/select2/dist/js/select2.full.min.js"></script>
+  <script src="../assets/js/ThemKiemKe.js"></script>
 
 </body>
 

@@ -25,9 +25,11 @@
   <!-- Font-icon css-->
   <link rel="stylesheet" type="text/css"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link rel="stylesheet" type="text/css" href="../assets/css/base.css" />
     <link rel="stylesheet" href="../assets/lib/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/base.css" />
   <!-- Css riêng ở đây nha -->
+  <link rel="stylesheet" href="../assets/lib/select2/dist/css/select2.min.css">
+  <link rel="stylesheet" href="../assets/css/SuaTaiKhoan.css">
 
 </head>
 
@@ -259,149 +261,117 @@
 
 
 
-
-  
-    <main class="app-content">
-      <div class="app-title">
-        <div>
-          <h1><i class="bi bi-receipt-cutoff"></i> Quản lý Hoá Đơn</h1>
-          <p>Quản lý và tra cứu lịch sử các đơn hàng/hoá đơn đã bán</p>
-        </div>
-        <ul class="app-breadcrumb breadcrumb side">
-          <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-          <li class="breadcrumb-item active">
-            <a href="#">Quản lý Hoá đơn</a>
-          </li>
-        </ul>
+  <main class="app-content">
+    <div class="app-title">
+      <div>
+        <h1><i class="bi bi-person-lock"></i> Sửa Tài Khoản</h1>
+        <p>Sửa tài khoản truy cập cho nhân viên hoặc khách hàng</p>
       </div>
+      <ul class="app-breadcrumb breadcrumb">
+        <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
+        <li class="breadcrumb-item"><a href="#">Quản lý bảo mật</a></li>
+        <li class="breadcrumb-item"><a href="#">Sửa tài khoản</a></li>
+      </ul>
+    </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="tile">
-            <div class="tile-body">
-              <div class="row mb-3">
-                <div class="col-md-3">
-                  <label class="form-label">Từ ngày</label>
-                  <input class="form-control" type="date" />
-                </div>
-                <div class="col-md-3">
-                  <label class="form-label">Đến ngày</label>
-                  <input class="form-control" type="date" />
-                </div>
-                <div class="col-md-3">
-                  <label class="form-label">Trạng thái</label>
-                  <select class="form-select">
-                    <option value="">Tất cả trạng thái</option>
-                    <option value="DaThanhToan">Đã Thanh Toán</option>
-                    <option value="ChuaThanhToan">Chưa Thanh Toán</option>
-                    <option value="Huy">Đã Hủy</option>
-                  </select>
-                </div>
-                <div class="col-md-3 d-flex align-items-end">
-                  <button class="btn btn-primary btn-add-khoi" type="button">
-                    <i class="fas fa-filter"></i> Lọc
-                  </button>
+    <div class="row">
+      <div class="col-md-10 mx-auto">
+        <div class="tile">
+          <h3 class="tile-title">Thông tin Tài Khoản</h3>
+          <div class="tile-body">
+            <form>
+
+              <div class="mb-3">
+                <label class="form-label">Loại tài khoản</label>
+                <div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="accountType" id="radio-nhan-vien" value="NhanVien" checked>
+                    <label class="form-check-label" for="radio-nhan-vien">Tài khoản Nhân viên</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="accountType" id="radio-khach-hang" value="KhachHang">
+                    <label class="form-check-label" for="radio-khach-hang">Tài khoản Khách hàng</label>
+                  </div>
                 </div>
               </div>
 
-              <div class="table-responsive">
-                <table
-                  class="table table-hover table-bordered"
-                  id="sampleTable"
-                >
-                  <thead>
-                    <tr>
-                      <th>Mã Hóa Đơn</th>
-                      <th>Ngày Lập</th>
-                      <th>Nhân Viên Lập</th>
-                      <th>Khách Hàng</th>
-                      <th>Tổng Tiền</th>
-                      <th>Trạng Thái</th>
-                      <th class="text-center">Thao tác</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>HD001</td>
-                      <td>02/11/2025, 14:30</td>
-                      <td>John Doe</td>
-                      <td>Khách lẻ</td>
-                      <td>151,000 đ</td>
-                      <td>
-                        <span class="badge bg-success">Đã Thanh Toán</span>
-                      </td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm me-1 btn-edit-khoi "
-                          href="../QuanLyDonHang/XemChiTietHoaDon.html"
-                          title="Xem chi tiết"
-                        >
-                          <i class="fas fa-eye"></i>
-                        </a>
-                        <a
-                          class="btn btn-secondary btn-sm"
-                          href="#"
-                          title="In hóa đơn"
-                        >
-                          <i class="fas fa-print"></i>
-                        </a>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>HD002</td>
-                      <td>02/11/2025, 10:15</td>
-                      <td>Jane Smith</td>
-                      <td>Nguyễn Văn A</td>
-                      <td>50,000 đ</td>
-                      <td><span class="badge bg-danger">Đã Hủy</span></td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm"
-                          href="../QuanLyDonHang/XemChiTietHoaDon.html"
-                          title="Xem chi tiết"
-                        >
-                          <i class="fas fa-eye"></i>
-                        </a>
-                      </td>
-                    </tr>
-
-                    <tr>
-                      <td>HD003</td>
-                      <td>01/11/2025, 08:05</td>
-                      <td>John Doe</td>
-                      <td>Trần Thị B</td>
-                      <td>12,000 đ</td>
-                      <td>
-                        <span class="badge bg-warning">Chưa Thanh Toán</span>
-                      </td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm me-1 btn-edit-khoi "
-                          href="../QuanLyDonHang/XemChiTietHoaDon.html"
-                          title="Xem chi tiết"
-                        >
-                          <i class="fas fa-eye"></i>
-                        </a>
-                        <a
-                          class="btn btn-secondary btn-sm"
-                          href="#"
-                          title="In hóa đơn"
-                        >
-                          <i class="fas fa-print"></i>
-                        </a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div class="mb-3" id="field-chon-nhan-vien">
+                <label class="form-label">Chọn Nhân Viên</label>
+                <select class="form-control" id="select-nhan-vien" style="width: 100%;">
+                  <option value="">-- Chọn nhân viên chưa có tài khoản --</option>
+                  <option value="NV001" data-email="vana@store.com">Nguyễn Văn A (Quản lý)</option>
+                  <option value="NV002" data-email="thib@store.com">Trần Thị B (Thu ngân)</option>
+                  <option value="NV003" data-email="vanc@store.com">Lê Văn C (Nhân viên kho)</option>
+                </select>
               </div>
-            </div>
+
+              <div class="mb-3 form-field-hidden" id="field-chon-khach-hang">
+                <label class="form-label">Chọn Khách Hàng</label>
+                <select class="form-control" id="select-khach-hang" style="width: 100%;">
+                  <option value="">-- Chọn khách hàng chưa có tài khoản --</option>
+                  <option value="KH001" data-email="khach1@email.com">Nguyễn Văn B (090xxxx123)</option>
+                  <option value="KH002" data-email="khach2@email.com">Trần Thị D (091xxxx456)</option>
+                </select>
+              </div>
+
+              <hr>
+              <h5 class="mb-3">Thông tin đăng nhập</h5>
+
+              <div class="mb-3">
+                <label class="form-label">Tên đăng nhập</label>
+                <input class="form-control" type="text" placeholder="V.d: vana, thib...">
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input class="form-control" type="email" id="input-email" placeholder="Email sẽ tự động điền khi chọn người dùng">
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label">Mật khẩu</label>
+                    <input class="form-control" type="password">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label class="form-label">Xác nhận Mật khẩu</label>
+                    <input class="form-control" type="password">
+                  </div>
+                </div>
+              </div>
+              
+              <div class="mb-3">
+                <label class="form-label">Trạng thái</label>
+                <select class="form-select" id="select-trang-thai">
+                  <option value="Active">Active (Hoạt động)</option>
+                  <option value="Inactive">Inactive (Không hoạt động)</option>
+                  <option value="Locked">Locked (Đã khoá)</option>
+                </select>
+              </div>
+
+              <div class="mb-3" id="field-chon-quyen">
+                <label class="form-label">Gán Quyền (Roles)</label>
+                <select class="form-control" id="select-quyen" multiple="multiple" style="width: 100%;">
+                  <option value="ADMIN">Admin (Quản trị viên)</option>
+                  <option value="MANAGER">Manager (Quản lý)</option>
+                  <option value="STAFF">Staff (Nhân viên)</option>
+                  <option value="CASHIER">Cashier (Thu ngân)</option>
+                </select>
+              </div>
+
+            </form>
+          </div>
+          <div class="tile-footer">
+            <button class="btn btn-primary" type="button"><i class="bi bi-check-circle-fill me-2"></i>Tạo tài
+              khoản</button>
+            <a class="btn btn-secondary" href="#"><i class="bi bi-x-circle-fill me-2"></i>Huỷ</a>
           </div>
         </div>
       </div>
-    </main>
-
-
+    </div>
+  </main>
 
 
 
@@ -414,13 +384,11 @@
   <!-- Essential javascripts for application to work-->
   <script src="../assets/lib/jquery/jquery-3.7.0.min.js"></script>
   <script src="../assets/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../assets/lib/select2/dist/js/select2.full.min.js"></script>
   <script src="../assets/lib/bootstrap/js/main.js"></script>
-  <!-- Page specific javascripts-->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+
   <!-- js riêng ở đây nha! -->
-
-
-
+  <script src="../assets/js/SuaTaiKhoan.js"></script>
 </body>
 
 </html>

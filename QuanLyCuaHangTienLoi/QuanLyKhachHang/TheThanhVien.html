@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="../assets/lib/fontawesome/css/all.min.css" />
   <link rel="stylesheet" type="text/css" href="../assets/css/base.css" />
   <!-- Css riêng ở đây nha -->
-
+  <link rel="stylesheet" href="../assets/css/TheThanhVien.css">
 </head>
 
 <body class="app sidebar-mini">
@@ -260,124 +260,194 @@
 
 
 
-  
-    <main class="app-content">
-      <div class="app-title">
-        <div>
-          <h1><i class="bi bi-person-badge"></i> Quản lý Thẻ Thành Viên</h1>
-          <p>Quản lý hạng thẻ và điểm tích lũy của khách hàng</p>
-        </div>
-        <ul class="app-breadcrumb breadcrumb side">
-          <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-          <li class="breadcrumb-item">Quản lý khách hàng</li>
-          <li class="breadcrumb-item active"><a href="#">Thẻ thành viên</a></li>
-        </ul>
+  <main class="app-content">
+    <div class="app-title">
+      <div>
+        <h1><i class="bi bi-person-badge"></i> Quản lý Thẻ Thành Viên</h1>
+        <p>Quản lý hạng thẻ và điểm tích lũy của khách hàng</p>
       </div>
+      <ul class="app-breadcrumb breadcrumb side">
+        <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
+        <li class="breadcrumb-item">Quản lý khách hàng</li>
+        <li class="breadcrumb-item active"><a href="#">Thẻ thành viên</a></li>
+      </ul>
+    </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="tile">
-            <div
-              class="tile-title-w-btn d-flex justify-content-between align-items-center"
-            >
-              <h3 class="title" style="margin-bottom: 0">
-                Danh Sách Thẻ Thành Viên
-              </h3>
-              <a class="btn btn-primary btn-add-khoi" href="them-the-thanh-vien.html">
-                <i class="fas fa-plus"></i> Cấp thẻ mới
-              </a>
-            </div>
+    <div class="row" id="main-row-container">
+      
+      <div class="col-md-12" id="list-col">
+        <div class="tile">
+          <div class="tile-title-w-btn d-flex justify-content-between align-items-center">
+            <h3 class="title" style="margin-bottom: 0">
+              Danh Sách Thẻ Thành Viên
+            </h3>
+            <a class="btn btn-primary btn-add-khoi" href="#" id="show-add-form-btn">
+              <i class="fas fa-plus"></i> Cấp thẻ mới
+            </a>
+          </div>
 
-            <div class="tile-body">
-              <div class="table-responsive">
-                <table
-                  class="table table-hover table-bordered"
-                  id="sampleTable"
-                >
-                  <thead>
-                    <tr>
-                      <th>Mã Thẻ</th>
-                      <th>Tên Khách Hàng</th>
-                      <th>Hạng Thẻ</th>
-                      <th>Điểm Tích Lũy</th>
-                      <th>Ngày Cấp</th>
-                      <th class="text-center">Thao tác</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>TTV001</td>
-                      <td>Nguyễn Văn A</td>
-                      <td>
-                        <span class="badge bg-warning">Gold</span>
-                      </td>
-                      <td>1,500</td>
-                      <td>01/10/2025</td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm me-1 btn-edit-khoi "
-                          href="#"
-                          title="Sửa"
-                        >
-                          <i class="fas fa-edit"></i>
-                        </a>
-                        <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
-                          <i class="fas fa-trash-alt"></i>
-                        </a>
-                      </td>
-                    </tr>
+          <div class="tile-body">
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered" id="sampleTable">
+                <thead>
+                  <tr>
+                    <th>Mã Thẻ (id) </th>
+                    <th>Tên Khách Hàng (hoTen) </th>
+                    <th>Hạng Thẻ (hang) </th>
+                    <th>Điểm Tích Lũy (diemTichLuy) </th>
+                    <th>Ngày Cấp (ngayCap) </th>
+                    <th class="text-center">Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-id="TTV001"
+                      data-khach-hang-id="KH001"
+                      data-ten-khach-hang="Nguyễn Văn A"
+                      data-sdt="090xxxx123"
+                      data-hang="Gold"
+                      data-diem="1500"
+                      data-ngay-cap="2025-10-01">
+                    <td>TTV001</td>
+                    <td>Nguyễn Văn A</td>
+                    <td>
+                      <span class="badge bg-warning">Gold</span>
+                    </td>
+                    <td>1,500</td>
+                    <td>01/10/2025</td>
+                    <td class="text-center">
+                      <a class="btn btn-info btn-sm me-1 btn-edit-khoi " href="#" title="Sửa">
+                        <i class="fas fa-edit"></i>
+                      </a>
+                      <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
+                        <i class="fas fa-trash-alt"></i>
+                      </a>
+                    </td>
+                  </tr>
 
-                    <tr>
-                      <td>TTV002</td>
-                      <td>Trần Thị B</td>
-                      <td>
-                        <span class="badge bg-info">Silver</span>
-                      </td>
-                      <td>350</td>
-                      <td>05/09/2025</td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm me-1 btn-edit-khoi "
-                          href="#"
-                          title="Sửa"
-                        >
-                          <i class="fas fa-edit"></i>
-                        </a>
-                        <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
-                          <i class="fas fa-trash-alt"></i>
-                        </a>
-                      </td>
-                    </tr>
+                  <tr data-id="TTV002"
+                      data-khach-hang-id="KH002"
+                      data-ten-khach-hang="Trần Thị B"
+                      data-sdt="091xxxx456"
+                      data-hang="Silver"
+                      data-diem="350"
+                      data-ngay-cap="2025-09-05">
+                    <td>TTV002</td>
+                    <td>Trần Thị B</td>
+                    <td>
+                      <span class="badge bg-info">Silver</span>
+                    </td>
+                    <td>350</td>
+                    <td>05/09/2025</td>
+                    <td class="text-center">
+                      <a class="btn btn-info btn-sm me-1 btn-edit-khoi " href="#" title="Sửa">
+                        <i class="fas fa-edit"></i>
+                      </a>
+                      <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
+                        <i class="fas fa-trash-alt"></i>
+                      </a>
+                    </td>
+                  </tr>
 
-                    <tr>
-                      <td>TTV003</td>
-                      <td>Phạm Hùng</td>
-                      <td>
-                        <span class="badge bg-primary">Platinum</span>
-                      </td>
-                      <td>5,200</td>
-                      <td>01/01/2025</td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm me-1 btn-edit-khoi "
-                          href="#"
-                          title="Sửa"
-                        >
-                          <i class="fas fa-edit"></i>
-                        </a>
-                        <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
-                          <i class="fas fa-trash-alt"></i>
-                        </a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                  <tr data-id="TTV003"
+                      data-khach-hang-id="KH003"
+                      data-ten-khach-hang="Phạm Hùng"
+                      data-sdt="098xxxx789"
+                      data-hang="Platinum"
+                      data-diem="5200"
+                      data-ngay-cap="2025-01-01">
+                    <td>TTV003</td>
+                    <td>Phạm Hùng</td>
+                    <td>
+                      <span class="badge bg-primary">Platinum</span>
+                    </td>
+                    <td>5,200</td>
+                    <td>01/01/2025</td>
+                    <td class="text-center">
+                      <a class="btn btn-info btn-sm me-1 btn-edit-khoi " href="#" title="Sửa">
+                        <i class="fas fa-edit"></i>
+                      </a>
+                      <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
+                        <i class="fas fa-trash-alt"></i>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
       </div>
-    </main>
+
+      <div class="col-md-0" id="form-col">
+        <div class="tile">
+          <h3 class="tile-title" id="form-title">Cấp Thẻ Thành Viên Mới</h3>
+          <div class="tile-body">
+            <form id="card-form">
+              
+              <h5 class="mb-3">Thông tin Khách hàng (Từ Bảng KhachHang )</h5>
+              
+              <div class="mb-3" id="field-chon-khach-hang">
+                <label class="form-label">Chọn Khách Hàng (chưa có thẻ)</label>
+                <select class="form-control" id="form-select-customer" style="width: 100%;">
+                  <option value="">-- Chọn khách hàng --</option>
+                  <option value="KH004" data-ten="Lê Văn D" data-sdt="090xxxx111">Lê Văn D (090xxxx111)</option>
+                  <option value="KH005" data-ten="Ngô Thị E" data-sdt="090xxxx222">Ngô Thị E (090xxxx222)</option>
+                </select>
+              </div>
+              
+              <div class="mb-3" id="field-xem-khach-hang" style="display: none;">
+                <label class="form-label">Tên Khách Hàng</label>
+                <input class="form-control" type="text" id="form-ten-kh" readonly>
+                <label class="form-label mt-2">Số Điện Thoại</label>
+                <input class="form-control" type="text" id="form-sdt-kh" readonly>
+              </div>
+              
+              <hr>
+              <h5 class="mb-3">Thông tin Thẻ Thành Viên (Từ Bảng TheThanhVien )</h5>
+
+              <div class="mb-3">
+                <label class="form-label">Mã Thẻ (id)</label>
+                <input class="form-control" type="text" id="form-id" placeholder="Mã sẽ được tạo tự động" readonly>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Hạng Thẻ</label>
+                <select class="form-select" id="form-select-hang">
+                  <option value="Silver">Silver</option>
+                  <option value="Gold">Gold</option>
+                  <option value="Platinum">Platinum</option>
+                </select>
+              </div>
+              
+              <div class="mb-3">
+                <label class="form-label">Điểm Tích Luỹ</label>
+                <input class="form-control" type="number" id="form-diem" min="0" value="0">
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Ngày Cấp</label>
+                <input class="form-control" type="date" id="form-ngay-cap">
+              </div>
+
+            </form>
+          </div>
+          <div class="tile-footer">
+            <button class="btn btn-primary" type="button" id="btn-submit">
+              <i class="bi bi-check-circle-fill me-2"></i>Thêm
+            </button>
+            
+            <button class="btn btn-info" type="button" id="btn-edit-mode" style="display: none;">
+              <i class="fas fa-edit me-2"></i>Chỉnh sửa
+            </button>
+            
+            <a class="btn btn-secondary" href="#" id="btn-cancel">
+              <i class="bi bi-x-circle-fill me-2"></i>Huỷ
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 
 
 
@@ -396,7 +466,7 @@
   <!-- Page specific javascripts-->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
   <!-- js riêng ở đây nha! -->
-
+    <script src="../assets/js/TheThanhVien.js"></script>
 
 
 </body>
