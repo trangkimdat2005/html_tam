@@ -1,0 +1,39 @@
+.modal-header-custom { background-color: #009688; color: white; }
+    .modal-header-custom .btn-close { filter: invert(1) grayscale(100%) brightness(200%); opacity: 1; }
+    .select2-container .select2-selection--single { height: 38px !important; border: 1px solid #ced4da !important; }
+    .select2-selection__rendered { line-height: 36px !important; padding-left: 12px !important; }
+    .select2-selection__arrow { height: 36px !important; }
+
+    #sampleTable, #table-gan-vi-tri {
+        width: 100% !important;
+        border-collapse: collapse !important;
+    }
+    /* 2. Định dạng các ô */
+    #sampleTable th, #sampleTable td,
+    #table-gan-vi-tri th, #table-gan-vi-tri td {
+        vertical-align: middle !important;
+        padding: 12px 8px !important;
+    }
+    /* 3. Định dạng tiêu đề */
+    .table-primary th, thead.table-light th {
+        background-color: #009688 !important;
+        color: white !important;
+        font-weight: 700 !important;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        white-space: nowrap !important;
+    }
+
+    /* --- ĐỊNH NGHĨA ĐỘ RỘNG CỨNG CHO TỪNG CỘT --- */
+    .c-stt  { width: 50px !important; text-align: center !important; }
+    .c-ten  { min-width: 200px !important; } /* Tên SP tự giãn */
+    .c-dvt  { width: 80px !important; text-align: center !important; }
+    .c-ma   { width: 120px !important; text-align: center !important; }
+    .c-loai { width: 130px !important; text-align: center !important; }
+    .c-sl   { width: 100px !important; text-align: center !important; font-weight: bold !important; }
+    .c-gia  { width: 130px !important; text-align: right !important; }
+    .c-act  { width: 60px !important; text-align: center !important; }
+
+    /* Badge đẹp hơn */
+    .badge-kho { background-color: #6c757d; color: white; padding: 6px 10px; border-radius: 12px; font-size: 11px; }
+    .badge-trungbay { background-color: #28a745; color: white; padding: 6px 10px; border-radius: 12px; font-size: 11px; }

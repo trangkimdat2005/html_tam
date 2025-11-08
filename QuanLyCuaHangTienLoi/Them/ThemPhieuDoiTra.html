@@ -25,15 +25,17 @@
   <!-- Font-icon css-->
   <link rel="stylesheet" type="text/css"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <link rel="stylesheet" type="text/css" href="../assets/css/base.css" />
     <link rel="stylesheet" href="../assets/lib/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/base.css" />
   <!-- Css riêng ở đây nha -->
+  <link rel="stylesheet" href="../assets/lib/select2/dist/css/select2.min.css">
+  <link rel="stylesheet" href="../assets/css/ThemNhanSu.css">
 
 </head>
 
 <body class="app sidebar-mini">
   <!-- Navbar-->
-  <header class="app-header"><a class="app-header__logo" href="index.html">Vali</a>
+  <header class="app-header"><a class="app-header__logo" href=" /QuanLyCuaHangTienLoi/index.html">Vali</a>
     <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"
       aria-label="Hide Sidebar"></a>
     <!-- Navbar Right Menu-->
@@ -118,7 +120,7 @@
       </div>
     </div>
     <ul class="app-menu">
-      <li><a class="app-menu__item  " href="index.html"><i class="app-menu__icon bi bi-speedometer"></i><span
+      <li><a class="app-menu__item  " href=" /QuanLyCuaHangTienLoi/index.html"><i class="app-menu__icon bi bi-speedometer"></i><span
             class="app-menu__label">Bảng điều khiển</span></a></li>
 
       <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
@@ -259,132 +261,136 @@
 
 
 
-
-  
 <main class="app-content">
     <div class="app-title">
       <div>
-        <h1><i class="bi bi-arrow-left-right"></i> Quản lý Đổi Trả</h1>
-        <p>Danh sách các phiếu đổi trả hàng của khách</p>
+        <h1><i class="bi bi-arrow-counterclockwise"></i> Tạo Phiếu Đổi Trả</h1>
+        <p>Ghi nhận hàng hoá khách hàng hoàn trả lại cửa hàng</p>
       </div>
-      <ul class="app-breadcrumb breadcrumb side">
+      <ul class="app-breadcrumb breadcrumb">
         <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-        <li class="breadcrumb-item">Giao dịch & hoàn trả</li>
-        <li class="breadcrumb-item active"><a href="#">Phiếu đổi trả</a></li>
+        <li class="breadcrumb-item"><a href="#">Giao dịch & Hoàn trả</a></li>
+        <li class="breadcrumb-item"><a href="#">Tạo phiếu đổi trả</a></li>
       </ul>
     </div>
 
-    <div id="section-list">
-        <div class="row">
-            <div class="col-md-12">
-              <div class="tile">
-                <div class="tile-title-w-btn d-flex justify-content-between align-items-center">
-                  <h3 class="title" style="margin-bottom: 0">Danh Sách Phiếu Đổi Trả</h3>
-                  <a class="btn btn-primary btn-add-khoi" href="../Them/ThemPhieuDoiTra.html">
-                    <i class="fas fa-plus"></i> Tạo phiếu mới
-                  </a>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tile">
+          <h3 class="tile-title">Thông tin Hoàn Trả</h3>
+          <div class="tile-body">
+            <div class="row">
+              <div class="col-md-3">
+                <label class="form-label fw-bold">Mã Hóa Đơn Gốc (*)</label>
+                <div class="input-group">
+                  <input class="form-control" type="text" id="input-ma-hoa-don" placeholder="VD: HD001">
+                  <button class="btn btn-primary" type="button" id="btn-check-hd">
+                      <i class="bi bi-search"></i>
+                  </button>
                 </div>
-      
-                <div class="tile-body">
-                  <div class="table-responsive">
-                    <table class="table table-hover table-bordered" id="sampleTable">
-                      <thead>
-                        <tr>
-                          <th>Mã Phiếu</th>
-                          <th>Hóa Đơn Gốc</th>
-                          <th>Ngày Đổi Trả</th>
-                          <th class="text-end">Tổng Hoàn</th>
-                          <th class="text-center">Thao tác</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>PDT001</td>
-                          <td>HD003</td>
-                          <td>01/11/2025</td>
-                          <td class="text-end">12,000 đ</td>
-                          <td class="text-center">
-                            <button class="btn btn-info btn-sm js-view-detail" data-id="PDT001" title="Xem chi tiết">
-                              <i class="fas fa-eye"></i>
-                            </button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>PDT002</td>
-                          <td>HD001</td>
-                          <td>03/11/2025</td>
-                          <td class="text-end">85,000 đ</td>
-                          <td class="text-center">
-                            <button class="btn btn-info btn-sm js-view-detail" data-id="PDT002" title="Xem chi tiết">
-                              <i class="fas fa-eye"></i>
-                            </button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+              </div>
+
+              <div class="col-md-3">
+                <label class="form-label">Khách hàng</label>
+                <input class="form-control" type="text" id="input-khach-hang" readonly placeholder="---">
+                <input type="hidden" id="input-khach-hang-id">
+              </div>
+
+              <div class="col-md-3">
+                <label class="form-label">Chính sách áp dụng (*)</label>
+                <select class="form-select" id="select-chinh-sach">
+                  <option value="">-- Chọn chính sách --</option>
+                  <option value="CS01">Đổi trả trong 7 ngày (Lỗi NSX)</option>
+                  <option value="CS02">Khách VIP (Hoàn tiền 100%)</option>
+                  <option value="CS03">Hoàn trả có thu phí (Khách đổi ý)</option>
+                </select>
+              </div>
+
+              <div class="col-md-3">
+                <label class="form-label">Ngày đổi trả (*)</label>
+                <input class="form-control" type="date" id="input-ngay-tra">
               </div>
             </div>
           </div>
-    </div>
 
-    <div id="section-detail" class="d-none">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="tile">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h3 class="tile-title mb-0">Chi Tiết Phiếu Đổi Trả: <span id="detail-id" class="text-primary">#---</span></h3>
-                        <button class="btn btn-secondary" id="btn-back-list">
-                            <i class="bi bi-arrow-left me-2"></i>Quay lại
-                        </button>
-                    </div>
-                    <hr>
-                    <div class="tile-body">
-                        <div class="row mb-4 p-3 bg-light border rounded mx-1">
-                            <div class="col-md-4">
-                                <label class="small text-muted">Hóa đơn gốc:</label>
-                                <div id="detail-hoaDonId" class="fw-bold fs-5">---</div>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="small text-muted">Ngày đổi trả:</label>
-                                <div id="detail-ngayDoiTra" class="fw-bold fs-5">---</div>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="small text-muted">Chính sách áp dụng:</label>
-                                <div id="detail-chinhSachId" class="fw-bold fs-5 text-info">---</div>
-                            </div>
-                        </div>
+          <hr>
 
-                        <h5 class="tile-title mt-4"><i class="bi bi-list-check me-2"></i>Danh sách sản phẩm hoàn trả</h5>
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover align-middle">
-                                <thead class="table-primary">
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Sản phẩm</th>
-                                        <th>Lý do</th>
-                                        <th class="text-end" >Số tiền hoàn</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="detail-tbody">
-                                    </tbody>
-                                <tfoot>
-                                    <tr class="bg-white">
-                                        <td colspan="3" class="text-end fw-bold pt-3">Tổng tiền hoàn lại:</td>
-                                        <td class="text-end fw-bold text-danger fs-4" id="detail-tong-tien">0 đ</td>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+          <h3 class="tile-title">Chi Tiết Sản Phẩm Trả</h3>
+          <div class="tile-body">
+            <div class="row mb-3 p-3 bg-light border rounded ms-1 me-1">
+              <div class="col-md-4">
+                <label class="form-label">Chọn sản phẩm từ hóa đơn</label>
+                <select class="form-select" id="select-san-pham-tra" disabled>
+                  <option value="">-- Vui lòng nhập Mã HĐ trước --</option>
+                </select>
+              </div>
+
+              <div class="col-md-2">
+                <label class="form-label">Số lượng trả</label>
+                <input class="form-control" type="number" id="input-sl-tra" min="1" value="1" disabled>
+              </div>
+              
+               <div class="col-md-4">
+                <label class="form-label">Lý do trả hàng</label>
+                <input class="form-control" type="text" id="input-ly-do" placeholder="VD: Hàng lỗi, khách đổi ý..." disabled>
+              </div>
+
+              <div class="col-md-2 d-flex align-items-end">
+                <button class="btn btn-primary w-100" type="button" id="btn-add-return-item" disabled>
+                  <i class="bi bi-plus-lg"></i> Thêm dòng
+                </button>
+              </div>
             </div>
+
+            <div class="table-responsive">
+              <table class="table table-hover table-bordered align-middle">
+                <thead class="table-light">
+                  <tr>
+                    <th>Mã SP</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Đơn giá mua</th>
+                    <th style="width: 100px;">SL Trả</th>
+                    <th>Lý do hoàn trả</th>
+                    <th class="text-end">Thành tiền hoàn</th>
+                    <th class="text-center" style="width: 50px;"><i class="bi bi-trash"></i></th>
+                  </tr>
+                </thead>
+                <tbody id="tbody-tra-hang">
+                   <tr>
+                    <td colspan="7" class="text-center text-muted fst-italic">Chưa có sản phẩm nào được chọn</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="row mt-3">
+              <div class="col-md-8">
+                 <label class="form-label">Ghi chú chung:</label>
+                 <textarea class="form-control" rows="2" placeholder="Nhập ghi chú thêm nếu cần..."></textarea>
+              </div>
+              <div class="col-md-4 text-end">
+                <div class="p-3 bg-light border rounded">
+                    <h4 class="mb-2">Tổng tiền hoàn lại:</h4>
+                    <h2 class="fw-bold text-danger" id="lbl-tong-tien-hoan">0 đ</h2>
+                    <input type="hidden" id="hidden-tong-tien-hoan" value="0">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="tile-footer text-end">
+            <a class="btn btn-secondary me-2" href="danh-sach-phieu-doi-tra.html">
+                <i class="bi bi-x-circle me-2"></i>Hủy bỏ
+            </a>
+            <button class="btn btn-success" type="button" onclick="alert('Lưu phiếu thành công (Demo)!')">
+                <i class="bi bi-floppy-fill me-2"></i>Hoàn tất phiếu
+            </button>
+          </div>
         </div>
+      </div>
     </div>
-
   </main>
-
 
 
 
@@ -398,12 +404,11 @@
   <!-- Essential javascripts for application to work-->
   <script src="../assets/lib/jquery/jquery-3.7.0.min.js"></script>
   <script src="../assets/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../assets/lib/select2/dist/js/select2.full.min.js"></script>
   <script src="../assets/lib/bootstrap/js/main.js"></script>
-  <!-- Page specific javascripts-->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
-  <!-- js riêng ở đây nha! -->
-<script src="../assets/js/PhieuDoiTra.js"></script>
 
+  <!-- js riêng ở đây nha! -->
+<script src="../assets/js/ThemPhieuDoiTra.js"></script>
 </body>
 
 </html>
