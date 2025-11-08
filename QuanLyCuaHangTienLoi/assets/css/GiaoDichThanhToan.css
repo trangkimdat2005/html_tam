@@ -1,0 +1,143 @@
+/* Đảm bảo bảng luôn đủ rộng để hiển thị, có thanh cuộn ngang nếu màn hình quá bé */
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    /* Reset bảng để tránh xung đột từ CSS cũ */
+    #invoice-table-fix {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        white-space: normal !important;
+    }
+
+    /* Căn giữa và tạo khoảng thở cho ô */
+    #invoice-table-fix th,
+    #invoice-table-fix td {
+        vertical-align: middle !important;
+        padding: 12px 8px !important;
+    }
+
+    /* Định dạng tiêu đề bảng */
+    #invoice-table-fix thead th {
+        background-color: #f8f9fa !important;
+        font-weight: 700 !important;
+        text-transform: uppercase;
+        font-size: 12px;
+        border-bottom: 2px solid #dee2e6 !important;
+        white-space: nowrap !important; /* Tiêu đề không được xuống dòng */
+    }
+
+    /* --- THIẾT LẬP ĐỘ RỘNG CỨNG (MIN-WIDTH) CHO TỪNG CỘT --- */
+    /* Dùng !important để ghi đè mọi CSS khác đang gây lỗi */
+    
+    /* Cột STT: 50px */
+    .c-stt {
+        width: 50px !important;
+        min-width: 50px !important;
+        text-align: center !important;
+    }
+    /* Cột ĐVT: 80px (Đủ rộng để không bị chèn) */
+    .c-dvt {
+        width: 80px !important;
+        min-width: 80px !important;
+        text-align: center !important;
+    }
+    /* Cột SL: 70px (Tách biệt hẳn hoi) */
+    .c-sl {
+        width: 70px !important;
+        min-width: 70px !important;
+        text-align: center !important;
+        font-weight: bold !important;
+        background-color: #fefefe !important; /* Làm nổi bật nhẹ cột số lượng */
+    }
+    /* Cột Đơn giá & Thành tiền: 120px (Đủ cho số tiền lớn) */
+    .c-gia, .c-tien {
+        width: 120px !important;
+        min-width: 120px !important;
+        text-align: right !important;
+        white-space: nowrap !important; /* Số tiền không được xuống dòng */
+    }
+    /* Cột Tên sản phẩm: Tự động chiếm phần còn lại, nhưng tối thiểu 200px */
+    .c-ten {
+        width: auto !important;
+        min-width: 200px !important;
+        text-align: left !important;
+        font-weight: 500;
+    }
+
+    /* --- CSS CHO PHẦN HÓA ĐƠN --- */
+    .invoice-wrap { background: #fff; padding: 30px; border-radius: 5px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); }
+    .invoice-header-custom { border-bottom: 2px solid #eee; margin-bottom: 20px; padding-bottom: 20px; }
+    .invoice-title { color: #009688; font-weight: 700; text-transform: uppercase; }
+    .invoice-total-box { background-color: #f9f9f9; padding: 20px; border-radius: 5px; border: 1px solid #eee; }/* Đảm bảo bảng luôn đủ rộng để hiển thị, có thanh cuộn ngang nếu màn hình quá bé */
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+    /* Reset bảng để tránh xung đột từ CSS cũ */
+    #invoice-table-fix {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        white-space: normal !important;
+    }
+
+    /* Căn giữa và tạo khoảng thở cho ô */
+    #invoice-table-fix th,
+    #invoice-table-fix td {
+        vertical-align: middle !important;
+        padding: 12px 8px !important;
+    }
+
+    /* Định dạng tiêu đề bảng */
+    #invoice-table-fix thead th {
+        background-color: #f8f9fa !important;
+        font-weight: 700 !important;
+        text-transform: uppercase;
+        font-size: 12px;
+        border-bottom: 2px solid #dee2e6 !important;
+        white-space: nowrap !important; /* Tiêu đề không được xuống dòng */
+    }
+
+    /* --- THIẾT LẬP ĐỘ RỘNG CỨNG (MIN-WIDTH) CHO TỪNG CỘT --- */
+    /* Dùng !important để ghi đè mọi CSS khác đang gây lỗi */
+    
+    /* Cột STT: 50px */
+    .c-stt {
+        width: 50px !important;
+        min-width: 50px !important;
+        text-align: center !important;
+    }
+    /* Cột ĐVT: 80px (Đủ rộng để không bị chèn) */
+    .c-dvt {
+        width: 80px !important;
+        min-width: 80px !important;
+        text-align: center !important;
+    }
+    /* Cột SL: 70px (Tách biệt hẳn hoi) */
+    .c-sl {
+        width: 70px !important;
+        min-width: 70px !important;
+        text-align: center !important;
+        font-weight: bold !important;
+        background-color: #fefefe !important; /* Làm nổi bật nhẹ cột số lượng */
+    }
+    /* Cột Đơn giá & Thành tiền: 120px (Đủ cho số tiền lớn) */
+    .c-gia, .c-tien {
+        width: 120px !important;
+        min-width: 120px !important;
+        text-align: right !important;
+        white-space: nowrap !important; /* Số tiền không được xuống dòng */
+    }
+    /* Cột Tên sản phẩm: Tự động chiếm phần còn lại, nhưng tối thiểu 200px */
+    .c-ten {
+        width: auto !important;
+        min-width: 200px !important;
+        text-align: left !important;
+        font-weight: 500;
+    }
+
+    /* --- CSS CHO PHẦN HÓA ĐƠN --- */
+    .invoice-wrap { background: #fff; padding: 30px; border-radius: 5px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); }
+    .invoice-header-custom { border-bottom: 2px solid #eee; margin-bottom: 20px; padding-bottom: 20px; }
+    .invoice-title { color: #009688; font-weight: 700; text-transform: uppercase; }
+    .invoice-total-box { background-color: #f9f9f9; padding: 20px; border-radius: 5px; border: 1px solid #eee; }

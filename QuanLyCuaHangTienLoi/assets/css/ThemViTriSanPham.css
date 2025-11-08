@@ -1,0 +1,21 @@
+.select2-container .select2-selection--single { height: 38px !important; border: 1px solid #ced4da !important; }
+    .select2-selection__rendered { line-height: 36px !important; padding-left: 12px !important; }
+    .select2-selection__arrow { height: 36px !important; }
+
+    /* --- SỬA LỖI BẢNG GÁN VỊ TRÍ --- */
+    #table-gan-vi-tri { width: 100% !important; border-collapse: collapse !important; }
+    #table-gan-vi-tri th, #table-gan-vi-tri td { vertical-align: middle !important; padding: 12px 8px !important; }
+    #table-gan-vi-tri thead th { background-color: #009688 !important; color: white !important; font-weight: 700 !important; text-transform: uppercase; font-size: 0.85rem; text-align: center !important; white-space: nowrap !important; border: 1px solid #00897b !important; }
+
+    /* --- ĐỊNH NGHĨA ĐỘ RỘNG CỨNG CHO TỪNG CỘT --- */
+    .c-stt  { width: 50px !important; text-align: center !important; }
+    .c-dvt  { width: 80px !important; text-align: center !important; }
+    .c-ma   { width: 140px !important; text-align: center !important; }
+    .c-loai { width: 140px !important; text-align: center !important; }
+    .c-sl   { width: 110px !important; text-align: center !important; font-weight: bold !important; }
+    .c-gia  { width: 140px !important; text-align: right !important; }
+    .c-act  { width: 60px !important; text-align: center !important; }
+    .c-ten  { width: auto !important; min-width: 200px !important; }
+
+    .badge-kho { background-color: #6c757d; color: white; padding: 6px 10px; border-radius: 12px; font-size: 11px; }
+    .badge-trungbay { background-color: #28a745; color: white; padding: 6px 10px; border-radius: 12px; font-size: 11px; }

@@ -1,0 +1,36 @@
+.fade-in { animation: fadeIn 0.3s ease-in; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .invoice-header-custom {
+        border-bottom: 2px solid #dee2e6;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+    .info-label { font-weight: 600; color: #6c757d; }
+    .info-value { font-weight: 500; color: #212529; }
+
+    /* --- CSS MỚI CHO HỘP TỔNG TIỀN ĐẸP HƠN --- */
+    .total-pay-box {
+        background-color: #fff;
+        padding: 20px 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05); /* Đổ bóng nhẹ tạo chiều sâu */
+        text-align: right; /* Căn phải nhìn chuyên nghiệp hơn */
+        border-right: 6px solid #009688; /* Viền tạo điểm nhấn bên phải */
+        margin-top: 20px;
+    }
+    .total-pay-box .label {
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #6c757d;
+        letter-spacing: 0.5px;
+        margin-bottom: 8px;
+    }
+    .total-pay-box .value {
+        font-size: 2rem; 
+        font-weight: 800;
+        color: #d9534f; 
+        line-height: 1;
+        white-space: nowrap; 
+    }
