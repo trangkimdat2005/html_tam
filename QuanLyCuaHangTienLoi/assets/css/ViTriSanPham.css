@@ -1,39 +1,93 @@
-.modal-header-custom { background-color: #009688; color: white; }
-    .modal-header-custom .btn-close { filter: invert(1) grayscale(100%) brightness(200%); opacity: 1; }
-    .select2-container .select2-selection--single { height: 38px !important; border: 1px solid #ced4da !important; }
-    .select2-selection__rendered { line-height: 36px !important; padding-left: 12px !important; }
-    .select2-selection__arrow { height: 36px !important; }
+/* --- 1. CSS CHUNG CHO MODAL & SELECT2 --- */
+.modal-header-custom {
+    background-color: #009688;
+    color: white;
+}
+.modal-header-custom .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+    opacity: 1;
+}
+.select2-container .select2-selection--single {
+    height: 38px !important;
+    border: 1px solid #ced4da !important;
+}
+.select2-selection__rendered {
+    line-height: 36px !important;
+    padding-left: 12px !important;
+}
+.select2-selection__arrow {
+    height: 36px !important;
+}
 
-    #sampleTable, #table-gan-vi-tri {
-        width: 100% !important;
-        border-collapse: collapse !important;
-    }
-    /* 2. Định dạng các ô */
-    #sampleTable th, #sampleTable td,
-    #table-gan-vi-tri th, #table-gan-vi-tri td {
-        vertical-align: middle !important;
-        padding: 12px 8px !important;
-    }
-    /* 3. Định dạng tiêu đề */
-    .table-primary th, thead.table-light th {
-        background-color: #009688 !important;
-        color: white !important;
-        font-weight: 700 !important;
-        text-transform: uppercase;
-        font-size: 0.85rem;
-        white-space: nowrap !important;
-    }
+/* --- 2. CSS CHUNG CHO CÁC BẢNG --- */
+/* Quan trọng: table-layout: fixed giúp cố định độ rộng cột */
+#sampleTable, #table-gan-vi-tri {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important; /* Thêm dòng này để sửa lỗi layout */
+}
 
-    /* --- ĐỊNH NGHĨA ĐỘ RỘNG CỨNG CHO TỪNG CỘT --- */
-    .c-stt  { width: 50px !important; text-align: center !important; }
-    .c-ten  { min-width: 200px !important; } /* Tên SP tự giãn */
-    .c-dvt  { width: 80px !important; text-align: center !important; }
-    .c-ma   { width: 120px !important; text-align: center !important; }
-    .c-loai { width: 130px !important; text-align: center !important; }
-    .c-sl   { width: 100px !important; text-align: center !important; font-weight: bold !important; }
-    .c-gia  { width: 130px !important; text-align: right !important; }
-    .c-act  { width: 60px !important; text-align: center !important; }
+/* Định dạng tiêu đề bảng */
+#sampleTable thead th,
+#table-gan-vi-tri thead th {
+    background-color: #009688 !important;
+    color: white !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    vertical-align: middle !important;
+    padding: 12px 8px !important;
+    white-space: nowrap !important; /* Ngăn tiêu đề bị xuống dòng */
+    border-bottom: 2px solid #00796b !important;
+}
 
-    /* Badge đẹp hơn */
-    .badge-kho { background-color: #6c757d; color: white; padding: 6px 10px; border-radius: 12px; font-size: 11px; }
-    .badge-trungbay { background-color: #28a745; color: white; padding: 6px 10px; border-radius: 12px; font-size: 11px; }
+/* Định dạng ô dữ liệu */
+#sampleTable tbody td,
+#table-gan-vi-tri tbody td {
+    vertical-align: middle !important;
+    padding: 10px 8px !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    /* word-wrap: break-word; Cho phép xuống dòng nếu nội dung quá dài */
+}
+
+/* Hiệu ứng hover dòng */
+#sampleTable tbody tr:hover,
+#table-gan-vi-tri tbody tr:hover {
+    background-color: #f1fdfc !important; /* Màu nền nhẹ khi di chuột */
+}
+
+/* --- 3. ĐỊNH NGHĨA ĐỘ RỘNG CỐ ĐỊNH CHO TỪNG CỘT --- */
+/* Sử dụng width cứng cho các cột ít biến động, cột Tên để auto hoặc width lớn */
+.c-stt { width: 50px !important; text-align: center !important; }
+.c-ma { width: 100px !important; text-align: center !important; font-weight: bold; color: #009688; }
+.c-ten { width: auto !important; } /* Để auto để tự chiếm phần còn lại */
+.c-anh { width: 70px !important; text-align: center !important; }
+.c-dvt { width: 80px !important; text-align: center !important; }
+.c-loai { width: 130px !important; text-align: center !important; }
+.c-sl { width: 100px !important; text-align: center !important; font-weight: bold !important; color: #d32f2f; }
+.c-gia { width: 120px !important; text-align: right !important; font-weight: 500; }
+/* Quan trọng: Cột thao tác cần độ rộng vừa đủ cho 2 nút */
+.c-act { width: 100px !important; text-align: center !important; }
+
+/* --- 4. CÁC THÀNH PHẦN KHÁC --- */
+/* Badge trạng thái đẹp hơn */
+.badge-loai {
+    padding: 6px 10px;
+    border-radius: 20px; /* Bo tròn mềm mại hơn */
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-block;
+    min-width: 80px; /* Độ rộng tối thiểu để đều nhau */
+}
+.badge-kho { background-color: #607d8b; color: white; }       /* Màu xám xanh cho Kho */
+.badge-trungbay { background-color: #4caf50; color: white; }  /* Màu xanh lá cho Trưng bày */
+.badge-kholanh { background-color: #03a9f4; color: white; }   /* Màu xanh dương cho Kho lạnh */
+
+/* Style ảnh sản phẩm nhỏ trong bảng */
+.img-sp-thumb {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
