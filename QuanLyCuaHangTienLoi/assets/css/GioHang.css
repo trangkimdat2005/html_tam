@@ -6,32 +6,33 @@
 
 /* Các quy tắc chiều rộng cố định */
 .cart-qty-control {
-    width: 120px; 
-    flex-shrink: 0; 
+    width: 120px;
+    flex-shrink: 0;
     margin: 0 !important;
 }
+
 .cart-total-price {
-    min-width: 100px; 
+    min-width: 100px;
     flex-shrink: 0;
 }
 
 /* Base alignment: Ép buộc căn giữa tất cả các thành phần trong <li> */
 .list-group-item .d-flex {
-    align-items: center !important; 
+    align-items: center !important;
 }
 
 /* Tinh chỉnh Khối Tên & Chi tiết */
 .cart-name-details {
-    min-width: 150px; 
+    min-width: 150px;
     flex-shrink: 0;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
 }
 
-.cart-name-details h6, 
+.cart-name-details h6,
 .cart-name-details small {
     /* Quan trọng: Loại bỏ margin mặc định của H6/Small để my-auto hoạt động */
-    margin-bottom: 0 !important; 
+    margin-bottom: 0 !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     line-height: 1.3;
@@ -41,12 +42,12 @@
 
 .cart-qty-control.input-group {
     display: flex;
-    align-items: stretch; 
+    align-items: stretch;
 }
 
 /* Đảm bảo input số lượng luôn khớp chiều cao của nút (btn-sm) */
 .cart-qty-control input[type="number"] {
-    height: 31px; 
+    height: 31px;
     padding-top: 0;
     padding-bottom: 0;
     padding-left: 0.25rem;
@@ -60,8 +61,8 @@
 
 /* 4. Căn chỉnh Nút Xóa */
 .list-group-item button.btn-outline-danger {
-    align-self: center; 
-    margin-left: auto; 
+    align-self: center;
+    margin-left: auto;
 }
 
 /* ================================================= */
@@ -69,12 +70,13 @@
 /* ================================================= */
 
 @media (max-width: 767.98px) {
+
     /* Bỏ auto margin khi xếp chồng để chúng không bị đẩy xuống giữa */
     .my-auto {
         margin-top: 0 !important;
         margin-bottom: 0 !important;
     }
-    
+
     /* Trên màn hình nhỏ, cần buộc xếp chồng các khối chính */
     .flex-grow-1 {
         flex-direction: column !important;
@@ -82,12 +84,12 @@
     }
 
     /* Đảm bảo khối Controls và Thành tiền chiếm hết chiều ngang */
-    .flex-grow-1 > .d-flex.align-items-center {
+    .flex-grow-1>.d-flex.align-items-center {
         width: 100% !important;
-        margin-top: 0.5rem; 
+        margin-top: 0.5rem;
         align-items: center !important;
     }
-    
+
     /* Đảm bảo khối tên sản phẩm chiếm hết chiều ngang có thể */
     .cart-name-details {
         min-width: 100% !important;

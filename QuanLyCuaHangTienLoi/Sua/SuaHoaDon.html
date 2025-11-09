@@ -28,7 +28,7 @@
   <link rel="stylesheet" type="text/css" href="../assets/css/base.css" />
   <!-- Css riêng ở đây nha -->
   <link rel="stylesheet" href="../assets/lib/select2/dist/css/select2.min.css">
-  <link rel="stylesheet" type="text/css" href="../assets/css/ThemHoaDon.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/SuaHoaDon.css">
 
 </head>
 
@@ -264,13 +264,13 @@
   <main class="app-content">
     <div class="app-title">
       <div>
-        <h1><i class="bi bi-receipt-cutoff"></i> Tạo Hoá Đơn Bán Hàng (POS)</h1>
+        <h1><i class="bi bi-receipt-cutoff"></i> Sửa Hoá Đơn Bán Hàng (POS)</h1>
         <p>Bán hàng tại quầy</p>
       </div>
       <ul class="app-breadcrumb breadcrumb">
         <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
         <li class="breadcrumb-item"><a href="#">Quản lý bán hàng</a></li>
-        <li class="breadcrumb-item"><a href="#">Tạo hoá đơn</a></li>
+        <li class="breadcrumb-item"><a href="#">Sửa hoá đơn</a></li>
       </ul>
     </div>
     <div class="row">
@@ -290,7 +290,9 @@
                 </select>
               </div>
               <div class="col-md-3 d-flex align-items-end">
-                <button class="btn btn-primary" type="button"><i class="bi bi-plus-lg"></i> Thêm mới</button>
+                <a href="../Them/ThemKhachHang.html">
+                  <button class="btn btn-primary" type="button"><i class="bi bi-plus-lg"></i> Thêm khách hàng</button>
+                </a>
               </div>
             </div>
 
@@ -333,12 +335,9 @@
             <button class="btn btn-secondary" type="button" id="cancel-invoice-btn"><i
                 class="bi bi-x-circle me-2"></i>Huỷ</button>
 
-            <button class="btn btn-primary" type="button" id="save-draft-btn">
-              <i class="bi bi-save me-2"></i>Lưu tạm
+            <button class="btn btn-primary" type="button">
+              <i class="bi bi-save me-2"></i>Xác nhận
             </button>
-
-            <button class="btn btn-success" type="button" id="checkout-btn"><i
-                class="bi bi-currency-dollar me-2"></i>Thanh toán</button>
           </div>
         </div>
       </div>
@@ -411,14 +410,6 @@
           </div>
         </div>
 
-        <div class="tile">
-          <h3 class="tile-title">Hoá Đơn Tạm Lưu</h3>
-          <div class="draft-list-container">
-            <ul class="list-group" id="draft-list">
-            </ul>
-          </div>
-        </div>
-
       </div>
     </div>
   </main>
@@ -438,7 +429,7 @@
   <script src="../assets/lib/bootstrap/js/main.js"></script>
 
   <!-- js riêng ở đây nha! -->
-  <script src="../assets/js/ThemHoaDon.js"></script>
+  <script src="../assets/js/SuaHoaDon.js"></script>
 </body>
 
 </html>

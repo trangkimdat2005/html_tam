@@ -1,0 +1,54 @@
+/* --- CSS CHO BỐ CỤC FORM TRƯỢT --- */
+
+/* Cột danh sách (master) */
+.list-column {
+    /* Hiệu ứng co/giãn mượt mà */
+    transition: all 0.4s ease-in-out;
+}
+
+/* Cột form (detail) */
+.form-column {
+    display: none;
+    /* Ẩn ban đầu */
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.4s ease-in-out;
+    /* Đảm bảo chiều cao linh hoạt */
+    height: 100%;
+}
+
+/* Trạng thái 'active' (khi form mở) được JS thêm vào */
+.form-column.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Tùy chỉnh cho tile bên trong form */
+.form-panel .tile-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-panel .tile-title h3 {
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    /* Điều chỉnh font cho gọn */
+}
+
+/* Responsive cho di động (màn hình nhỏ hơn 'lg' - 992px)
+    Khi form được kích hoạt trên di động, nó sẽ ẩn danh sách đi
+  */
+@media (max-width: 991.98px) {
+    .main-row.form-active .list-column {
+        display: none;
+        /* Ẩn cột danh sách */
+    }
+
+    .main-row.form-active .form-column {
+        flex: 0 0 100%;
+        /* Cột form chiếm 100% */
+        max-width: 100%;
+    }
+}
