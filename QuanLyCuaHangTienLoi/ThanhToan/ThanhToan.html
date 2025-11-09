@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="../assets/lib/fontawesome/css/all.min.css" />
   <link rel="stylesheet" type="text/css" href="../assets/css/base.css" />
   <!-- Css riêng ở đây nha -->
-
+  <link rel="stylesheet" href="../assets/css/ThanhToan.css">
 </head>
 
 <body class="app sidebar-mini">
@@ -260,142 +260,208 @@
 
 
 
-    <main class="app-content">
-      <div class="app-title">
-        <div>
-          <h1><i class="bi bi-wallet"></i> Quản lý Kênh Thanh Toán</h1>
-          <p>Cấu hình các phương thức thanh toán được chấp nhận</p>
-        </div>
-        <ul class="app-breadcrumb breadcrumb side">
-          <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-          <li class="breadcrumb-item active"><a href="#">Thanh toán</a></li>
-        </ul>
+<main class="app-content">
+    <div class="app-title">
+      <div>
+        <h1><i class="bi bi-wallet"></i> Quản lý Kênh Thanh Toán</h1>
+        <p>Cấu hình các phương thức thanh toán được chấp nhận</p>
       </div>
+      <ul class="app-breadcrumb breadcrumb side">
+        <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
+        <li class="breadcrumb-item active"><a href="#">Thanh toán</a></li>
+      </ul>
+    </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="tile">
-            <div
-              class="tile-title-w-btn d-flex justify-content-between align-items-center"
-            >
-              <h3 class="title" style="margin-bottom: 0">
-                Danh Sách Kênh Thanh Toán
-              </h3>
-              <a class="btn btn-primary btn-add-khoi" href="them-kenh-thanh-toan.html">
-                <i class="fas fa-plus"></i> Thêm kênh mới
-              </a>
-            </div>
+    <div class="row main-row" id="main-content-row">
+      
+      <div class="col-lg-12 list-column" id="list-column">
+        <div class="tile">
+          <div
+            class="tile-title-w-btn d-flex justify-content-between align-items-center"
+          >
+            <h3 class="title" style="margin-bottom: 0">
+              Danh Sách Kênh Thanh Toán
+            </h3>
+            <button class="btn btn-primary btn-add-khoi" type="button" id="btn-show-add-form">
+              <i class="fas fa-plus"></i> Thêm kênh mới
+            </button>
+          </div>
 
-            <div class="tile-body">
-              <div class="table-responsive">
-                <table
-                  class="table table-hover table-bordered"
-                  id="sampleTable"
-                >
-                  <thead>
-                    <tr>
-                      <th>Mã Kênh</th>
-                      <th>Tên Kênh Thanh Toán</th>
-                      <th>Loại Kênh</th>
-                      <th>Phí Giao Dịch (%)</th>
-                      <th>Trạng Thái</th>
-                      <th>Thao tác</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>TIEN_MAT</td>
-                      <td>Tiền mặt</td>
-                      <td>TIEN_MAT</td>
-                      <td>0.00 %</td>
-                      <td>
-                        <span class="badge bg-success">Hoạt động</span>
-                      </td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm me-1 btn-edit-khoi "
-                          href="#"
-                          title="Sửa"
-                        >
-                          <i class="fas fa-edit"></i>
-                        </a>
-                      </td>
-                    </tr>
+          <div class="tile-body">
+            <div class="table-responsive">
+              <table
+                class="table table-hover table-bordered"
+                id="sampleTable"
+              >
+                <thead>
+                  <tr>
+                    <th>Mã Kênh</th>
+                    <th>Tên Kênh Thanh Toán</th>
+                    <th>Loại Kênh</th>
+                    <th>Phí Giao Dịch (%)</th>
+                    <th>Trạng Thái</th>
+                    <th>Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-field="id">TIEN_MAT</td>
+                    <td data-field="tenKenh">Tiền mặt</td>
+                    <td data-field="loaiKenh">TIEN_MAT</td>
+                    <td data-field="phiGiaoDich">0.00</td>
+                    <td data-field="trangThai" data-value="Active">
+                      <span class="badge bg-success">Hoạt động</span>
+                    </td>
+                    <td class="text-center">
+                      <button
+                        class="btn btn-info btn-sm me-1 btn-edit"
+                        title="Sửa"
+                      >
+                        <i class="fas fa-edit"></i>
+                      </button>
+                    </td>
+                  </tr>
 
-                    <tr>
-                      <td>THE_POS</td>
-                      <td>Quẹt thẻ (POS)</td>
-                      <td>THE</td>
-                      <td>1.50 %</td>
-                      <td>
-                        <span class="badge bg-success">Hoạt động</span>
-                      </td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm me-1 btn-edit-khoi "
-                          href="#"
-                          title="Sửa"
-                        >
-                          <i class="fas fa-edit"></i>
-                        </a>
-                        <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
-                          <i class="fas fa-trash-alt"></i>
-                        </a>
-                      </td>
-                    </tr>
+                  <tr>
+                    <td data-field="id">THE_POS</td>
+                    <td data-field="tenKenh">Quẹt thẻ (POS)</td>
+                    <td data-field="loaiKenh">THE</td>
+                    <td data-field="phiGiaoDich">1.50</td>
+                    <td data-field="trangThai" data-value="Active">
+                      <span class="badge bg-success">Hoạt động</span>
+                    </td>
+                    <td class="text-center">
+                      <button
+                        class="btn btn-info btn-sm me-1 btn-edit"
+                        title="Sửa"
+                      >
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="btn btn-danger btn-sm btn-delete-khoi" title="Xóa">
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                    </td>
+                  </tr>
 
-                    <tr>
-                      <td>VI_MOMO</td>
-                      <td>Ví điện tử (Momo)</td>
-                      <td>VI_DIEN_TU</td>
-                      <td>1.00 %</td>
-                      <td>
-                        <span class="badge bg-success">Hoạt động</span>
-                      </td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm me-1 btn-edit-khoi "
-                          href="#"
-                          title="Sửa"
-                        >
-                          <i class="fas fa-edit"></i>
-                        </a>
-                        <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
-                          <i class="fas fa-trash-alt"></i>
-                        </a>
-                      </td>
-                    </tr>
+                  <tr>
+                    <td data-field="id">VI_MOMO</td>
+                    <td data-field="tenKenh">Ví điện tử (Momo)</td>
+                    <td data-field="loaiKenh">VI_DIEN_TU</td>
+                    <td data-field="phiGiaoDich">1.00</td>
+                    <td data-field="trangThai" data-value="Active">
+                      <span class="badge bg-success">Hoạt động</span>
+                    </td>
+                    <td class="text-center">
+                      <button
+                        class="btn btn-info btn-sm me-1 btn-edit"
+                        title="Sửa"
+                      >
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="btn btn-danger btn-sm btn-delete-khoi" title="Xóa">
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                    </td>
+                  </tr>
 
-                    <tr>
-                      <td>QR_ZALOPAY</td>
-                      <td>ZaloPay (Tạm dừng)</td>
-                      <td>QR_PAY</td>
-                      <td>1.00 %</td>
-                      <td>
-                        <span class="badge bg-secondary">Không hoạt động</span>
-                      </td>
-                      <td class="text-center">
-                        <a
-                          class="btn btn-info btn-sm me-1 btn-edit-khoi "
-                          href="#"
-                          title="Sửa"
-                        >
-                          <i class="fas fa-edit"></i>
-                        </a>
-                        <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
-                          <i class="fas fa-trash-alt"></i>
-                        </a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+                  <tr>
+                    <td data-field="id">QR_ZALOPAY</td>
+                    <td data-field="tenKenh">ZaloPay (Tạm dừng)</td>
+                    <td data-field="loaiKenh">QR_PAY</td>
+                    <td data-field="phiGiaoDich">1.00</td>
+                    <td data-field="trangThai" data-value="Inactive">
+                      <span class="badge bg-secondary">Không hoạt động</span>
+                    </td>
+                    <td class="text-center">
+                      <button
+                        class="btn btn-info btn-sm me-1 btn-edit"
+                        title="Sửa"
+                      >
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button class="btn btn-danger btn-sm btn-delete-khoi" title="Xóa">
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
       </div>
-    </main>
 
+      <div class="col-lg-4 form-column" id="form-column">
+        <div class="tile form-panel">
+          <div class="tile-title">
+            <h3 id="form-title">Thêm Kênh Mới</h3>
+            <button class="btn-close" type="button" aria-label="Close" id="btn-close-form"></button>
+          </div>
+
+          <div class="tile-body">
+            <form id="payment-channel-form">
+              
+              <div class="mb-3">
+                <label class="form-label">Mã Kênh (id)</label>
+                <input class="form-control" type="text" id="form-id" name="id" placeholder="V.d: VI_ZALOPAY, QR_VIETQR">
+                <small class="form-text text-muted">Mã này là duy nhất, không dấu, viết hoa.</small>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Tên Kênh (tenKenh)</label>
+                <input class="form-control" type="text" id="form-tenKenh" name="tenKenh" placeholder="V.d: Ví ZaloPay" required>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Loại Kênh (loaiKenh)</label>
+                <select class="form-select" id="form-loaiKenh" name="loaiKenh">
+                  <option value="TIEN_MAT">Tiền Mặt (TIEN_MAT)</option>
+                  <option value="VI_DIEN_TU">Ví Điện Tử (VI_DIEN_TU)</option>
+                  <option value="QR_PAY">Quét Mã QR (QR_PAY)</option>
+                  <option value="THE">Quẹt Thẻ (THE)</option>
+                  <option value="CHUYEN_KHOAN">Chuyển Khoản (CHUYEN_KHOAN)</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Phí Giao Dịch (phiGiaoDich)</label>
+                <div class="input-group">
+                  <input class="form-control" type="number" id="form-phiGiaoDich" name="phiGiaoDich" value="0.00" step="0.01">
+                  <span class="input-group-text">%</span>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Trạng Thái (trangThai)</label>
+                <select class="form-select" id="form-trangThai" name="trangThai">
+                  <option value="Active">Hoạt động (Active)</option>
+                  <option value="Inactive">Không hoạt động (Inactive)</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Cấu Hình (cauHinh)</label>
+                <textarea class="form-control" id="form-cauHinh" name="cauHinh" rows="3" placeholder="Nhập cấu hình JSON (nếu có)"></textarea>
+                <small class="form-text text-muted">V.d: {"merchant_id": "ABC12345"}</small>
+              </div>
+
+            </form>
+          </div>
+          <div class="tile-footer">
+            <div class="d-flex justify-content-end">
+              <button class="btn btn-secondary me-2" type="button" id="btn-cancel-form">
+                <i class="fas fa-times-circle me-2"></i>Huỷ
+              </button>
+              <button class="btn btn-primary" type="button" id="btn-save-form">
+                <i class="fas fa-save me-2"></i>Lưu
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </main>
 
 
 
@@ -413,7 +479,7 @@
   <!-- Page specific javascripts-->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
   <!-- js riêng ở đây nha! -->
-
+<script src="../assets/js/ThanhToan.js"></script>
 
 
 </body>

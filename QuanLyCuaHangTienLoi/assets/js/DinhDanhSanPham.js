@@ -27,7 +27,7 @@ $(document).ready(function () {
     const btnCancel = $('#btn-cancel');
     const btnEditMode = $('#btn-edit-mode');
 
-    let currentData = null; // Biến lưu trữ dữ liệu khi xem
+    let currentData = null; // Biến lưu trữ dữ liệu khi xem/sửa
 
     // --- HÀM MỞ FORM ---
     function openForm(mode, data = null) {
@@ -37,7 +37,7 @@ $(document).ready(function () {
         listCol.removeClass('col-md-12').addClass('col-md-8');
         formCol.removeClass('col-md-0').addClass('col-md-4');
         mainRow.addClass('form-open');
-        showAddFormBtn.hide();
+        showAddFormBtn.hide(); // Ẩn nút "Thêm"
 
         // 2. Xử lý form dựa theo 'mode'
         identifierForm.removeClass('form-readonly'); // Mở khoá form trước
@@ -72,7 +72,7 @@ $(document).ready(function () {
 
                 btnSubmit.hide();
                 btnCancel.text('Đóng').show();
-                btnEditMode.text('Chỉnh sửa').show();
+                btnEditMode.text('Chỉnh sửa').show(); // Hiện nút "Chỉnh sửa"
             }
             else { // mode === 'edit'
                 formTitle.text('Sửa Mã Định Danh');
@@ -92,7 +92,7 @@ $(document).ready(function () {
         listCol.removeClass('col-md-8').addClass('col-md-12');
         formCol.removeClass('col-md-4').addClass('col-md-0');
         mainRow.removeClass('form-open');
-        showAddFormBtn.show();
+        showAddFormBtn.show(); // Hiện lại nút "Thêm"
 
         // 2. Reset form về trạng thái mặc định (mở khoá)
         identifierForm.removeClass('form-readonly');
@@ -114,7 +114,7 @@ $(document).ready(function () {
         closeForm();
     });
 
-    // --- GÁN SỰ KIỆN CHO BẢNG (SỬA, XOÁ, XEM) ---
+    // --- SỬA ĐỔI CHÍNH NẰM Ở ĐÂY ---
     $('#sampleTable tbody').on('click', 'tr', function (e) {
         const clickedRow = $(this);
         const target = $(e.target);
@@ -132,24 +132,34 @@ $(document).ready(function () {
         // 1. Xử lý nút XOÁ
         if (target.closest('.btn-delete-khoi').length) {
             e.preventDefault();
+            e.stopPropagation(); // Ngăn sự kiện click vào hàng
             if (confirm(`Bạn có chắc muốn xoá mã định danh "${data.maCode}" của sản phẩm "${data.tenSp}" không?`)) {
                 clickedRow.remove();
-                closeForm(); // Đóng form nếu nó đang mở
+                closeForm();
             }
-            return; // Dừng xử lý
+            return;
         }
 
-        // 2. Xử lý nút IN (không làm gì)
+        // 2. Xử lý nút IN
         if (target.closest('.btn-secondary').length) {
             e.preventDefault();
+            e.stopPropagation(); // Ngăn sự kiện click vào hàng
             alert('Đang gọi máy in... (mô phỏng)');
-            return; // Dừng xử lý
+            return;
         }
 
-        // 3. Xử lý click XEM (nếu click vào hàng, không phải nút)
-        // (Chúng ta không có nút "Sửa" riêng, nên click vào hàng là "Xem")
-        openForm('view', data);
+        // 3. Xử lý nút SỬA MỚI (btn-edit)
+        if (target.closest('.btn-edit').length) {
+            e.preventDefault();
+            e.stopPropagation(); // Ngăn sự kiện click vào hàng
+            openForm('edit', data); // MỞ FORM Ở CHẾ ĐỘ SỬA
+            return;
+        }
+
+        // 4. Xử lý click XEM (nếu click vào hàng, không phải nút)
+        openForm('view', data); // MỞ FORM Ở CHẾ ĐỘ XEM
     });
+    // --- KẾT THÚC SỬA ĐỔI ---
 
     // --- GÁN SỰ KIỆN CHO NÚT "CHỈNH SỬA" (TRONG FORM VIEW) ---
     btnEditMode.on('click', function () {

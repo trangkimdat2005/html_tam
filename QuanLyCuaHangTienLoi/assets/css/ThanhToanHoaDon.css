@@ -1,0 +1,92 @@
+/* CSS tùy chỉnh cho giao diện thanh toán */
+.payment-total-box {
+    background-color: #e0f8f0;
+    /* Màu xanh nhạt */
+    border: 1px solid #b6e9d2;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.payment-total-box .amount {
+    font-size: 2.5rem;
+    /* 40px */
+    font-weight: 700;
+    color: #008246;
+    /* Màu xanh đậm */
+}
+
+.payment-total-box .note {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.payment-change-box {
+    background-color: #fff9e0;
+    /* Màu vàng nhạt */
+    border: 1px solid #fdeec6;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    min-height: 80px;
+}
+
+.payment-change-box .change-value {
+    font-size: 1.75rem;
+    /* 28px */
+    font-weight: 700;
+}
+
+.payment-change-box .change-value.missing {
+    color: #dc3545;
+    /* Màu đỏ */
+}
+
+.payment-change-box .change-value.change {
+    color: #198754;
+    /* Màu xanh lá */
+}
+
+.payment-method-selector .btn {
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+#qr-code-image {
+    width: 250px;
+    height: 250px;
+    background-color: #eee;
+    /* Margin và display block đã bị xóa, để flexbox xử lý căn giữa */
+}
+
+/* --- CSS CHO RESPONSIVE --- */
+@media (max-width: 576px) {
+    .payment-total-box .amount {
+        font-size: 2rem;
+        /* Giảm font-size trên mobile */
+    }
+
+    .payment-change-box .change-value {
+        font-size: 1.5rem;
+        /* Giảm font-size trên mobile */
+    }
+
+    .payment-method-selector {
+        flex-direction: column;
+        /* Xếp chồng 2 nút chọn PT */
+        gap: 8px;
+    }
+
+    .payment-method-selector .btn {
+        margin: 0 !important;
+        /* Reset margin */
+    }
+
+    /* Thêm class .suggestion-buttons vào div chứa các nút gợi ý */
+    .suggestion-buttons {
+        display: grid;
+        /* Xếp chồng các nút gợi ý */
+        gap: 8px;
+    }
+}
