@@ -275,185 +275,77 @@
 
 
 <main class="app-content">
-  <div class="app-title">
-    <div>
-      <h1><i class="bi bi-pin-map"></i> Quản lý Vị trí</h1>
-      <p>Quản lý vị trí sản phẩm và danh mục vị trí trong kho</p>
-    </div>
-    <ul class="app-breadcrumb breadcrumb side">
-      <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
-      <li class="breadcrumb-item">Quản lý kho hàng</li>
-      <li class="breadcrumb-item active"><a href="#">Vị trí</a></li>
-    </ul>
-  </div>
-  <!-- Danh sách vị trí sản phẩm-->
-  <div class="row">
-    <div class="col-md-12">
-      <div class="tile">
-        <div class="tile-title-w-btn d-flex justify-content-between align-items-center">
-          <h3 class="title" style="margin-bottom: 0">Danh Sách Vị Trí Sản Phẩm</h3>
-          <a class="btn btn-primary" href="../Them/ThemViTriSanPham.html"><i class="fas fa-plus"></i> Gán vị trí cho SP</a>
-        </div>
-        <div class="tile-body">
-            <div class="table-responsive">
-            <table class="table table-hover table-bordered" id="table-san-pham-vi-tri">
-              <thead>
-                <tr>
-                  <th>Tên Sản Phẩm</th>
-                  <th>Đơn vị tính</th>
-                  <th>Mã Vị Trí</th>
-                  <th>Loại Vị Trí</th>
-                  <th>Số Lượng</th>
-                  <th class="text-center">Thao tác</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Sữa tươi TH True Milk</td>
-                  <td>Lốc</td>
-                  <td>KHO-A1</td>
-                  <td>Kho</td>
-                  <td>100</td>
-                  <td class="text-center">
-                    <button class="btn btn-info btn-sm me-1 btn-edit-sp-vt" title="Sửa"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-danger btn-sm btn-delete-sp-vt" title="Xóa"><i class="fas fa-trash-alt"></i></button>
-                  </td>
-                </tr>
-                  <tr>
-                  <td>Sữa tươi TH True Milk</td>
-                  <td>Lốc</td>
-                  <td>KHO-A1</td>
-                  <td>Kho</td>
-                  <td>100</td>
-                  <td class="text-center">
-                    <button class="btn btn-info btn-sm me-1 btn-edit-sp-vt" title="Sửa"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-danger btn-sm btn-delete-sp-vt" title="Xóa"><i class="fas fa-trash-alt"></i></button>
-                  </td>
-                </tr>
-                </tbody>
-            </table>
-          </div>
-        </div>
+    <div class="app-title">
+      <div>
+        <h1><i class="bi bi-plus-square-dotted"></i> Thêm Danh Mục Vị Trí Mới</h1>
+        <p>Tạo mới các khu vực, kệ hàng để quản lý lưu kho</p>
       </div>
+      <ul class="app-breadcrumb breadcrumb">
+        <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
+        <li class="breadcrumb-item"><a href="#">Quản lý kho</a></li>
+        <li class="breadcrumb-item"><a href="../QuanLy/QuanLyViTri.html">Danh sách vị trí</a></li>
+        <li class="breadcrumb-item active"><a href="#">Thêm mới</a></li>
+      </ul>
     </div>
-  </div>
-  <!-- Danh mục vị trí -->
-  <div class="row mt-4"> <div class="col-md-12">
-      <div class="tile">
-        <div class="tile-title-w-btn d-flex justify-content-between align-items-center">
-          <h3 class="title" style="margin-bottom: 0">Danh Mục Vị Trí (Kho/Kệ)</h3>
-          <a class="btn btn-primary" href="../Them/ThemDanhMucViTri.html"><i class="fas fa-plus"></i> Thêm vị trí mới</a>
-        </div>
-        <div class="tile-body">
-           <div class="table-responsive">
-            <table class="table table-hover table-bordered" id="table-danh-muc-vi-tri">
-              <thead>
-                <tr>
-                  <th>Mã Vị Trí</th>
-                  <th>Loại Vị Trí</th>
-                  <th>Mô Tả</th>
-                  <th class="text-center" >Thao tác</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>KHO-A1</td>
-                  <td>Kho</td>
-                  <td>Khu vực kệ sắt lưu trữ hàng khô, tầng 1</td>
-                  <td class="text-center">
-                    <button class="btn btn-info btn-sm me-1 btn-edit-dm-vt" title="Sửa"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-danger btn-sm btn-delete-dm-vt" title="Xóa"><i class="fas fa-trash-alt"></i></button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>KHO-A1</td>
-                  <td>Kho</td>
-                  <td>Khu vực kệ sắt lưu trữ hàng khô, tầng 1</td>
-                  <td class="text-center">
-                    <button class="btn btn-info btn-sm me-1 btn-edit-dm-vt" title="Sửa"><i class="fas fa-edit"></i></button>
-                    <button class="btn btn-danger btn-sm btn-delete-dm-vt" title="Xóa"><i class="fas fa-trash-alt"></i></button>
-                  </td>
-                </tr>
-                 </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal Sửa vị trí sản phẩm -->
-  <div class="modal fade" id="modalSuaSanPhamViTri" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header bg-info text-white">
-        <h5 class="modal-title"><i class="bi bi-pencil-square me-2"></i>Điều Chuyển / Sửa Số Lượng SP</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="alert alert-info">Đang thao tác với SP: <strong id="sp-vt-ten">...</strong></div>
-        <form id="formSuaSPVT">
-            <div class="row g-3">
-                <div class="col-md-6">
-                    <label class="form-label fw-bold">Vị trí hiện tại</label>
-                    <input type="text" class="form-control bg-light" id="sp-vt-ma-cu" readonly>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tile">
+          <h3 class="tile-title">Thông tin vị trí</h3>
+          <div class="tile-body">
+            <form class="row g-3" id="formThemViTri">
+              <div class="form-group col-md-4">
+                <label class="control-label fw-bold">Mã vị trí <span class="text-danger">*</span></label>
+                <div class="input-group">
+                    <input class="form-control" type="text" id="maViTri" placeholder="VD: KHO-A1, KE-B2..." required>
+                    <button class="btn btn-secondary" type="button" id="btnGenMa" title="Tự động tạo mã">
+                        <i class="fas fa-random"></i>
+                    </button>
                 </div>
-                <div class="col-md-6">
-                    <label class="form-label fw-bold">Chuyển đến vị trí mới</label>
-                    <select class="form-select" id="sp-vt-ma-moi" required>
-                        <option value="KHO-A1">KHO-A1 (Kho)</option>
-                        <option value="TRUNGBAY-01">TRUNGBAY-01 (Trưng bày)</option>
-                        </select>
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label fw-bold">Số lượng</label>
-                    <input type="number" class="form-control" id="sp-vt-so-luong" min="1" required>
-                </div>
-            </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-        <button type="button" class="btn btn-primary" id="btn-luu-sp-vt">Lưu thay đổi</button>
-      </div>
-    </div>
-  </div>
-</div>
-  <!-- Modal Sửa danh mục vị trí -->
-<div class="modal fade" id="modalSuaDanhMucViTri" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header bg-primary text-white">
-        <h5 class="modal-title"><i class="fas fa-edit me-2"></i>Sửa Thông Tin Vị Trí (Kho/Kệ)</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form id="formSuaDMVT">
-            <div class="mb-3">
-                <label class="form-label fw-bold">Mã vị trí <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="dm-vt-ma" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label fw-bold">Loại vị trí <span class="text-danger">*</span></label>
-                <select class="form-select" id="dm-vt-loai" required>
-                    <option value="Kho">Kho</option>
-                    <option value="Trưng bày">Trưng bày</option>
-                    <option value="Kho lạnh">Kho lạnh</option>
+                <small class="form-text text-muted">Mã phải là duy nhất, viết liền không dấu.</small>
+              </div>
+
+              <div class="form-group col-md-4">
+                <label class="control-label fw-bold">Tên vị trí <span class="text-danger">*</span></label>
+                <input class="form-control" type="text" id="tenViTri" placeholder="VD: Kệ A tầng 1..." required>
+              </div>
+
+              <div class="form-group col-md-4">
+                <label class="control-label fw-bold">Loại vị trí <span class="text-danger">*</span></label>
+                <select class="form-select" id="loaiViTri" required>
+                  <option value="">-- Chọn loại vị trí --</option>
+                  <option value="Kho">Kho lưu trữ (Thường)</option>
+                  <option value="Kho lạnh">Kho lạnh / Tủ đông</option>
+                  <option value="Kho mát">Kho mát</option>
+                  <option value="Trưng bày">Kệ trưng bày (Cửa hàng)</option>
+                  <option value="Kho tạm">Kho tạm / Hàng chờ xử lý</option>
                 </select>
-            </div>
-            <div class="mb-3">
-                <label class="form-label fw-bold">Mô tả</label>
-                <textarea class="form-control" id="dm-vt-mo-ta" rows="3"></textarea>
-            </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-        <button type="button" class="btn btn-primary" id="btn-luu-dm-vt">Cập nhật vị trí</button>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label class="control-label fw-bold">Sức chứa tối đa (Đơn vị SP)</label>
+                <input class="form-control" type="number" id="sucChua" min="0" placeholder="VD: 1000 (Để trống nếu không giới hạn)">
+              </div>
+
+              <div class="form-group col-md-12">
+                <label class="control-label fw-bold">Mô tả chi tiết</label>
+                <textarea class="form-control" id="moTa" rows="4" placeholder="Nhập mô tả vị trí, ghi chú đặc biệt..."></textarea>
+              </div>
+
+              <div class="tile-footer col-md-12 mt-4 text-end">
+                <a class="btn btn-secondary me-2" href="../QuanLyKhoHang/ViTriSanPham.html">
+                    <i class="fas fa-arrow-left me-1"></i> Quay lại danh sách
+                </a>
+                <button class="btn btn-primary" type="button" id="btnLuuLai">
+                    <i class="fas fa-save me-1"></i> Lưu lại
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-</main>
+  </main>
 
 
 
