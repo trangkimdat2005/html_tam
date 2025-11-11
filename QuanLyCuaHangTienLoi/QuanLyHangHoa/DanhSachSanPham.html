@@ -273,9 +273,6 @@
 
 
 
-
-
-
   <main class="app-content">
     <div class="app-title">
       <div>
@@ -285,13 +282,11 @@
       <ul class="app-breadcrumb breadcrumb side">
         <li class="breadcrumb-item"><i class="bi bi-house-door fs-6"></i></li>
         <li class="breadcrumb-item">Quản lý hàng hoá</li>
-        <li class="breadcrumb-item active">
-          <a href="#">Danh sách sản phẩm</a>
-        </li>
+        <li class="breadcrumb-item active"><a href="#">Danh sách sản phẩm</a></li>
       </ul>
     </div>
 
-    <div class="row" id="main-row-container">
+    <div class="row flex-nowrap" id="main-row-container" style="overflow: hidden;">
 
       <div class="col-md-12" id="product-list-col">
         <div class="tile">
@@ -301,7 +296,6 @@
               <i class="fas fa-plus"></i> Thêm sản phẩm mới
             </a>
           </div>
-
           <div class="tile-body">
             <div class="table-responsive">
               <table class="table table-hover table-bordered" id="sampleTable">
@@ -329,12 +323,10 @@
                     <td>85,000 đ</td>
                     <td><span class="badge bg-success">Còn hàng</span></td>
                     <td class="text-center">
-                      <a class="btn btn-info btn-sm me-1 btn-edit-khoi " href="#" title="Sửa">
-                        <i class="fas fa-edit"></i>
-                      </a>
-                      <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
-                        <i class="fas fa-trash-alt"></i>
-                      </a>
+                      <button class="btn btn-info btn-sm me-1 btn-edit-khoi" title="Sửa"><i
+                          class="fas fa-edit"></i></button>
+                      <button class="btn btn-danger btn-sm btn-delete-khoi" title="Xóa"><i
+                          class="fas fa-trash-alt"></i></button>
                     </td>
                   </tr>
                   <tr data-id="ST001" data-name="Sữa tươi TH True Milk (Lốc 4)" data-danh-muc-ids='["DM_SUA", "DM_DU"]'
@@ -348,12 +340,10 @@
                     <td>38,000 đ</td>
                     <td><span class="badge bg-success">Còn hàng</span></td>
                     <td class="text-center">
-                      <a class="btn btn-info btn-sm me-1 btn-edit-khoi " href="#" title="Sửa">
-                        <i class="fas fa-edit"></i>
-                      </a>
-                      <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
-                        <i class="fas fa-trash-alt"></i>
-                      </a>
+                      <button class="btn btn-info btn-sm me-1 btn-edit-khoi" title="Sửa"><i
+                          class="fas fa-edit"></i></button>
+                      <button class="btn btn-danger btn-sm btn-delete-khoi" title="Xóa"><i
+                          class="fas fa-trash-alt"></i></button>
                     </td>
                   </tr>
                   <tr data-id="NGK002" data-name="Sting Dâu" data-danh-muc-ids='["DM_DU"]' data-nhan-hieu-id="NH_PEPSI"
@@ -367,12 +357,10 @@
                     <td>10,000 đ</td>
                     <td><span class="badge bg-danger">Ngừng kinh doanh</span></td>
                     <td class="text-center">
-                      <a class="btn btn-info btn-sm me-1 btn-edit-khoi " href="#" title="Sửa">
-                        <i class="fas fa-edit"></i>
-                      </a>
-                      <a class="btn btn-danger btn-sm btn-delete-khoi" href="#" title="Xóa">
-                        <i class="fas fa-trash-alt"></i>
-                      </a>
+                      <button class="btn btn-info btn-sm me-1 btn-edit-khoi" title="Sửa"><i
+                          class="fas fa-edit"></i></button>
+                      <button class="btn btn-danger btn-sm btn-delete-khoi" title="Xóa"><i
+                          class="fas fa-trash-alt"></i></button>
                     </td>
                   </tr>
                 </tbody>
@@ -382,17 +370,25 @@
         </div>
       </div>
 
-      <div class="col-md-0" id="product-form-col">
+      <div id="product-form-col">
         <div class="tile">
           <h3 class="tile-title" id="form-title">Thêm Sản Phẩm Mới</h3>
           <div class="tile-body">
             <form id="product-form">
+              <div class="mb-3">
+                <label class="form-label fw-bold">Thêm hình ảnh</label>
+                <div class="upload-zone" id="upload-zone">
+                  <input type="file" id="form-images-upload" accept=".png, .jpg, .jpeg" multiple>
 
-              <div class="avatar-upload-container">
-                <img class="avatar-preview" id="form-avatar-preview" src="https://via.placeholder.com/200?text=Ảnh SP"
-                  alt="Ảnh sản phẩm">
-                <input class="avatar-edit-input" type="file" id="form-avatar-upload" accept=".png, .jpg, .jpeg">
-                <label class="avatar-edit-label" for="form-avatar-upload"><i class="bi bi-camera-fill"></i></label>
+                  <div class="upload-zone-content" id="upload-placeholder">
+                    <i class="fas fa-cloud-upload-alt fa-3x mb-3"></i>
+                    <p class="mb-1 fw-bold">Click để chọn ảnh</p>
+                    <p class="small">Hỗ trợ JPG, PNG. Giữ Ctrl để chọn nhiều ảnh.</p>
+                  </div>
+
+                  <div id="images-preview-container" class="d-flex flex-wrap gap-2" style="display: none;">
+                  </div>
+                </div>
               </div>
 
               <div class="mb-3">
@@ -402,13 +398,13 @@
               </div>
 
               <div class="mb-3">
-                <label class="form-label">Tên sản phẩm</label>
+                <label class="form-label">Tên sản phẩm <span class="text-danger">*</span></label>
                 <input class="form-control" type="text" id="form-product-name"
                   placeholder="V.d: Nước tăng lực Sting Dâu" required>
               </div>
 
               <div class="mb-3">
-                <label class="form-label">Nhãn hiệu </label>
+                <label class="form-label">Nhãn hiệu</label>
                 <select class="form-control" id="form-select-nhan-hieu" style="width: 100%;">
                   <option value="">-- Chọn nhãn hiệu --</option>
                   <option value="NH_PEPSI">PepsiCo</option>
@@ -420,7 +416,7 @@
               </div>
 
               <div class="mb-3">
-                <label class="form-label">Danh mục </label>
+                <label class="form-label">Danh mục</label>
                 <select class="form-control" id="form-select-danh-muc" multiple="multiple" style="width: 100%;">
                   <option value="DM_DU">Đồ uống</option>
                   <option value="DM_AN">Đồ ăn nhanh</option>
@@ -467,44 +463,35 @@
 
               <div class="mb-3">
                 <label class="form-label">Trạng thái</label>
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="trangThaiSP" value="ConHang" checked>Còn hàng
-                  </label>
-                </div>
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="trangThaiSP" value="HetHang">Hết hàng
-                  </label>
-                </div>
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="trangThaiSP" value="NgungKinhDoanh">Ngừng kinh
-                    doanh
-                  </label>
+                <div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="trangThaiSP" id="tt1" value="ConHang" checked>
+                    <label class="form-check-label" for="tt1">Còn hàng</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="trangThaiSP" id="tt2" value="HetHang">
+                    <label class="form-check-label" for="tt2">Hết hàng</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="trangThaiSP" id="tt3" value="NgungKinhDoanh">
+                    <label class="form-check-label" for="tt3">Ngừng kinh doanh</label>
+                  </div>
                 </div>
               </div>
-
             </form>
           </div>
           <div class="tile-footer">
-            <button class="btn btn-primary" type="button" id="btn-submit">
-              <i class="bi bi-check-circle-fill me-2"></i>Thêm
-            </button>
-
-            <button class="btn btn-info" type="button" id="btn-edit-mode" style="display: none;">
-              <i class="fas fa-edit me-2"></i>Chỉnh sửa
-            </button>
-
-            <a class="btn btn-secondary" href="#" id="btn-cancel">
-              <i class="bi bi-x-circle-fill me-2"></i>Huỷ
-            </a>
+            <button class="btn btn-primary" type="button" id="btn-submit"><i
+                class="bi bi-check-circle-fill me-2"></i>Thêm</button>
+            <button class="btn btn-info" type="button" id="btn-edit-mode" style="display: none;"><i
+                class="fas fa-edit me-2"></i>Chỉnh sửa</button>
+            <button class="btn btn-secondary" type="button" id="btn-cancel"><i
+                class="bi bi-x-circle-fill me-2"></i>Huỷ</button>
           </div>
         </div>
       </div>
     </div>
   </main>
-
 
 
 
@@ -518,7 +505,7 @@
 
   <!-- js riêng ở đây nha! -->
   <script src="../assets/lib/select2/dist/js/select2.min.js"></script>
- <script src="../assets/js/DanhSachSanPham.js"></script>
+  <script src="../assets/js/DanhSachSanPham.js"></script>
 
 </body>
 

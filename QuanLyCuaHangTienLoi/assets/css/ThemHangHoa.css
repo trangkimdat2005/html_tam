@@ -1,100 +1,170 @@
-/* CSS cho hiệu ứng trượt */
-    #product-list-col,
-    #product-form-col {
-      transition: width 0.4s ease-in-out;
-    }
+/* --- 1. LAYOUT CHÍNH & HIỆU ỨNG TRƯỢT --- */
 
-    #product-form-col {
-      overflow: hidden;
-      /* Ngăn thanh cuộn ngang khi co lại */
-    }
+.app-content {
+    padding: 30px;
+    overflow-x: hidden; /* Ngăn thanh cuộn ngang */
+}
+.tile {
+    background: #ffffff;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+.tile-title {
+    margin-top: 0; margin-bottom: 20px; font-size: 1.5rem;
+}
 
-    /* Trạng thái ban đầu (form ẩn) */
-    #product-list-col.col-md-12 {
-      width: 100%;
-    }
+/* Container cha ngăn rớt dòng */
+#main-row-container {
+    flex-wrap: nowrap !important;
+    overflow: hidden;
+}
 
-    #product-form-col.col-md-0 {
-      width: 0;
-      opacity: 0;
-      padding: 0;
-      margin: 0;
-      /* Đảm bảo form bị ẩn hoàn toàn */
-    }
+/* Hiệu ứng trượt mượt mà */
+#product-list-col, #product-form-col {
+    transition: all 0.4s ease-in-out;
+}
 
-    /* Trạng thái khi form mở (thêm class .form-open vào #main-row-container) */
-    .form-open #product-list-col {
-      width: 66.66667%;
-      /* Tương đương col-md-8 */
-    }
+/* Trạng thái ĐÓNG form */
+#product-list-col { width: 100% !important; flex: 0 0 100% !important; max-width: 100% !important; }
+#product-form-col { width: 0 !important; flex: 0 0 0 !important; max-width: 0 !important; padding: 0 !important; overflow: hidden !important; opacity: 0; }
 
-    .form-open #product-form-col {
-      width: 33.33333%;
-      /* Tương đương col-md-4 */
-      opacity: 1;
-    }
+/* Trạng thái MỞ form */
+.form-open #product-list-col { width: 66.666667% !important; flex: 0 0 66.666667% !important; max-width: 66.666667% !important; }
+.form-open #product-form-col { width: 33.333333% !important; flex: 0 0 33.333333% !important; max-width: 33.333333% !important; opacity: 1 !important; overflow: visible !important; padding-left: 15px !important; padding-right: 15px !important; }
 
-    /* CSS CHO AVATAR PREVIEW (Ảnh sản phẩm) */
-    .avatar-upload-container {
-      position: relative;
-      width: 100%;
-      height: 200px;
-      margin-bottom: 20px;
-    }
+/* --- 2. STYLE CHO VÙNG UPLOAD ẢNH (ĐÃ SỬA LẠI) --- */
+.upload-zone {
+    position: relative;
+    border: 2px dashed #009688;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f8fdfc;
+    min-height: 150px; /* Chiều cao tối thiểu cho vùng lớn */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center; /* Căn giữa nội dung */
+    gap: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.upload-zone:hover {
+    background-color: #e0f2f1;
+    border-color: #00796b;
+}
 
-    .avatar-preview {
-      width: 100%;
-      height: 200px;
-      border-radius: 6px;
-      border: 3px solid #ddd;
-      object-fit: cover;
-      background-color: #f8f9fa;
-    }
+/* Input file ẩn phủ kín vùng upload */
+.upload-zone > input[type=file] {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0; cursor: pointer; z-index: 1;
+}
 
-    .avatar-edit-input {
-      display: none;
-    }
+/* STYLE CHO PLACEHOLDER TO BAN ĐẦU (MÀU XANH) */
+#upload-placeholder.upload-zone-content {
+    text-align: center;
+    pointer-events: none; /* Để click xuyên qua xuống input file nền */
+    color: #009688; /* Màu xanh mặc định */
+}
+/* Đảm bảo icon và text bên trong kế thừa màu xanh */
+#upload-placeholder.upload-zone-content i,
+#upload-placeholder.upload-zone-content p {
+    color: inherit;
+}
 
-    .avatar-edit-label {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      width: 34px;
-      height: 34px;
-      background: #009688;
-      color: white;
-      border-radius: 50%;
-      text-align: center;
-      line-height: 34px;
-      cursor: pointer;
-      border: 2px solid white;
-      font-size: 18px;
-    }
+/* Container chứa ảnh preview và nút thêm nhỏ */
+#images-preview-container {
+    display: contents; /* Để các con tham gia vào flex layout của cha */
+}
 
-    .avatar-edit-label:hover {
-      background: #007a6f;
-    }
+/* STYLE CHO ẢNH PREVIEW */
+.preview-image-wrapper {
+    position: relative;
+    width: 100px; height: 100px;
+    z-index: 3; /* Nổi lên trên input file để click được nút X */
+}
+.preview-image-item {
+    width: 100%; height: 100%; object-fit: cover;
+    border-radius: 10px; border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+/* Nút xoá (X) */
+.btn-remove-image {
+    position: absolute; top: -8px; right: -8px;
+    width: 24px; height: 24px;
+    border-radius: 50%; background: #dc3545; color: white;
+    font-size: 14px; display: flex; align-items: center; justify-content: center;
+    cursor: pointer; border: 2px solid white;
+    transition: background-color 0.2s; z-index: 4;
+}
+.btn-remove-image:hover { background-color: #bb2d3b; }
 
-    /* === CSS MỚI: Để khoá form khi ở chế độ "Xem" === */
-    .form-readonly .form-control,
-    .form-readonly .form-check-input {
-      pointer-events: none;
-      /* Ngăn click */
-      background-color: #e9ecef;
-      /* Làm mờ đi */
-    }
+/* STYLE CHO NÚT "THÊM ẢNH" NHỎ (HIỆN SAU KHI ĐÃ CÓ ẢNH) */
+.mini-add-btn {
+    width: 100px; height: 100px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    color: #999; background-color: #fff;
+    cursor: pointer; transition: all 0.2s ease;
+    z-index: 3; /* Nổi lên trên input file nền để nhận click */
+}
+.mini-add-btn:hover {
+    border-color: #009688; color: #009688; background-color: #f0f9f8;
+}
+.mini-add-btn i { font-size: 24px; margin-bottom: 5px; }
+.mini-add-btn span { font-size: 13px; font-weight: 600; }
 
-    .form-readonly .select2-container--default {
-      pointer-events: none;
-      background-color: #e9ecef;
-    }
+/* --- 3. CHẾ ĐỘ READONLY --- */
+.form-readonly .form-control, .form-readonly .form-check-input {
+    pointer-events: none; background-color: #e9ecef !important; opacity: 1;
+}
+.form-readonly .upload-zone {
+    border: 1px solid #ddd; background: #f8f9fa; pointer-events: none;
+}
+/* Ẩn nút thêm ảnh và nút xoá khi readonly */
+.form-readonly .upload-zone-content,
+.form-readonly .btn-remove-image,
+.form-readonly .upload-zone > input[type=file] {
+    display: none !important;
+}
 
-    .form-readonly .avatar-edit-label {
-      display: none;
-      /* Ẩn nút upload ảnh */
-    }
+/* --- 4. KHÁC --- */
+#sampleTable tbody tr { cursor: pointer; }
+.mini-add-btn {
+    width: 100px;
+    height: 100px;
+    border: 2px dashed #ccc;
+    border-radius: 10px; /* Bo tròn nhẹ giống hình bạn gửi */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
 
-    /* CSS MỚI: Giúp phân biệt hàng có thể click */
-    #sampleTable tbody tr:not(.no-click) {
-      cursor: pointer;
-    }
+.mini-add-btn:hover {
+    border-color: #009688;
+    color: #009688;
+    background-color: #f0f9f8;
+}
+
+.mini-add-btn i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.mini-add-btn span {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.mini-add-btn small {
+    font-size: 11px;
+    color: #bbb;
+}
